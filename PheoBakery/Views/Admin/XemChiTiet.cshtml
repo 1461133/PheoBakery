@@ -1,0 +1,29 @@
+﻿
+@using PheoBakery.Models;
+@model IEnumerable<KHACHHANG>
+@{
+    ViewBag.Title = "XemChiTiet";
+    Layout = "~/Views/Admin/AdminQuanTri.cshtml";
+    WebGrid grid = new WebGrid(source: Model, rowsPerPage: 10);
+}
+
+<h2 style="font-weight:bold;text-align:center">Quản Lý Thành Viên</h2>
+@grid.GetHtml(
+            tableStyle: "table table-bordered table-condensed table-responsive",
+            headerStyle: "gridHead",
+            footerStyle: "gridHead",
+            rowStyle: "gridRow",
+            alternatingRowStyle: "gridAlter",
+            columns: grid.Columns(
+                        grid.Column("MAKH", "Khách hàng"),
+                        grid.Column("TENKH", "Tên khách hàng "),
+                         grid.Column("DIACHI", "Địa chỉ khách hàng "),
+                        grid.Column("EMAIL", "Email khách hàng "),
+                         grid.Column("SDT", "Số điện thoại "),
+                         grid.Column("TENDANGNHAP","Tên đăng nhập")
+                        ))
+
+
+
+
+

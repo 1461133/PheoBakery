@@ -1,0 +1,148 @@
+﻿@model WebBanQuanAo.Models.SanPham
+
+@{
+    ViewBag.Title = "Chỉnh sửa sản phẩm";
+    Layout = "~/Views/Admin/AdminQuanTri.cshtml";
+}
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+<script src="~/Content/ckeditor/ckeditor.js"></script>
+<script src="~/Content/ckfinder/ckfinder.js"></script>
+<script type="text/javascript">
+    // CKEDITOR.replace('ckeditor');
+    var editor = CKEDITOR.replace('ckeditor', {
+        customConfig: '/Content/ckeditor/config.js',
+    });
+    CKFinder.setupCKEditor(null,'@Url.Content( "~/Content/ckfinder/")');
+</script>
+
+<script type="text/javascript">
+    var id = null;
+    function BrowseServer(num) {
+        id = num;
+        var finder = new CKFinder();
+        //finder.basePath = '../';
+        finder.selectActionFunction = SetFileField;
+        finder.popup();
+    }
+    function SetFileField(fileUrl) {
+        document.getElementById('HINHANH' + id).value = fileUrl;
+
+    }
+</script>
+
+@*xây dựng function điều hướng control*@
+<script>
+    $(function () {
+        $("#datepicker").datepicker();
+    });
+</script>
+
+<h2 style="text-align:center">CHỈNH SỬA SẢN PHẨM</h2>
+@*thêm hình ảnh*@
+@using (Html.BeginForm("ChinhSuaSanPham", "SANPHAMs", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.Hidden("MASP", Model.MASP);
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TENSP, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TENSP)
+                @Html.ValidationMessageFor(model => model.TENSP)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DONGIA, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DONGIA)
+                @Html.ValidationMessageFor(model => model.DONGIA)
+            </div>
+        </div>
+
+        
+        <div class="form-group">
+            @Html.LabelFor(model => model.MOTA, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <textarea name="MOTA" class="ckeditor" id="ckeditor">@Model.MOTA</textarea>
+                @Html.ValidationMessageFor(model => model.MOTA)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SOLUONGTON, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.SOLUONGTON)
+                @Html.ValidationMessageFor(model => model.SOLUONGTON)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.LUOTXEM, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.LUOTXEM)
+                @Html.ValidationMessageFor(model => model.LUOTXEM)
+            </div>
+        </div>
+       
+        <div class="form-group">
+            @Html.LabelFor(model => model.MALOAI, new { @class = "control-label col-md-2" })
+            <div class="col-md-2">
+                @Html.DropDownList("MALOAI", null, new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.XOA, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.XOA)
+                @Html.ValidationMessageFor(model => model.XOA)
+            </div>
+        </div>
+        @*tạo thẻ input để upload hình ảnh*@
+        <div class="form-group">
+            @Html.LabelFor(model => model.HINHANH, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="text" name="HINHANH" id="HinhAnh" />
+                <input type="button" value="Chọn Ảnh ..." onclick="BrowseServer('');" />
+                @Html.ValidationMessageFor(model => model.HINHANH)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.HINHANH1, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="text" name="HINHANH1" id="HINHANH1" />
+                <input type="button" value="Chọn Ảnh ..." onclick="BrowseServer(1);" />
+                @Html.ValidationMessageFor(model => model.HINHANH1)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.HINHANH2, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="text" name="HINHANH2" id="HINHANH2" />
+                <input type="button" value="Chọn Ảnh ..." onclick="BrowseServer(2);" />
+                @Html.ValidationMessageFor(model => model.HINHANH2)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Cập Nhật" class="btn btn-danger" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+
+

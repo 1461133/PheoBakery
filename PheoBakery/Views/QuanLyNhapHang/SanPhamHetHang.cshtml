@@ -1,0 +1,24 @@
+﻿@using PheoBakery.Models;
+@model IEnumerable<SANPHAM>
+@{
+    ViewBag.Title = "sản phẩm hết hàng";
+    Layout = "~/Views/Admin/AdminQuanTri.cshtml";
+    WebGrid grid = new WebGrid(source: Model, rowsPerPage: 5);
+}
+<h1 style="font-weight:bold;text-align:center">Sản phẩm hết hàng</h1>
+<br />
+
+@grid.GetHtml(
+            tableStyle: "table table-bordered table-condensed table-responsive",
+            headerStyle: "gridHead",
+            footerStyle: "gridHead",
+            rowStyle: "gridRow",
+            alternatingRowStyle: "gridAlter",
+            columns: grid.Columns(
+                        grid.Column("MASP", "Mã sản phẩm"),
+                        grid.Column("TENSP", "Tên sản phẩm"),
+                         grid.Column("SOLUONGTON", "Số Lượng Tồn"),
+                      grid.Column("DONGIA", "Đơn giá nhập"),
+                        grid.Column("HINHANH", "Hình ảnh", format: p => @Html.Raw("<img width=\"200\" height=\"250\" src = \"../Content/ckfinder/core/connector/aspx/" + p.HINHANH + "\">")),
+                        grid.Column("Nhập Hàng", format: p => @Html.ActionLink("Nhập Hàng", "NhapHangDon", new { @MASP = p.MASP }, new { @class = "btn btn-success", @target = "_blank" }))
+                 ))

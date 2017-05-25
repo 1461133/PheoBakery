@@ -1,0 +1,70 @@
+﻿@using PheoBakery.Models;
+
+@model SANPHAM
+@{
+    ViewBag.Title = "Nhập hàng sản phẩm";
+    Layout = "~/Views/Admin/AdminQuanTri.cshtml";
+}
+
+<legend>Nhập hàng cho sản phẩm <b style="color: rgb(192,0,0)">@Model.TENSP</b> </legend>
+<div class="row">
+    <div class="col-md-3">
+        <div class="imgSP">
+            <img style="height: 250px; width: 300px;" src="@Url.Content("~/Content/ckfinder/core/connector/aspx/" + Model.HINHANH)" />
+        </div>
+    </div>
+    <div class="col-md-9">
+        <div class="ttSP">
+            <h3>Loại sản phẩm: @Model.LOAISP.TENLOAI</h3>
+            <h3>Số lượng tồn: @Model.SOLUONGTON</h3>
+            <h3>Đơn Giá: @Model.DONGIA.Value.ToString("#,##")</h3>
+        </div>
+    </div>
+</div>
+<br />
+
+@*thêm hình ảnh*@
+<h2 style="font-size:20px; font-weight:bold;padding:10px;">Thông Tin Nhập Hàng</h2>
+@using (Html.BeginForm("NhapHangDon", "QuanLyNhapHang"))
+{
+    <div class="form-horizontal">
+        <hr />
+        @Html.Hidden("MASP", Model.MASP)
+        <div class="form-group">
+            <label class="control-label col-md-2">Mã loại sản phẩm :</label>
+            <div class="col-md-2">
+                @{var lstMLSP = (SelectList)ViewBag.MALOAISP;}
+                @Html.DropDownList("MALOAISP", lstMLSP, new { @class = "MALOAISP" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">Đơn Giá :</label>
+            <div class="col-md-10">
+                @Html.TextBox("DONGIANHAP")
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">Số Lượng Nhập :</label>
+            <div class="col-md-10">
+                @Html.TextBox("SOLUONGNHAP")
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Nhập Hàng" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+
+                    }
+
+<style>
+    .imgSP {
+        border: 1px solid #999999;
+        background-color: #fff;
+        height: 250px;
+        width: 300px;
+    }
+</style>
+
+

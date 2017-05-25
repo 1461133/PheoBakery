@@ -1,0 +1,106 @@
+﻿@model PheoBakery.Models.SANPHAM
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>SANPHAM</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.TENSP)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.TENSP)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.DONGIA)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.DONGIA)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.MOTA)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.MOTA)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.LUOTXEM)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.LUOTXEM)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.HINHANH)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.HINHANH)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.HINHANH1)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.HINHANH1)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.HINHANH2)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.HINHANH2)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.XOA)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.XOA)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.SOLUONGTON)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.SOLUONGTON)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.LOAISP.TENLOAI)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.LOAISP.TENLOAI)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.MASP }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

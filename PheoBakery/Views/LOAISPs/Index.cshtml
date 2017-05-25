@@ -1,0 +1,25 @@
+﻿@using PheoBakery.Models;
+@model IEnumerable<LOAISP>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Admin/AdminQuanTri.cshtml";
+    WebGrid grid = new WebGrid(source: Model, rowsPerPage: 20);
+}
+
+<h2 style="font-weight:bold;text-align:center">Quản Lý Loại Sản Phẩm</h2>
+
+@grid.GetHtml(
+            tableStyle: "table table-bordered table-condensed table-responsive",
+            headerStyle: "gridHead",
+            footerStyle: "gridHead",
+            rowStyle: "gridRow",
+            alternatingRowStyle: "gridAlter",
+            columns: grid.Columns(
+                            grid.Column("MALOAI", "STT"),
+                            grid.Column("TENLOAI", "Tên loại"),
+                            grid.Column(format: p => @Html.ActionLink("Thêm", "TaoMoi", null, new { @class = "btn btn-default" })),
+                           grid.Column(format: p => @Html.ActionLink("Sửa", "ChinhSua", new { @MALOAI = p.MALOAI }, new { @class = "btn btn-success" })),
+                           grid.Column(format: p => @Html.ActionLink("Xóa", "Xoa", new { @MALOAI = p.MALOAI }, new { @class = "btn btn-danger" }))
+                            ))
+
