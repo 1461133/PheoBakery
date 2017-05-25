@@ -310,6 +310,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="images\16938832_384755625230678_5914671651680429800_n.jpg" />
     <Content Include="images\banner250x250.jpg" />
     <Content Include="images\banner469x60.jpg" />
     <Content Include="images\blog-comment.jpg" />
