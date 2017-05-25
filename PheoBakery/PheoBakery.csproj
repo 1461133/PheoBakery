@@ -98,7 +98,15 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -438,12 +446,7 @@
     <Content Include="Content\ckeditor\LICENSE.md" />
     <Content Include="Content\ckeditor\README.md" />
     <None Include="Project_Readme.html" />
-    <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\MyComponent\Menu.cshtml" />
-    <Content Include="Views\SANPHAMs\Create.cshtml" />
-    <Content Include="Views\SANPHAMs\Delete.cshtml" />
-    <Content Include="Views\SANPHAMs\Details.cshtml" />
-    <Content Include="Views\SANPHAMs\Edit.cshtml" />
     <Content Include="Views\SANPHAMs\Index.cshtml" />
     <Content Include="Views\KHACHHANGs\Create.cshtml" />
     <Content Include="Views\KHACHHANGs\Delete.cshtml" />
@@ -470,6 +473,16 @@
     <Content Include="Views\LOAISPs\ChinhSua.cshtml" />
     <Content Include="Views\LOAISPs\TaoMoi.cshtml" />
     <Content Include="Views\LOAISPs\Xoa.cshtml" />
+    <Content Include="Views\SANPHAMs\SanPham.cshtml" />
+    <Content Include="Views\SANPHAMs\XemChiTiet.cshtml" />
+    <Content Include="Views\SANPHAMs\TrangSanPham.cshtml" />
+    <Content Include="Views\MyComponent\Footer.cshtml" />
+    <Content Include="Views\MyComponent\InforCake.cshtml" />
+    <Content Include="Views\MyComponent\Infor.cshtml" />
+    <Content Include="Views\MyComponent\NewCake.cshtml" />
+    <Content Include="Views\MyComponent\Slider.cshtml" />
+    <Content Include="Views\MyComponent\SpecialCake.cshtml" />
+    <Content Include="Views\MyComponent\SearchBar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

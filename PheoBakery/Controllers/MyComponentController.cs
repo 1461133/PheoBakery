@@ -17,5 +17,33 @@ namespace PheoBakery.Controllers
         {
             return PartialView();
         }
+        public PartialViewResult Footer()
+        {
+            return PartialView();
+        }
+        public PartialViewResult InforCake()
+        {
+            return PartialView();
+        }
+        public PartialViewResult Infor()
+        {
+            return PartialView();
+        }
+        public PartialViewResult NewCake()
+        {
+            return PartialView();
+        }
+        public PartialViewResult Slider()
+        {
+            return PartialView();
+        }
+        public PartialViewResult SpecialCake()
+        {
+            return PartialView();
+        }
+        public PartialViewResult SearchBar()
+        {
+            return PartialView();
+        }
     }
 }

@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using PheoBakery.Models;
+using PagedList;
 
 namespace PheoBakery.Controllers
 {
@@ -24,19 +25,19 @@ namespace PheoBakery.Controllers
        
 
         // GET: SANPHAMs/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            SANPHAM sANPHAM = db.SANPHAMs.Find(id);
-            if (sANPHAM == null)
-            {
-                return HttpNotFound();
-            }
-            return View(sANPHAM);
-        }
+        //public ActionResult Details(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+        //    SANPHAM sANPHAM = db.SANPHAMs.Find(id);
+        //    if (sANPHAM == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(sANPHAM);
+        //}
 
         // GET: SANPHAMs/Create
         
@@ -50,7 +51,7 @@ namespace PheoBakery.Controllers
         }
         [ValidateInput(false)]
         [HttpPost]
-        public ActionResult TaoMoiSanPham(SANPHAM sanpham, HttpPostedFileBase[] HinhAnh)
+        public ActionResult TaoMoiSanPham(SANPHAM sanpham, HttpPostedFileBase[] HINHANH)
         {
             //load dropdownlist nhà cung cấp, loại sản phẩm, nhà sản xuất
             ViewBag.MALOAI = new SelectList(db.LOAISPs.OrderBy(n => n.MALOAI), "MALOAI", "TENLOAI");
@@ -125,6 +126,88 @@ namespace PheoBakery.Controllers
             db.SANPHAMs.Remove(sanpham);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        //[ChildActionOnly]
+        //public ActionResult SanPhamStyle1Partial()
+        //{
+        //    return PartialView();
+        //}
+        //[ChildActionOnly]
+        //public ActionResult SanPhamStyle2Partial()
+        //{
+        //    return PartialView();
+        //}
+        public ActionResult XemChiTiet(int? MASP, string TENSP)
+        {
+            // kiểm tra tham số truyền vào có rổng hay không
+            if (MASP == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            SANPHAM sanpham = db.SANPHAMs.SingleOrDefault(n => n.MASP == MASP && n.XOA == false);
+            // kiểm tra id sản phẩm truyền  vào
+            if (sanpham == null)
+            {
+                // thông báo ko tìm thấy
+                return HttpNotFound();
+            }
+            return View(sanpham);
+        }
+        // xây dựng aciton load sản phẩm theo mã  sản phẩm 
+        public ActionResult SanPham(int? MALOAI, int? page)
+        {
+
+            if (MALOAI == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            // load sản phẩm dựa vào loại sản phẩm và nhà sản xuất trong bảng sản phẩm
+            var lstSanPham = db.SANPHAMs.Where(n => n.MALOAI == MALOAI);
+            if (lstSanPham.Count() == 0)
+            {
+                // thông báo ko tìm thấy
+                return HttpNotFound();
+            }
+            // thực hiện phân trang
+            // tạo biến số sản phẩm trên trang
+            if (Request.HttpMethod != "GET")
+            {
+                page = 1;
+            }
+            int Pagesize = 9;
+            // tạo biến số trang hiện tại
+            int PageNumber = (page ?? 1);
+            ViewBag.MALOAI = MALOAI;
+            return View(lstSanPham.OrderBy(n => n.MASP).ToPagedList(PageNumber, Pagesize));
+
+
+        }
+        public ActionResult TrangSanPham(int? MALOAI, int? page)
+        {
+
+            if (MALOAI == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            // load sản phẩm dựa vào loại sản phẩm và nhà sản xuất trong bảng sản phẩm
+            var lstSanPham = db.SANPHAMs.Where(n => n.MALOAI == MALOAI);
+            if (lstSanPham.Count() == 0)
+            {
+                // thông báo ko tìm thấy
+                return HttpNotFound();
+            }
+            // thực hiện phân trang
+            // tạo biến số sản phẩm trên trang
+            if (Request.HttpMethod != "GET")
+            {
+                page = 1;
+            }
+            int Pagesize = 9;
+            // tạo biến số trang hiện tại
+            int PageNumber = (page ?? 1);
+            ViewBag.MALOAI = MALOAI;
+            return View(lstSanPham.OrderBy(n => n.MASP).ToPagedList(PageNumber, Pagesize));
         }
     }
 }

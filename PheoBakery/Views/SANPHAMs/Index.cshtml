@@ -21,7 +21,7 @@
                          grid.Column("DONGIA", "Đơn giá"),
                         grid.Column("MOTA", "Số lượng"),
                         grid.Column("LUOTXEM", "Ngày nhập"),
-                        grid.Column("MALOAI", "Loại sản phẩm", format: p => p.MALOAI != null ? p.MALOAI.TENLOAI : ""), // toán tử 3 ngôi
+                        grid.Column("MALOAI", "Loại sản phẩm", format: p => p.MALOAI != null ? p.LOAISP.TENLOAI : ""), // toán tử 3 ngôi
                         grid.Column("HINHANH", "Hình ảnh", format: p => @Html.Raw("<img width=\"200\" height=\"250\" src = \"../Content/ckfinder/core/connector/aspx/" + p.HINHANH + "\">")),
                         grid.Column("Tạo Mới Sản Phẩm", format: p => @Html.ActionLink("Thêm", "TaoMoiSanPham", null, new { @class = "btn btn-success" })),
                         grid.Column("Chỉnh Sửa Sản Phẩm", format: p => @Html.ActionLink("Sửa", "ChinhSuaSanPham", new { @MASP = p.MASP }, new { @class = "btn btn-danger" })),
