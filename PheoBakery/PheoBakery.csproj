@@ -211,11 +211,14 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\DONDATHANGsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KHACHHANGsController.cs" />
+    <Compile Include="Controllers\LienHeController.cs" />
     <Compile Include="Controllers\LOAISPsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MyComponentController.cs" />
@@ -484,6 +487,10 @@
     <Content Include="Views\MyComponent\Slider.cshtml" />
     <Content Include="Views\MyComponent\SpecialCake.cshtml" />
     <Content Include="Views\MyComponent\SearchBar.cshtml" />
+    <Content Include="Views\SANPHAMs\TatCaSanPhamTheoLoai.cshtml" />
+    <Content Include="Views\Blog\Index.cshtml" />
+    <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\LienHe\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
