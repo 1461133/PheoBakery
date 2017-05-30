@@ -1,21 +1,23 @@
 ﻿@using PheoBakery.Models
 @model IEnumerable<SANPHAM>
 
-ul#sub li {
-    position: relative;
-}
 <style>
-    /*sub menu*/
-    ul#sub li ul.sub-menu {
-        display:none;
-        position: absolute;
-        top: 30px;
-        left: 0;
-        width: 100px;
+    ul#sub li {
+        position: relative;
     }
-    ul#sub li:hover ul.sub-menu {
-        display:block;
-    }
+
+        /*sub menu*/
+        ul#sub li ul.sub-menu {
+            display: none;
+            position: absolute;
+            top: 30px;
+            left: 0;
+            width: 100px;
+        }
+
+        ul#sub li:hover ul.sub-menu {
+            display: block;
+        }
 </style>
 <div id="mainMenu" class="grid_16">
     <ul>

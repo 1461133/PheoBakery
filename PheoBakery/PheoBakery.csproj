@@ -493,6 +493,10 @@
     <Content Include="images\thumb1_1.jpg" />
     <Content Include="images\thumb2.jpg" />
     <Content Include="images\thumb2_2.jpg" />
+    <Content Include="images\thumb3.jpg" />
+    <Content Include="images\valher.jpg" />
+    <Content Include="images\valhim.jpg" />
+    <Content Include="images\valkid.jpg" />
     <Content Include="index.html" />
     <Content Include="login.html" />
     <Content Include="Models\Bakery.Context.tt">
