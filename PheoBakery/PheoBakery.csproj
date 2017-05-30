@@ -450,12 +450,6 @@
     <Content Include="images\LoaiSanPham\Mochi\Mochi-water-1.jpg" />
     <Content Include="images\LoaiSanPham\Mochi\Mochi-water-2.jpg" />
     <Content Include="images\LoaiSanPham\Mochi\Mochi-water.jpg" />
-    <Content Include="images\LoaiSanPham\Muffin\muffin1.jpeg" />
-    <Content Include="images\LoaiSanPham\Muffin\muffin2.jpg" />
-    <Content Include="images\LoaiSanPham\Muffin\muffin3.jpg" />
-    <Content Include="images\LoaiSanPham\Muffin\muffin4.jpg" />
-    <Content Include="images\LoaiSanPham\Muffin\muffin5.jpg" />
-    <Content Include="images\LoaiSanPham\Muffin\muffin6.jpg" />
     <Content Include="images\LoaiSanPham\PannaCotta\panda1.jpg" />
     <Content Include="images\LoaiSanPham\PannaCotta\panna2.jpg" />
     <Content Include="images\LoaiSanPham\PannaCotta\panna3.jpg" />
@@ -616,8 +610,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="images\LoaiSanPham\Crepe\" />
-    <Folder Include="images\LoaiSanPham\Pancake\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
