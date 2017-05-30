@@ -11,11 +11,6 @@ namespace PheoBakery.Controllers
 {
     public class HomeController : Controller
     {
-        
-        public ActionResult About()
-        {
-            return View();
-        }
         TPBakeryEntities db = new TPBakeryEntities();
         public ActionResult Index()
         {

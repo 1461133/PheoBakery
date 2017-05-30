@@ -1,8 +1,54 @@
-﻿
-@{Html.RenderAction("Slider", "MyComponent");}
+﻿@using PheoBakery.Models;
+@model IEnumerable<SANPHAM>
+@{
+    ViewBag.Title = "Trang chủ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
 
-@{Html.RenderAction("SpecialCake", "MyComponent");}
-@{Html.RenderAction("NewCake", "MyComponent");}
-@{Html.RenderAction("InforCake", "MyComponent");}
-@{Html.RenderAction("Infor", "MyComponent");}
-@{Html.RenderAction("Footer", "MyComponent");}
+@{
+    IEnumerable<SANPHAM> lstQAM = (IEnumerable<SANPHAM>)ViewBag.lstQAM;
+    IEnumerable<SANPHAM> lstMPM = (IEnumerable<SANPHAM>)ViewBag.lstMPM;
+    IEnumerable<SANPHAM> lstPKM = (IEnumerable<SANPHAM>)ViewBag.lstPKM;
+}
+
+
+@{Html.RenderAction("MenuPartial", "Home");}
+@{Html.RenderAction("SearchBar", "MyComponent");}
+<div class="product">
+    <div class="container">
+        <h1 class="h1"> ĐỒNG HỒ</h1>
+        <div class="product-top">
+            <div class="product-one">
+
+                @Html.Partial("~/Views/SANPHAMs/SanPhamPartial.cshtml", lstQAM)
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1 class="h1"> Mỹ Phẩm</h1>
+        <div class="product-top">
+            <div class="product-one">
+                @Html.Partial("~/Views/SANPHAMs/SanPhamPartial.cshtml", lstMPM)
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1 class="h1"> Phụ Kiện</h1>
+        <div class="product-top">
+            <div class="product-one">
+                @Html.Partial("~/Views/SANPHAMs/SanPhamPartial.cshtml", lstPKM)
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .h1 {
+        text-align: center;
+        font-weight: bold;
+        font-size: 2em;
+        margin: 10px;
+        padding: 10px;
+    }
+</style>
