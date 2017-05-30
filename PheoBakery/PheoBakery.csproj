@@ -453,6 +453,10 @@
     <Content Include="images\LoaiSanPham\PannaCotta\panda1.jpg" />
     <Content Include="images\LoaiSanPham\PannaCotta\panna2.jpg" />
     <Content Include="images\LoaiSanPham\PannaCotta\panna3.jpg" />
+    <Content Include="images\LoaiSanPham\PannaCotta\panna4.jpeg" />
+    <Content Include="images\LoaiSanPham\PannaCotta\panna5.jpg" />
+    <Content Include="images\LoaiSanPham\PannaCotta\panna6.jpg" />
+    <Content Include="images\LoaiSanPham\PannaCotta\panna7.jpeg" />
     <Content Include="images\LoaiSanPham\Pie\Pie-blue-1.jpg" />
     <Content Include="images\LoaiSanPham\Pie\Pie-blue-2.jpg" />
     <Content Include="images\LoaiSanPham\Pie\Pie-blue.jpg" />
