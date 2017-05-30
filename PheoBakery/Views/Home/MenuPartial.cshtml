@@ -1,0 +1,30 @@
+﻿@using PheoBakery.Models
+@model IEnumerable<SANPHAM>
+
+<div id="mainMenu" class="grid_16">
+    <ul>
+        <li><a href="@Url.Action("Index","Home")">Home</a></li>
+        <li><a href="@Url.Action("#","SANPHAMs")">Cakes</a>
+        <ul id="sub">
+
+            @foreach (var groupItem in Model.GroupBy(n => n.LOAISP))
+            {
+                if (groupItem.Key != null)
+                {
+                    
+                    <li class="grid">
+                        <a href="@Url.Action("TrangSanPham", "SANPHAMs", new { @MALOAI = groupItem.Key.MALOAI })">@groupItem.Key.TENLOAI</a>
+                        
+                    </li>
+    
+                }
+
+            }
+        </ul>
+        </li>
+        <li><a href="@Url.Action("Index","Home")">Test Order</a></li>
+        <li><a href="@Url.Action("Index","Blog")">Blog</a></li>
+        <li><a href="@Url.Action("Index","About")">About</a></li>
+        <li><a href="@Url.Action("Index","LienHe")">Contact</a></li>
+    </ul>
+</div>

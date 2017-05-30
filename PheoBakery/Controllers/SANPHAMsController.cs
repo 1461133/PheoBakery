@@ -18,26 +18,10 @@ namespace PheoBakery.Controllers
         // GET: SANPHAMs
         public ActionResult Index()
         {
-            //var sANPHAMs = db.SANPHAMs.Include(s => s.LOAISP);
+            var sANPHAMs = db.SANPHAMs.Include(s => s.LOAISP);
             //return View(sANPHAMs.ToList());
             return View(db.SANPHAMs.Where(n => n.XOA == false).OrderByDescending(n => n.MASP));
         }
-       
-
-        // GET: SANPHAMs/Details/5
-        //public ActionResult Details(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-        //    SANPHAM sANPHAM = db.SANPHAMs.Find(id);
-        //    if (sANPHAM == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    return View(sANPHAM);
-        //}
 
         // GET: SANPHAMs/Create
         
@@ -128,11 +112,11 @@ namespace PheoBakery.Controllers
             return RedirectToAction("Index");
         }
 
-        //[ChildActionOnly]
-        //public ActionResult SanPhamStyle1Partial()
-        //{
-        //    return PartialView();
-        //}
+        [ChildActionOnly]
+        public ActionResult SanPhamPartial()
+        {
+            return PartialView();
+        }
         //[ChildActionOnly]
         //public ActionResult SanPhamStyle2Partial()
         //{
@@ -209,5 +193,6 @@ namespace PheoBakery.Controllers
             ViewBag.MALOAI = MALOAI;
             return View(lstSanPham.OrderBy(n => n.MASP).ToPagedList(PageNumber, Pagesize));
         }
+        
     }
 }
