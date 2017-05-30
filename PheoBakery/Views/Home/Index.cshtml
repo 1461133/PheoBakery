@@ -14,7 +14,7 @@
 
 @{Html.RenderAction("MenuPartial", "Home");}
 @{Html.RenderAction("SearchBar", "MyComponent");}
-<div class="product">
+@*div class="product">
     <div class="container">
         <h1 class="h1"> ĐỒNG HỒ</h1>
         <div class="product-top">
@@ -42,7 +42,14 @@
             </div>
         </div>
     </div>
-</div>
+</div>*@
+@{Html.RenderAction("Slider", "MyComponent");}
+@{Html.RenderAction("SpecialCake", "MyComponent");}
+@{Html.RenderAction("NewCake", "MyComponent");}
+@{Html.RenderAction("InforCake", "MyComponent");}
+@{Html.RenderAction("Infor", "MyComponent");}
+@{Html.RenderAction("Footer", "MyComponent");}
+
 <style>
     .h1 {
         text-align: center;
