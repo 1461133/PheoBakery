@@ -453,6 +453,9 @@
     <Content Include="images\LoaiSanPham\Muffin\muffin1.jpeg" />
     <Content Include="images\LoaiSanPham\Muffin\muffin2.jpg" />
     <Content Include="images\LoaiSanPham\Muffin\muffin3.jpg" />
+    <Content Include="images\LoaiSanPham\Muffin\muffin4.jpg" />
+    <Content Include="images\LoaiSanPham\Muffin\muffin5.jpg" />
+    <Content Include="images\LoaiSanPham\Muffin\muffin6.jpg" />
     <Content Include="images\LoaiSanPham\PannaCotta\panda1.jpg" />
     <Content Include="images\LoaiSanPham\PannaCotta\panna2.jpg" />
     <Content Include="images\LoaiSanPham\PannaCotta\panna3.jpg" />
