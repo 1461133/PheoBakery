@@ -395,6 +395,12 @@
     <Content Include="images\LoaiSanPham\Donut\Donut-white-1.jpg" />
     <Content Include="images\LoaiSanPham\Donut\Donut-white-2.jpg" />
     <Content Include="images\LoaiSanPham\Donut\Donut-white.jpg" />
+    <Content Include="images\LoaiSanPham\Dorayaki\Dorayaki-choco-1.jpg" />
+    <Content Include="images\LoaiSanPham\Dorayaki\Dorayaki-choco-2.jpg" />
+    <Content Include="images\LoaiSanPham\Dorayaki\Dorayaki-choco.jpg" />
+    <Content Include="images\LoaiSanPham\Dorayaki\Dorayaki-macha-1.jpg" />
+    <Content Include="images\LoaiSanPham\Dorayaki\Dorayaki-macha-2.jpg" />
+    <Content Include="images\LoaiSanPham\Dorayaki\Dorayaki-macha.jpg" />
     <Content Include="images\LoaiSanPham\Gato\Gato-choco-1.jpg" />
     <Content Include="images\LoaiSanPham\Gato\Gato-choco-2.jpg" />
     <Content Include="images\LoaiSanPham\Gato\Gato-choco.jpg" />
@@ -576,7 +582,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="images\LoaiSanPham\Cheese-cakes\" />
     <Folder Include="images\LoaiSanPham\Crepe\" />
-    <Folder Include="images\LoaiSanPham\Dorayaki\" />
     <Folder Include="images\LoaiSanPham\Muffin\" />
     <Folder Include="images\LoaiSanPham\Pancake\" />
   </ItemGroup>
