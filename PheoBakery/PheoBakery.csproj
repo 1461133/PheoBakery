@@ -457,12 +457,6 @@
     <Content Include="images\LoaiSanPham\PannaCotta\panna5.jpg" />
     <Content Include="images\LoaiSanPham\PannaCotta\panna6.jpg" />
     <Content Include="images\LoaiSanPham\PannaCotta\panna7.jpeg" />
-    <Content Include="images\LoaiSanPham\Pie\Pie-blue-1.jpg" />
-    <Content Include="images\LoaiSanPham\Pie\Pie-blue-2.jpg" />
-    <Content Include="images\LoaiSanPham\Pie\Pie-blue.jpg" />
-    <Content Include="images\LoaiSanPham\Pie\Pie-ras-1.jpg" />
-    <Content Include="images\LoaiSanPham\Pie\Pie-ras-2.jpg" />
-    <Content Include="images\LoaiSanPham\Pie\Pie-ras.jpg" />
     <Content Include="images\LoaiSanPham\Pudding\Pudding-mango-1.jpg" />
     <Content Include="images\LoaiSanPham\Pudding\Pudding-mango-2.jpg" />
     <Content Include="images\LoaiSanPham\Pudding\Pudding-mango.jpg" />
