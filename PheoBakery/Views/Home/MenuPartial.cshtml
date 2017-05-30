@@ -1,57 +1,21 @@
 ﻿@using PheoBakery.Models
 @model IEnumerable<SANPHAM>
-<style>
-   
-.main {
-    margin: 30px 100px;
-    /*background: #367AEB;*/
-    float: left;
-}
- 
-.main ul {
-    float: left;
-    list-style: none;
-}
- 
-.main ul li {
+
+ul#sub li {
     position: relative;
-    float: left;
 }
- 
-.main li a {
-    display: block;
-    color: #ffffff;
-    font-weight: bold;
-    text-decoration: none;
-    text-transform: uppercase; 
-    padding: 10px 15px;
-}
- 
-.main li a:hover {
-    /*background: #70A0F1;*/
-}
- 
-.main li ul{
-    /*background: #70A0F1;*/
-    position: absolute;
-    display: none;
-    width: 230px;
-}
-.main li ul a:hover{
-    color: #FF0000;
-}
- 
-.main li:hover ul{
-    display: block;
-}
- 
-.main ul li ul li {
-    width: 100%;
-}
- 
-.main li:hover > a{
-    background: #552101;
-}
+<style>
+    /*sub menu*/
+    ul#sub li ul.sub-menu {
+        display:none;
+        position: absolute;
+        top: 30px;
+        left: 0;
+        width: 100px;
+    }
+    ul#sub li:hover ul.sub-menu {
+        display:block;
+    }
 </style>
 <div id="mainMenu" class="grid_16">
     <div class="main">
