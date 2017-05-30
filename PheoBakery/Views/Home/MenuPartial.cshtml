@@ -1,26 +1,42 @@
 ﻿@using PheoBakery.Models
 @model IEnumerable<SANPHAM>
 
+ul#sub li {
+    position: relative;
+}
+<style>
+    /*sub menu*/
+    ul#sub li ul.sub-menu {
+        display:none;
+        position: absolute;
+        top: 30px;
+        left: 0;
+        width: 100px;
+    }
+    ul#sub li:hover ul.sub-menu {
+        display:block;
+    }
+</style>
 <div id="mainMenu" class="grid_16">
     <ul>
         <li><a href="@Url.Action("Index","Home")">Home</a></li>
         <li><a href="@Url.Action("#","SANPHAMs")">Cakes</a>
-        <ul id="sub">
+            <ul id="sub">
 
-            @foreach (var groupItem in Model.GroupBy(n => n.LOAISP))
-            {
-                if (groupItem.Key != null)
+                @foreach (var groupItem in Model.GroupBy(n => n.LOAISP))
                 {
+                    if (groupItem.Key != null)
+                    {
                     
-                    <li class="grid">
-                        <a href="@Url.Action("TrangSanPham", "SANPHAMs", new { @MALOAI = groupItem.Key.MALOAI })">@groupItem.Key.TENLOAI</a>
+                        <li class="sub-menu">
+                            <a href="@Url.Action("TrangSanPham", "SANPHAMs", new { @MALOAI = groupItem.Key.MALOAI })">@groupItem.Key.TENLOAI</a>
                         
-                    </li>
+                        </li>
     
-                }
+                    }
 
-            }
-        </ul>
+                }
+            </ul>
         </li>
         <li><a href="@Url.Action("Index","Home")">Test Order</a></li>
         <li><a href="@Url.Action("Index","Blog")">Blog</a></li>
