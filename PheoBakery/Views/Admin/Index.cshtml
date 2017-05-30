@@ -16,7 +16,7 @@
                 <div class="signin">
                     <div class="signin-rit">
                         <span class="checkbox1">
-                            <label class="checkbox"><input type="checkbox" name="checkbox" checked="">Quên Mật Khẩu ?</label>
+                            <label class="checkbox"><input type="checkbox" name="checkbox" checked="">Forgot Password ?</label>
                         </span>
                         <p><a href="#">Click Here</a> </p>
                         <div class="clearfix"> </div>
@@ -25,12 +25,12 @@
                         @using (Ajax.BeginForm("LoginAdmin", "Admin", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "ThongBao" }))
                         {
                             <div class="log-input-left">
-                                <input class="email TaiKhoan" name="txtUser" placeholder="Tên đăng nhập" required="" type="text">
-                                <input class="password MatKhau" name="txtPass" placeholder="Mật khẩu" required="" type="password">
+                                <input class="email TaiKhoan" name="txtUser" placeholder="Username" required="" type="text">
+                                <input class="password MatKhau" name="txtPass" placeholder="Password" required="" type="password">
                             </div>
                             <h3 style="font-weight:bold;color:red;text-align:left;" id="ThongBao"> </h3>
 
-                            <input value="Đăng nhập" type="submit" id="btnDangNhap1">
+                            <input value="Log In" type="submit" id="btnDangNhap1">
 
                         }
                     </div>
@@ -48,11 +48,11 @@
         var MatKhau = $(".MatKhau").val();
         //    alert("Tài khoản:" + TaiKhoan + "\n Mật khẩu:" + MatKhau);
         if (TaiKhoan == "") {
-            alert("Nhập vào tài khoản");
+            alert("Enter Your Username");
             return;
         }
         if (MatKhau == "") {
-            alert("Nhập vào mật khẩu");
+            alert("Enter Your Password");
             return;
         }
     });
