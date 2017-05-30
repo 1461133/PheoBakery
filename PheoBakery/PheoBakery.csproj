@@ -360,6 +360,15 @@
     <Content Include="images\LoaiSanPham\Birthday-cake\pre-cake-1.jpg" />
     <Content Include="images\LoaiSanPham\Birthday-cake\pre-cake-2.jpg" />
     <Content Include="images\LoaiSanPham\Birthday-cake\pre-cake.jpg" />
+    <Content Include="images\LoaiSanPham\Cheese-cakes\Cheese-cake-1.jpg" />
+    <Content Include="images\LoaiSanPham\Cheese-cakes\Cheese-cake-2.jpg" />
+    <Content Include="images\LoaiSanPham\Cheese-cakes\Cheese-cake.jpg" />
+    <Content Include="images\LoaiSanPham\Cheese-cakes\Cheese-oreo-1.jpg" />
+    <Content Include="images\LoaiSanPham\Cheese-cakes\Cheese-oreo-2.jpg" />
+    <Content Include="images\LoaiSanPham\Cheese-cakes\Cheese-oreo.jpg" />
+    <Content Include="images\LoaiSanPham\Cheese-cakes\Chse-matcha-1.jpg" />
+    <Content Include="images\LoaiSanPham\Cheese-cakes\Chse-matcha-2.jpg" />
+    <Content Include="images\LoaiSanPham\Cheese-cakes\Chse-matcha.jpg" />
     <Content Include="images\LoaiSanPham\Cookies\Cookies-cute-1.jpg" />
     <Content Include="images\LoaiSanPham\Cookies\Cookies-cute-2.jpg" />
     <Content Include="images\LoaiSanPham\Cookies\Cookies-cute.jpg" />
@@ -594,7 +603,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="images\LoaiSanPham\Cheese-cakes\" />
     <Folder Include="images\LoaiSanPham\Crepe\" />
     <Folder Include="images\LoaiSanPham\Muffin\" />
     <Folder Include="images\LoaiSanPham\Pancake\" />
