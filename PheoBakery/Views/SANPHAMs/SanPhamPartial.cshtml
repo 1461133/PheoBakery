@@ -14,7 +14,7 @@
                         <div class="product-bottom">
                             <h3> @item.TENSP</h3>
                             @*<p>@Html.Raw(item.MoTa)</p>*@
-                            <h4><a class="item_add" href="@Url.Action("ThemGioHang", "GioHang", new { @MASP = item.MASP, @strUrl= Request.Url.ToString() }) "><i></i></a> <span class="item_price">@item.DONGIA.Value.ToString("#,##")</span></h4>
+                            <h4><a class="item_add" href="@Url.Action("ThemGioHang", "GioHang", new { @MASP = item.MASP, @strUrl= Request.Url.ToString() }) "></a> <span class="item_price">@item.DONGIA.Value.ToString("#,##")</span></h4>
 
                         </div>
                         <div class="srch">
