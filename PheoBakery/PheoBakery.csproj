@@ -671,10 +671,15 @@
     <Content Include="images\LoaiSanPham\Mochi\Mochi-water-1.jpg" />
     <Content Include="images\LoaiSanPham\Mochi\Mochi-water-2.jpg" />
     <Content Include="images\LoaiSanPham\Mochi\Mochi-water.jpg" />
-    <Content Include="images\LoaiSanPham\PannaCotta\panda1.jpg" />
+    <Content Include="images\LoaiSanPham\PannaCotta\panna1a.jpg" />
+    <Content Include="images\LoaiSanPham\PannaCotta\panna1b.jpg" />
+    <Content Include="images\LoaiSanPham\PannaCotta\panna1c.jpg" />
     <Content Include="images\LoaiSanPham\PannaCotta\panna2.jpg" />
+    <Content Include="images\LoaiSanPham\PannaCotta\panna2b.jpg" />
+    <Content Include="images\LoaiSanPham\PannaCotta\panna2c.jpg" />
     <Content Include="images\LoaiSanPham\PannaCotta\panna3.jpg" />
-    <Content Include="images\LoaiSanPham\PannaCotta\panna4.jpeg" />
+    <Content Include="images\LoaiSanPham\PannaCotta\panna3b.jpeg" />
+    <Content Include="images\LoaiSanPham\PannaCotta\panna3c.jpg" />
     <Content Include="images\LoaiSanPham\PannaCotta\panna5.jpg" />
     <Content Include="images\LoaiSanPham\PannaCotta\panna6.jpg" />
     <Content Include="images\LoaiSanPham\PannaCotta\panna7.jpeg" />
