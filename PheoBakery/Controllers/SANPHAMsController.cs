@@ -16,11 +16,11 @@ namespace PheoBakery.Controllers
         private TPBakeryEntities db = new TPBakeryEntities();
 
         // GET: SANPHAMs
-        public ActionResult Index()
+        public ActionResult QLySP()
         {
             var sANPHAMs = db.SANPHAMs.Include(s => s.LOAISP);
             //return View(sANPHAMs.ToList());
-            return View(db.SANPHAMs.Where(n => n.XOA == false).OrderByDescending(n => n.MASP));
+            return View(db.SANPHAMs.Where(n => n.XOA == false).OrderBy(n => n.MASP));
         }
 
         // GET: SANPHAMs/Create
