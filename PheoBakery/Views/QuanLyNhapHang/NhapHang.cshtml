@@ -1,7 +1,7 @@
 ﻿@using PheoBakery.Models;
 @model PHIEUNHAP
 @{
-    ViewBag.Title = "Nhập hàng";
+    ViewBag.Title = "Import Product";
     Layout = "~/Views/Admin/AdminQuanTri.cshtml";
 }
 @{
@@ -18,7 +18,7 @@
     });
 </script>
 
-<h1 style="font-weight:bold;text-align:center">Quản Lý Nhập Hàng</h1>
+<h1 style="font-weight:bold;text-align:center">Product Management</h1>
 <br />
 @using (Html.BeginForm())
 {
@@ -63,16 +63,16 @@
             </td>
         </tr>
         <tr class="trFirstChild" data-id="-1">
-            <td>Sản phẩm</td>
-            <td>Đơn giá nhập</td>
-            <td>Số lượng nhập</td>
+            <td>Product</td>
+            <td>Input Price</td>
+            <td>The Number Of Product</td>
             <td></td>
         </tr>
     </table>
                     <div class="row">
                         <div class="col-md-12">
                             <input type="button" value="+" class="btn btn-success" id="btnAdd" style="padding:9px 12px" />
-                            <input type="submit" value="Nhập hàng" class="btn btn-primary" id="btnNhapHang" style="padding:9px 12px" />
+                            <input type="submit" value="Import Product" class="btn btn-primary" id="btnNhapHang" style="padding:9px 12px" />
                         </div>
                     </div>
             }
@@ -139,7 +139,7 @@
         $(".txtDonGia").each(function () {
             var giatri = $(this).val();
             if (isNaN(giatri) == true) {
-                alert("Đơn giá không hợp lệ");
+                alert("Invalid unit price");
                 bl = false;
                 return bl;
             }
@@ -152,7 +152,7 @@
         $(".txtSoLuong").each(function () {
             var giatri = $(this).val();
             if (isNaN(giatri) == true) {
-                alert("Số lượng không hợp lệ!");
+                alert("Number of invalid!");
                 bl = false;
                 return bl;
             }

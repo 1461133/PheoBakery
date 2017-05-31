@@ -581,18 +581,6 @@
     <Content Include="images\icon-facebook.png" />
     <Content Include="images\icon-mail.png" />
     <Content Include="images\icon-twitter.png" />
-    <Content Include="images\LoaiSanPham\Birthday-cake\choco-cake-1.jpg" />
-    <Content Include="images\LoaiSanPham\Birthday-cake\choco-cake-2.jpg" />
-    <Content Include="images\LoaiSanPham\Birthday-cake\choco-cake.jpg" />
-    <Content Include="images\LoaiSanPham\Birthday-cake\happy-cake-1.jpg" />
-    <Content Include="images\LoaiSanPham\Birthday-cake\happy-cake-2.jpg" />
-    <Content Include="images\LoaiSanPham\Birthday-cake\happy-cake.jpg" />
-    <Content Include="images\LoaiSanPham\Birthday-cake\iced-cake-1.jpg" />
-    <Content Include="images\LoaiSanPham\Birthday-cake\iced-cake-2.jpg" />
-    <Content Include="images\LoaiSanPham\Birthday-cake\iced-cake.jpg" />
-    <Content Include="images\LoaiSanPham\Birthday-cake\pre-cake-1.jpg" />
-    <Content Include="images\LoaiSanPham\Birthday-cake\pre-cake-2.jpg" />
-    <Content Include="images\LoaiSanPham\Birthday-cake\pre-cake.jpg" />
     <Content Include="images\LoaiSanPham\Cheese-cakes\Cheese-cake-1.jpg" />
     <Content Include="images\LoaiSanPham\Cheese-cakes\Cheese-cake-2.jpg" />
     <Content Include="images\LoaiSanPham\Cheese-cakes\Cheese-cake.jpg" />
@@ -683,12 +671,13 @@
     <Content Include="images\LoaiSanPham\Mochi\Mochi-water-1.jpg" />
     <Content Include="images\LoaiSanPham\Mochi\Mochi-water-2.jpg" />
     <Content Include="images\LoaiSanPham\Mochi\Mochi-water.jpg" />
-    <Content Include="images\LoaiSanPham\Pie\Pie-blue-1.jpg" />
-    <Content Include="images\LoaiSanPham\Pie\Pie-blue-2.jpg" />
-    <Content Include="images\LoaiSanPham\Pie\Pie-blue.jpg" />
-    <Content Include="images\LoaiSanPham\Pie\Pie-ras-1.jpg" />
-    <Content Include="images\LoaiSanPham\Pie\Pie-ras-2.jpg" />
-    <Content Include="images\LoaiSanPham\Pie\Pie-ras.jpg" />
+    <Content Include="images\LoaiSanPham\PannaCotta\panda1.jpg" />
+    <Content Include="images\LoaiSanPham\PannaCotta\panna2.jpg" />
+    <Content Include="images\LoaiSanPham\PannaCotta\panna3.jpg" />
+    <Content Include="images\LoaiSanPham\PannaCotta\panna4.jpeg" />
+    <Content Include="images\LoaiSanPham\PannaCotta\panna5.jpg" />
+    <Content Include="images\LoaiSanPham\PannaCotta\panna6.jpg" />
+    <Content Include="images\LoaiSanPham\PannaCotta\panna7.jpeg" />
     <Content Include="images\LoaiSanPham\Pudding\Pudding-mango-1.jpg" />
     <Content Include="images\LoaiSanPham\Pudding\Pudding-mango-2.jpg" />
     <Content Include="images\LoaiSanPham\Pudding\Pudding-mango.jpg" />
@@ -725,18 +714,6 @@
     <Content Include="images\LoaiSanPham\Tiramisu\Tiramisu-ras-1.jpg" />
     <Content Include="images\LoaiSanPham\Tiramisu\Tiramisu-ras-2.jpg" />
     <Content Include="images\LoaiSanPham\Tiramisu\Tiramisu-ras.jpg" />
-    <Content Include="images\LoaiSanPham\Weeding-cake\flo-cake-1.jpg" />
-    <Content Include="images\LoaiSanPham\Weeding-cake\flo-cake-2.jpg" />
-    <Content Include="images\LoaiSanPham\Weeding-cake\flo-cake.jpg" />
-    <Content Include="images\LoaiSanPham\Weeding-cake\scr-cake-1.jpg" />
-    <Content Include="images\LoaiSanPham\Weeding-cake\scr-cake-2.jpg" />
-    <Content Include="images\LoaiSanPham\Weeding-cake\scr-cake.jpg" />
-    <Content Include="images\LoaiSanPham\Weeding-cake\sw-cake-1.jpg" />
-    <Content Include="images\LoaiSanPham\Weeding-cake\sw-cake-2.jpg" />
-    <Content Include="images\LoaiSanPham\Weeding-cake\sw-cake.jpg" />
-    <Content Include="images\LoaiSanPham\Weeding-cake\white-cake-1.jpg" />
-    <Content Include="images\LoaiSanPham\Weeding-cake\white-cake-2.jpg" />
-    <Content Include="images\LoaiSanPham\Weeding-cake\white-cake.jpg" />
     <Content Include="images\search.jpg" />
     <Content Include="images\star.png" />
     <Content Include="images\thumb1.jpg" />
@@ -836,9 +813,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="images\LoaiSanPham\Crepe\" />
-    <Folder Include="images\LoaiSanPham\Muffin\" />
-    <Folder Include="images\LoaiSanPham\Pancake\" />
+    <Folder Include="images\LoaiSanPham\Other\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
