@@ -6,37 +6,61 @@
 }
 <div id="fb-root"></div>
 <script>
-(function (d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.6&appId=482221048641721";
-    fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.6&appId=482221048641721";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+<style>
+    #menu ul{
+    list-style-type:none;
+    padding:0px;
+    margin:0px;
+    }
+ 
+    #menu ul li{
+    display:inline;
+    }
+ 
+    #menu ul a{
+    text-decoration:none;
+    width:129px;
+    float:left;
+    /*background:#000;*/
+    color:#000000;
+    font-weight:bold;
+    text-align:center;
+    line-height:35px;
+    border-left:1px solid #fff;
+    }
+</style>
+<div id="warp">
+    <div id="main" class="container_16">
+        @*<div class="col-md-9 single-main-left">
+            <div class="sngl-top">
+                <div class="col-md-5 single-top-left">*@
+                    <div id="menu">
+                        <ul >
+                            <li data-thumb="@Url.Content("~/Content/CssHome/HinhSanPham/" + Model.HINHANH)">
+                                <div class="thumb-image"> <img src="@Url.Content("~/Content/CssHome/HinhSanPham/" + Model.HINHANH)" data-imagezoom="true" class="img-responsive" alt="" height="250" width="250" /> </div>
+                            </li>
+                            <li data-thumb="@Url.Content("~/Content/CssHome/HinhSanPham/" + Model.HINHANH1)">
+                                <div class="thumb-image"> <img src="@Url.Content("~/Content/CssHome/HinhSanPham/" + Model.HINHANH1)" data-imagezoom="true" class="img-responsive" alt="" height="100" width="100" /> </div>
+                            </li>
+                            <li data-thumb="@Url.Content("~/Content/CssHome/HinhSanPham/" + Model.HINHANH2)">
+                                <div class="thumb-image"> <img src="@Url.Content("~/Content/CssHome/HinhSanPham/" + Model.HINHANH2)" data-imagezoom="true" class="img-responsive" alt="" height="100" width="100" /> </div>
+                            </li>
 
-<div class="col-md-9 single-main-left">
-    <div class="sngl-top">
-        <div class="col-md-5 single-top-left">
-            <div class="flexslider">
-                <ul class="slides">
-                    <li data-thumb="@Url.Content("~/Content/CssHome/HinhSanPham/" + Model.HINHANH)">
-                        <div class="thumb-image"> <img src="@Url.Content("~/Content/CssHome/HinhSanPham/" + Model.HINHANH)" data-imagezoom="true" class="img-responsive" alt="" /> </div>
-                    </li>
-                    <li data-thumb="@Url.Content("~/Content/CssHome/HinhSanPham/" + Model.HINHANH1)">
-                        <div class="thumb-image"> <img src="@Url.Content("~/Content/CssHome/HinhSanPham/" + Model.HINHANH1)" data-imagezoom="true" class="img-responsive" alt="" /> </div>
-                    </li>
-                    <li data-thumb="@Url.Content("~/Content/CssHome/HinhSanPham/" + Model.HINHANH2)">
-                        <div class="thumb-image"> <img src="@Url.Content("~/Content/CssHome/HinhSanPham/" + Model.HINHANH2)" data-imagezoom="true" class="img-responsive" alt="" /> </div>
-                    </li>
+                        </ul>
+                    </div>
+                    <!-- FlexSlider -->
+                    <script src="~/Content/CssHome/js/imagezoom.js"></script>
+                    <script defer src="~/Content/CssHome/js/jquery.flexslider.js"></script>
+                    <link rel="stylesheet" href="~/Content/CssHome/css/flexslider.css" type="text/css" media="screen" />
 
-                </ul>
-            </div>
-            <!-- FlexSlider -->
-            <script src="~/Content/CssHome/js/imagezoom.js"></script>
-            <script defer src="~/Content/CssHome/js/jquery.flexslider.js"></script>
-            <link rel="stylesheet" href="~/Content/CssHome/css/flexslider.css" type="text/css" media="screen" />
-
-            <script>
+                    <script>
                 // Can also be used with $(document).ready()
                 $(window).load(function () {
                     $('.flexslider').flexslider({
@@ -44,80 +68,66 @@
                         controlNav: "thumbnails"
                     });
                 });
-            </script>
-        </div>
-        <div class="col-md-7 single-top-right">
-            <div class="single-para simpleCart_shelfItem">
-                <h2>@Model.TENSP</h2>
-                <div class="star-on">
-                    <ul class="star-footer">
-                        <li><a href="#"><i> </i></a></li>
-                        <li><a href="#"><i> </i></a></li>
-                        <li><a href="#"><i> </i></a></li>
-                        <li><a href="#"><i> </i></a></li>
-                        <li><a href="#"><i> </i></a></li>
-                    </ul>
-                    <div class="review">
-                        <a href="#">Lượt Xem: @Model.LUOTXEM  </a>
+                    </script>
+                
+                
+                        <h2>@Model.TENSP</h2>
+                            
+                        <h5 class="item_price">@Model.DONGIA.Value.ToString("#,##")</h5>
+                        <p>@Model.MOTA</p>
+                        <a href="@Url.Action("ThemGioHang", "GioHang", new { @MASP = Model.MASP, @strUrl= Request.Url.ToString() })" class="add-cart item_add">Add to cart</a>
+                   
+                <div class="clearfix"> </div>
+            
+            <div id="menu">
+                <ul >
+                    <li >
+                        <a href="#">Details: </a>
+                        
+                        <p style="text-align:left">@Model.MOTA</p>
+                        
+                    </li>
+                    <li >
+                       <a href="#">View: </a>
+                       <p style="text-align:left">View :@Model.LUOTXEM</p>
+                        
+                    </li>
+                    <li >
+                        <a href="#">Comment:</a>
+                        <div class="fb-comments" data-href="http://localhost:50143/" data-numposts="5"></div>
+                    </li> 
 
-                    </div>
-                    <div class="clearfix"> </div>
-                </div>
-
-                <h5 class="item_price">@Model.DONGIA.Value.ToString("#,##")</h5>
-                <p>@Model.MOTA</p>
-                <a href="@Url.Action("ThemGioHang", "GioHang", new { @MASP = Model.MASP, @strUrl= Request.Url.ToString() })" class=" add-cart item_add">Giỏ Hàng</a>
+                    
+                </ul>
             </div>
-        </div>
-        <div class="clearfix"> </div>
-    </div>
-    <div class="tabs">
-        <ul class="menu_drop">
-            <li class="item2">
-                <a href="#"><img src="@Url.Content("~/Content/CssHome/images/arrow.png")" alt="">Mô Tả </a>
-                <ul>
-                    <li class="subitem1"><p style="color:#000000; text-align:left;background:#ffffff">@Model.MOTA</p></li>
-                </ul>
-            </li>
-            <li class="item2">
-                <a href="#"><img src="@Url.Content("~/Content/CssHome/images/arrow.png")" alt="">Lượt xem: </a>
-                <ul>
-                    <li class="subitem1"><p style="color:#000000; text-align:left;background:#ffffff">Lượt xem sản phẩm :@Model.LUOTXEM</p></li>
-                </ul>
-            </li>
-            <li class="item3">
-                <a href="#"><img src="@Url.Content("~/Content/CssHome/images/arrow.png")" alt=""> Bình Luận</a>
-
-            <li class="subitem2"><div class="fb-comments" data-href="http://localhost:31615/" data-numposts="5"></div></li>
-
-            </li>
-        </ul>
-    </div>
-    <div class="latestproducts">
-        <div class="product-one">
-            @foreach (var item in Model.MASP.ToString().Take(10))
-            {
-                <div class="col-md-3 product-left p-left">
-                    <div class="product-main simpleCart_shelfItem">
-                        <a href="@Url.Action("XemChiTiet", "SANPHAMs", new { @MASP=Model.MASP})" class="mask"><img class="img-responsive zoom-img" src="@Url.Content("~/Content/ckfinder/core/connector/aspx/" + Model.HINHANH)" alt="" /></a>
-                        <div class="product-bottom">
-                            <h3>@Html.Raw(Model.TENSP)</h3>
-                            <h4><a class="item_add" href="#"><i></i></a> <span class=" item_price">@Model.DONGIA.Value.ToString("#,##")</span></h4>
+            <div class="latestproducts">
+                <div class="product-one">
+                    @foreach (var item in Model.MASP.ToString().Take(10))
+                    {
+                    
+                        <div id="menu">
+                            <a href="@Url.Action("XemChiTiet", "SANPHAMs", new { @MASP=Model.MASP})" class="mask"><img class="img-responsive zoom-img" src="@Url.Content("~/Content/CssHome/HinhSanPham/" + Model.HINHANH)" alt="" height="250" width="250" /></a>
+                            <div class="product-bottom">
+                                <h3>@Html.Raw(Model.TENSP)</h3>
+                                <h4><a class="item_add" href="#"><i></i></a> <span class="item_price">@Model.DONGIA.Value.ToString("#,##")</span></h4>
+                            </div>
+                            
                         </div>
-                        <div class="srch">
-                            <span>-50%</span>
-                        </div>
-                    </div>
+                 
+                    }
+                    <div class="clearfix"></div>
                 </div>
-            }
-            <div class="clearfix"></div>
-        </div>
+            </div>
+
+
+        @*</div>
+
     </div>
+    <div class="clear"></div>
+</div>*@
+
+
 
 
 </div>
-
-
-
-
-
+</div>
