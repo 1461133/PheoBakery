@@ -7,7 +7,7 @@
     WebGrid grid = new WebGrid(source: Model, rowsPerPage: 10);
 }
 
-<h2 style="font-weight:bold;text-align:center">Quản Lý Sản Phẩm</h2>
+<h2 style="font-weight:bold;text-align:center">Product Management</h2>
 
 @grid.GetHtml(
             tableStyle: "table table-bordered table-condensed table-responsive",
@@ -16,15 +16,15 @@
             rowStyle: "gridRow",
             alternatingRowStyle: "gridAlter",
             columns: grid.Columns(
-                         grid.Column("MASP", "STT"),
-                         grid.Column("TENSP", "Tên sản phẩm"),
-                         grid.Column("DONGIA", "Đơn giá"),
-                        grid.Column("MOTA", "Số lượng"),
-                        grid.Column("LUOTXEM", "Ngày nhập"),
-                        grid.Column("MALOAI", "Loại sản phẩm", format: p => p.MALOAI != null ? p.LOAISP.TENLOAI : ""), // toán tử 3 ngôi
-                        grid.Column("HINHANH", "Hình ảnh", format: p => @Html.Raw("<img width=\"200\" height=\"250\" src = \"../Content/CssHome/HinhSanPham/" + p.HINHANH + "\">")),
-                        grid.Column("Tạo Mới Sản Phẩm", format: p => @Html.ActionLink("Thêm", "TaoMoiSanPham", null, new { @class = "btn btn-success" })),
-                        grid.Column("Chỉnh Sửa Sản Phẩm", format: p => @Html.ActionLink("Sửa", "ChinhSuaSanPham", new { @MASP = p.MASP }, new { @class = "btn btn-danger" })),
-                       grid.Column("Xóa Sản Phẩm", format: p => @Html.ActionLink("Xóa", "XoaSanPham", new { @MASP = p.MASP }, new { @class = "btn btn-default" }))
+                         grid.Column("MASP", "ID"),
+                         grid.Column("TENSP", "Product Name"),
+                         grid.Column("DONGIA", "Price"),
+                        grid.Column("MOTA", "Quantity"),
+                        grid.Column("LUOTXEM", "View"),
+                        grid.Column("MALOAI", "Type", format: p => p.MALOAI != null ? p.LOAISP.TENLOAI : ""), // toán tử 3 ngôi
+                        grid.Column("HINHANH", "Image", format: p => @Html.Raw("<img width=\"200\" height=\"250\" src = \"../Content/CssHome/HinhSanPham/" + p.HINHANH + "\">")),
+                        grid.Column("Create", format: p => @Html.ActionLink("Create", "TaoMoiSanPham", null, new { @class = "btn btn-success" })),
+                        grid.Column("Edit", format: p => @Html.ActionLink("Edit", "ChinhSuaSanPham", new { @MASP = p.MASP }, new { @class = "btn btn-danger" })),
+                       grid.Column("Delete", format: p => @Html.ActionLink("Delete", "XoaSanPham", new { @MASP = p.MASP }, new { @class = "btn btn-default" }))
 
                         ))
