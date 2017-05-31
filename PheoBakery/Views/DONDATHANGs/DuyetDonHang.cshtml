@@ -2,7 +2,7 @@
 
 @model DonDatHang
 @{
-    ViewBag.Title = "DuyetDonHang";
+    ViewBag.Title = "Check Order";
     Layout = "~/Views/Admin/AdminQuanTri.cshtml";
 }
 <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
@@ -13,7 +13,7 @@
         $("#datepicker").datepicker();
     });
 </script>
-<h2>Thông tin đơn hàng <font color="#f65e84">@Model.KHACHHANG.TENKH</font></h2>
+<h2>Order Information <font color="#f65e84">@Model.KHACHHANG.TENKH</font></h2>
 <br /><br />
 
 @using (Html.BeginForm())
@@ -26,13 +26,13 @@
                 <td colspan="4">
                     <table style="width:100%;">
                         <tr>
-                            <td>Mã đơn hàng: <b style="color:red;"> @Model.MADONDH @Html.Hidden("MADONDH", @Model.MADONDH)</b></td>
-                            <td>Mã khách hàng: <b style="color:red;"> @Model.KHACHHANG.MAKH</b></td>
-                            <td>Tên khách hàng: <b style="color:red;"> @Model.KHACHHANG.TENKH</b></td>
-                            <td>Ngày đặt: @Model.NGAYDAT.Value.ToString("dd/MM/yyyy")</td>
-                            <td>Ngày giao:<input name="NGAYGIAO" type="text" id="datepicker"></td>
-                            <td>Đã thanh toán: @Html.EditorFor(model => model.THANHTOAN)</td>
-                            <td>Đã giao: @Html.EditorFor(model => model.GIAOHANG)</td>
+                            <td>Order Code: <b style="color:red;"> @Model.MADONDH @Html.Hidden("MADONDH", @Model.MADONDH)</b></td>
+                            <td>Customer Code: <b style="color:red;"> @Model.KHACHHANG.MAKH</b></td>
+                            <td>Customer's Name: <b style="color:red;"> @Model.KHACHHANG.TENKH</b></td>
+                            <td>Order Date: @Model.NGAYDAT.Value.ToString("dd/MM/yyyy")</td>
+                            <td>Delivery Date:<input name="NGAYGIAO" type="text" id="datepicker"></td>
+                            <td>Payment: @Html.EditorFor(model => model.THANHTOAN)</td>
+                            <td>Delivered: @Html.EditorFor(model => model.GIAOHANG)</td>
                         </tr>
                     </table>
                 </td>
@@ -40,10 +40,10 @@
 
             @*Thông tin chi tiết đơn hàng*@
             <tr>
-                <td><b>Sản phẩm</b></td>
-                <td><b>Hình ảnh</b></td>
-                <td><b>Số lượng đặt</b></td>
-                <td><b>Đơn giá đặt</b></td>
+                <td><b>Product</b></td>
+                <td><b>Image</b></td>
+                <td><b>The Number Of Orders</b></td>
+                <td><b>Unit Price</b></td> @*Đơn giá đặt*@
             </tr>
             @foreach (var item in lstChiTietDH)
             {
@@ -55,16 +55,16 @@
                 </tr>
             }
             <tr>
-                <td align="right" colspan="4">Tổng số lượng: @Model.CTDDHs.Sum(n => n.SOLUONG) sản phẩm</td>
+                <td align="right" colspan="4">Total: @Model.CTDDHs.Sum(n => n.SOLUONG) products</td>
             </tr>
             <tr>
-                <td align="right" colspan="4">Tổng tiền: @Model.CTDDHs.Sum(n => n.SANPHAM.DONGIA).Value.ToString("#,##") $</td>
+                <td align="right" colspan="4">Total Money: @Model.CTDDHs.Sum(n => n.SANPHAM.DONGIA).Value.ToString("#,##") $</td>
             </tr>
         </table>
         <br /><br />
         <br /><br />
-        <input type="button" value="In đơn hàng" id="btnInDonHang" class="btn btn-success" />
-        <input type="submit" value="Lưu đơn hàng" id="btnInDonHang" class="btn btn-success" />
+        <input type="button" value="Print Order" id="btnInDonHang" class="btn btn-success" />
+        <input type="submit" value="Save Order" id="btnInDonHang" class="btn btn-success" />
     </div>
             }
 <script>
