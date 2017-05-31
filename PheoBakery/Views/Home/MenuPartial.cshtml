@@ -3,83 +3,89 @@
 
 
 <style>
-   *{
-    margin:0; 
-    padding: 0
-}
-.main {
-    margin: 30px 100px;
-    /*background: #367AEB;*/
-    float: left;
-}
- 
-.main ul {
-    float: left;
-    list-style: none;
-}
- 
-.main ul li {
-    position: relative;
-    float: left;
-}
- 
-.main li a {
-    display: block;
-    color: #ffffff;
-    font-weight: bold;
-    text-decoration: none;
-    text-transform: uppercase; 
-    padding: 10px 15px;
-}
- 
-.main li a:hover {
-    /*background: #70A0F1;*/
-}
- 
-.main li ul{
-    background: #70A0F1;
-    position: absolute;
-    display: none;
-    width: 230px;
-}
-.main li ul a:hover{
-    color: #FF0000;
-}
- 
-.main li:hover ul{
-    display: block;
-}
- 
-.main ul li ul li {
-    width: 100%;
-}
- 
-.main li:hover > a{
-    background: #6f2f01;
-}
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .mainMenu {
+        
+        /*background: #367AEB;*/
+        float: left;
+    }
+
+        .mainMenu ul {
+            float: left;
+            list-style: none;
+        }
+
+            .mainMenu ul li {
+                position: relative;
+                float: left;
+            }
+
+        .mainMenu li a {
+            display: block;
+            color: #ffffff;
+            font-weight: bold;
+            text-decoration: none;
+            text-transform: uppercase;
+            padding: 10px 15px;
+        }
+
+            .mainMenu li a:hover {
+                /*background: #70A0F1;*/
+            }
+
+        .mainMenu li ul {
+            background: #6f2f01;
+            position: absolute;
+            display: none;
+            width: 230px;
+        }
+
+            .mainMenu li ul a:hover {
+                color: #FF0000;
+            }
+
+        .mainMenu li:hover ul {
+            display: block;
+        }
+
+        .mainMenu ul li ul li {
+            width: 100%;
+        }
+
+        .mainMenu li:hover > a {
+            background: #6f2f01;
+        }
 </style>
-<div id="mainMenu" class="grid_16">
-    <div class="main">
-        <ul>
-            <li><a href="@Url.Action("Index","Home")">Home</a></li>
-            <li>
-                <a href="@Url.Action("#","SANPHAMs")">Cakes</a>
+<div id="warp">
+    <div id="main" class="container_16">
+        <div id="mainMenu" class="grid_16">
+            <div class="mainMenu">
                 <ul>
-                    @foreach (var groupItem in Model.GroupBy(n => n.LOAISP))
-                    {
-                        if (groupItem.Key != null)
-                        {
-                            <li>
-                                <a href="@Url.Action("TrangSanPham", "SANPHAMs", new { @MALOAI = groupItem.Key.MALOAI })">@groupItem.Key.TENLOAI</a>
-                            </li>
-                        }
-                    }
+                    <li><a href="@Url.Action("Index","Home")">Home</a></li>
+                    <li>
+                        <a href="@Url.Action("#","SANPHAMs")">Cakes</a>
+                        <ul>
+                            @foreach (var groupItem in Model.GroupBy(n => n.LOAISP))
+                            {
+                                if (groupItem.Key != null)
+                                {
+                                    <li>
+                                        <a href="@Url.Action("TrangSanPham", "SANPHAMs", new { @MALOAI = groupItem.Key.MALOAI })">@groupItem.Key.TENLOAI</a>
+                                    </li>
+                                }
+                            }
+                        </ul>
+                    </li>
+                    <li><a href="@Url.Action("Index","Home")">Test Order</a></li>
+                    <li><a href="@Url.Action("Index","Blog")">Blog</a></li>
+                    <li><a href="@Url.Action("Index","About")">About</a></li>
+                    <li><a href="@Url.Action("Index","LienHe")">Contact</a></li>
                 </ul>
-            </li>
-            <li><a href="@Url.Action("Index","Home")">Test Order</a></li>
-            <li><a href="@Url.Action("Index","Blog")">Blog</a></li>
-            <li><a href="@Url.Action("Index","About")">About</a></li>
-            <li><a href="@Url.Action("Index","LienHe")">Contact</a></li>
-        </ul>
+            </div>
         </div>
     </div>
+</div>

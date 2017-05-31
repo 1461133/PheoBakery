@@ -10,7 +10,7 @@
     IEnumerable<SANPHAM> lstMPM = (IEnumerable<SANPHAM>)ViewBag.lstMPM;
     IEnumerable<SANPHAM> lstPKM = (IEnumerable<SANPHAM>)ViewBag.lstPKM;
 }
-@{Html.RenderAction("MenuPartial", "Home");}
+
 @*
 
     <div class="warpCart">
@@ -43,6 +43,7 @@
                 </div>
             </div>
         </div>*@
+@{Html.RenderAction("MenuPartial", "Home");}
 @{Html.RenderAction("Slider", "MyComponent");}
 @{Html.RenderAction("SpecialCake", "MyComponent");}
 @{Html.RenderAction("NewCake", "MyComponent");}
