@@ -1,11 +1,11 @@
 ﻿@using PheoBakery.Models;
 @model IEnumerable<SANPHAM>
 @{
-    ViewBag.Title = "sản phẩm hết hàng";
+    ViewBag.Title = "Out Of Stock";
     Layout = "~/Views/Admin/AdminQuanTri.cshtml";
     WebGrid grid = new WebGrid(source: Model, rowsPerPage: 5);
 }
-<h1 style="font-weight:bold;text-align:center">Sản phẩm hết hàng</h1>
+<h1 style="font-weight:bold;text-align:center">Out Of Stock</h1>
 <br />
 
 @grid.GetHtml(
@@ -15,10 +15,10 @@
             rowStyle: "gridRow",
             alternatingRowStyle: "gridAlter",
             columns: grid.Columns(
-                        grid.Column("MASP", "Mã sản phẩm"),
-                        grid.Column("TENSP", "Tên sản phẩm"),
-                         grid.Column("SOLUONGTON", "Số Lượng Tồn"),
-                      grid.Column("DONGIA", "Đơn giá nhập"),
-                        grid.Column("HINHANH", "Hình ảnh", format: p => @Html.Raw("<img width=\"200\" height=\"250\" src = \"../Content/ckfinder/core/connector/aspx/" + p.HINHANH + "\">")),
-                        grid.Column("Nhập Hàng", format: p => @Html.ActionLink("Nhập Hàng", "NhapHangDon", new { @MASP = p.MASP }, new { @class = "btn btn-success", @target = "_blank" }))
+                        grid.Column("MASP", "ID"),
+                        grid.Column("TENSP", "Product Name"),
+                         grid.Column("SOLUONGTON", "Quantity"),
+                      grid.Column("DONGIA", "Price"),
+                        grid.Column("HINHANH", "Image", format: p => @Html.Raw("<img width=\"200\" height=\"250\" src = \"../Content/CssHome/HinhSanPham/" + p.HINHANH + "\">")),
+                        grid.Column("Import", format: p => @Html.ActionLink("Import", "NhapHangDon", new { @MASP = p.MASP }, new { @class = "btn btn-success", @target = "_blank" }))
                  ))
