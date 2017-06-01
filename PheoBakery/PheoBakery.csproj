@@ -743,7 +743,6 @@
       <LastGenOutput>Bakery.cs</LastGenOutput>
     </Content>
     <Content Include="product-details.html" />
-    <Content Include="product-overview.html" />
     <Content Include="Scripts\dapur.js" />
     <Content Include="Scripts\jquery-1.4.2.js" />
     <Content Include="Scripts\jquery.tools.min.js" />
