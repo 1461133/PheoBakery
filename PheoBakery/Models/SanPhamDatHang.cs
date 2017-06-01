@@ -14,7 +14,7 @@ namespace PheoBakery.Models
         public double DONGIA { get; set; }
         public double TONGTIEN { get; set; }
         public string HINHANH { get; set; }
-        public SanPhamDatHang(int MASP)
+        public SanPhamDatHang(int MASP)// chir mua dc 1 sp
         {
             using (TPBakeryEntities db = new TPBakeryEntities())
             {
@@ -27,7 +27,7 @@ namespace PheoBakery.Models
                 this.TONGTIEN = DONGIA * SOLUONG;
             }
         }
-        public SanPhamDatHang(int MASP, int SL)
+        public SanPhamDatHang(int MASP, int SL)// mua 1 sp voi so luong nhieu
         {
             using (TPBakeryEntities db = new TPBakeryEntities())
             {
