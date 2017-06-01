@@ -731,7 +731,6 @@
     <Content Include="images\valher.jpg" />
     <Content Include="images\valhim.jpg" />
     <Content Include="images\valkid.jpg" />
-    <Content Include="index.html" />
     <Content Include="login.html" />
     <Content Include="Models\Bakery.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
