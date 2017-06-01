@@ -917,6 +917,7 @@
     <Content Include="Views\GioHang\ThongBaoThatBai.cshtml" />
     <Content Include="Views\SANPHAMs\SanPhamPartial.cshtml" />
     <Content Include="Views\Home\MenuPartial.cshtml" />
+    <Content Include="Views\GioHang\ThemGioHang.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

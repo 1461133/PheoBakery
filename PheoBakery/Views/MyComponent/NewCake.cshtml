@@ -1,4 +1,7 @@
-﻿<div id="fresh">
+﻿@using PheoBakery.Models;
+
+@model PagedList.PagedList<SANPHAM>
+<div id="fresh">
     <div class="container_16">
         <div id="freshCake" class="grid_16">
             <div class="grid_1 alpha"> <a class="prevButton">&laquo;</a></div>
@@ -9,18 +12,18 @@
         </div>
         <div class="newCakes">
             <div class="scroller">
-                <div class="newCake"><a href="product-details.html" class="grid_4"><img src="~/images/freshCake1.jpg" alt="" width="220" height="120" /></a></div>
-                <div class="newCake"><a href="product-details.html" class="grid_4"><img src="~/images/freshCake2.jpg" alt="" width="220" height="120" /></a></div>
-                <div class="newCake"><a href="product-details.html" class="grid_4"><img src="~/images/freshCake3.jpg" alt="" width="220" height="120" /></a></div>
-                <div class="newCake"><a href="product-details.html" class="grid_4"><img src="~/images/freshCake4.jpg" alt="" width="220" height="120" /></a></div>
-                <div class="newCake"><a href="product-details.html" class="grid_4"><img src="~/images/freshCake5.jpg" alt="" width="220" height="120" /></a></div>
-                <div class="newCake"><a href="product-details.html" class="grid_4"><img src="~/images/freshCake6.jpg" alt="" width="220" height="120" /></a></div>
-                <div class="newCake"><a href="product-details.html" class="grid_4"><img src="~/images/freshCake7.jpg" alt="" width="220" height="120" /></a></div>
-                <div class="newCake"><a href="product-details.html" class="grid_4"><img src="~/images/freshCake8.jpg" alt="" width="220" height="120" /></a></div>
-                <div class="newCake"><a href="product-details.html" class="grid_4"><img src="~/images/freshCake9.jpg" alt="" width="220" height="120" /></a></div>
-                <div class="newCake"><a href="product-details.html" class="grid_4"><img src="~/images/freshCake10.jpg" alt="" width="220" height="120" /></a></div>
-                <div class="newCake"><a href="product-details.html" class="grid_4"><img src="~/images/freshCake11.jpg" alt="" width="220" height="120" /></a></div>
-                <div class="newCake"><a href="product-details.html" class="grid_4"><img src="~/images/freshCake14.jpg" alt="" width="220" height="120" /></a></div>
+                <div class="newCake"><a href="@Url.Action("XemChiTiet","SANPHAMs", new {@MASP = 48})" class="grid_4"><img src="~/images/freshCake1.jpg" alt="" width="220" height="120" /></a></div>
+                <div class="newCake"><a href="@Url.Action("XemChiTiet","SANPHAMs", new {@MASP = 22})" class="grid_4"><img src="~/images/freshCake2.jpg" alt="" width="220" height="120" /></a></div>
+                <div class="newCake"><a href="@Url.Action("XemChiTiet","SANPHAMs", new {@MASP = 22})" class="grid_4"><img src="~/images/freshCake3.jpg" alt="" width="220" height="120" /></a></div>
+                <div class="newCake"><a href="@Url.Action("XemChiTiet","SANPHAMs", new {@MASP = 19})" class="grid_4"><img src="~/images/freshCake4.jpg" alt="" width="220" height="120" /></a></div>
+                <div class="newCake"><a href="@Url.Action("XemChiTiet","SANPHAMs", new {@MASP = 21})" class="grid_4"><img src="~/images/freshCake5.jpg" alt="" width="220" height="120" /></a></div>
+                <div class="newCake"><a href="@Url.Action("XemChiTiet","SANPHAMs", new {@MASP = 25})" class="grid_4"><img src="~/images/freshCake6.jpg" alt="" width="220" height="120" /></a></div>
+                <div class="newCake"><a href="@Url.Action("XemChiTiet","SANPHAMs", new {@MASP = 38})" class="grid_4"><img src="~/images/freshCake7.jpg" alt="" width="220" height="120" /></a></div>
+                <div class="newCake"><a href="@Url.Action("XemChiTiet","SANPHAMs", new {@MASP = 10})" class="grid_4"><img src="~/images/freshCake8.jpg" alt="" width="220" height="120" /></a></div>
+                <div class="newCake"><a href="@Url.Action("XemChiTiet","SANPHAMs", new {@MASP = 31})" class="grid_4"><img src="~/images/freshCake9.jpg" alt="" width="220" height="120" /></a></div>
+                <div class="newCake"><a href="@Url.Action("XemChiTiet","SANPHAMs", new {@MASP = 36})" class="grid_4"><img src="~/images/freshCake10.jpg" alt="" width="220" height="120" /></a></div>
+                <div class="newCake"><a href="@Url.Action("XemChiTiet","SANPHAMs", new {@MASP = 49})" class="grid_4"><img src="~/images/freshCake11.jpg" alt="" width="220" height="120" /></a></div>
+                <div class="newCake"><a href="@Url.Action("XemChiTiet","SANPHAMs", new {@MASP = 28})" class="grid_4"><img src="~/images/freshCake14.jpg" alt="" width="220" height="120" /></a></div>
 
             </div>
         </div>

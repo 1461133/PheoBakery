@@ -131,7 +131,7 @@ namespace PheoBakery.Controllers
         public ActionResult CapNhatGioHang(SanPhamDatHang itemGH)
         {
             // kiểm tra số lượng tồn
-            SANPHAM sanphamcheck = db.SANPHAMs.SingleOrDefault(n => n.MASP == itemGH.SOLUONG);
+            SANPHAM sanphamcheck = db.SANPHAMs.SingleOrDefault(n => n.MASP == itemGH.MASP);
             if (sanphamcheck.SOLUONGTON < itemGH.SOLUONG)
             {
                 return View("ThongBaoThatBai");
@@ -163,7 +163,7 @@ namespace PheoBakery.Controllers
             // lấy list giỏ hàng từ session
             List<SanPhamDatHang> lstGioHang = LayGioHang();
             // kiểm tra sản phẩm có tồn tại trong giỏ hàng chưa
-            SanPhamDatHang sanphamcheck = lstGioHang.SingleOrDefault(n => n.SOLUONG == MASP);
+            SanPhamDatHang sanphamcheck = lstGioHang.SingleOrDefault(n => n.MASP == MASP);
             if (sanphamcheck == null)
             {
                 return RedirectToAction("Index", "Home");
@@ -231,7 +231,7 @@ namespace PheoBakery.Controllers
 
             List<SanPhamDatHang> lstGioHang = LayGioHang();
             // trường hợp đả tồn tại một sản phẩm trên giỏ hàng
-            SanPhamDatHang sanphamcheck = lstGioHang.SingleOrDefault(n => n.SOLUONG == MASP);
+            SanPhamDatHang sanphamcheck = lstGioHang.SingleOrDefault(n => n.MASP == MASP);
             if (sanphamcheck != null)
             {
                 // kiểm tra số lượng sản phẩm tồn
