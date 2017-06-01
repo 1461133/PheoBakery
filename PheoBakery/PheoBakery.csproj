@@ -746,7 +746,6 @@
     <Content Include="Scripts\jquery-1.4.2.js" />
     <Content Include="Scripts\jquery.tools.min.js" />
     <Content Include="Scripts\thickbox.js" />
-    <Content Include="shoppingcart.html" />
     <Content Include="style.css" />
     <Content Include="themes\brown\images\addcart.png" />
     <Content Include="themes\brown\images\arrow.gif" />
