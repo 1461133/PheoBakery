@@ -150,7 +150,7 @@
                                                 @if (Session["user"] != null && Session["user"] != " ")
                                                 {
                                                     TAIKHOAN tv = (TAIKHOAN)Session["user"];
-                                                    <p>Xin Chào:<span>@tv.USERNAME</span></p>
+                                                    <p>Hello:<span>@tv.USERNAME</span></p>
                                                 }
                                             </div>
                                             <i class="lnr lnr-chevron-down"></i>
@@ -161,7 +161,8 @@
                                     <ul class="dropdown-menu drp-mnu" style="margin:8px">
                                         <li> <a href="#"><i class="fa fa-cog"></i> Settings</a> </li>
                                         <li> <a href="#"><i class="fa fa-user"></i>Profile</a> </li>
-                                        @Html.ActionLink("Logout", "Logout", "Admin", new { @class = "fa fa-sign-out" })
+                                        <li> <a href="@Url.Action("Index","Home")"><i class="fa fa-sign-out"></i>Logout</a> </li>
+                                        
                                     </ul>
                                 </li>
                                 <div class="clearfix"> </div>
