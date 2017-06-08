@@ -915,6 +915,8 @@
     <Content Include="Views\Home\MenuPartial.cshtml" />
     <Content Include="Views\GioHang\ThemGioHang.cshtml" />
     <Content Include="Views\Admin\DangNhap.cshtml" />
+    <Content Include="Views\Home\DangNhap.cshtml" />
+    <Content Include="Views\Home\DangKy.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

@@ -40,5 +40,9 @@ namespace PheoBakery.Models
                 this.TONGTIEN = DONGIA * SOLUONG;
             }
         }
+        public SanPhamDatHang()
+        {
+
+        }
     }
 }

@@ -35,6 +35,35 @@ namespace PheoBakery.Controllers
             var lstSanPham = db.SANPHAMs;
             return PartialView(lstSanPham);
         }
-        
+        public ActionResult DangNhap()
+        {
+            return View();
+        }
+        public ActionResult DangKy()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult LoginAdmin(FormCollection collection)
+        {
+            string TaiKhoan = collection["txtUser"].ToString();
+            string MatKhau = collection["txtPass"].ToString();
+            TAIKHOAN thanhvien = db.TAIKHOANs.SingleOrDefault(n => n.USERNAME == TaiKhoan && n.PASSWORD == MatKhau);
+            if (thanhvien != null)
+            {
+                if (thanhvien.USERNAME == "admin")
+                {
+                    Session["user"] = thanhvien;
+                    return RedirectToAction("XemChiTiet");
+                }
+                else
+                {
+                    Session["user"] = thanhvien;
+                    return RedirectToAction("XemChiTiet");
+                }
+
+            }
+            return Content("Tài khoản hoặc mật khẩu không đúng!");
+        }
     }
 }

@@ -10,22 +10,22 @@
         <div class="container_16">
             @if (Model == null || Model.Count() == 0)
             {
-                <p style="font-size:2em;padding:10px;margin:10px"> Giỏ hàng rỗng !! </p>
-                <a href="@Url.Action("Index","Home")" style="font-size:2em;padding:10px;margin:10px">    Vui lòng quay trở lại trang chủ để mua hàng !! </a>
+                <p style="font-size:2em;padding:10px;margin:10px">  </p>
+                <a href="@Url.Action("Index","Home")" style="font-size:2em;padding:10px;margin:10px"> Return HomePage!! ^^ </a>
             }
             else
             {
                 <div class="table-responsive">
-                    <table class=" table table-striped table-bordered table table-condensed">
+                    <table class="table table-striped table-bordered table table-condensed">
                         <tr style="text-align:center">
-                            <td>Mã Sản Phẩm:</td>
-                            <td>Tên Sản Phẩm</td>
-                            <td>Hình Ảnh</td>
-                            <td>Số Lượng</td>
-                            <td>Đơn Giá</td>
-                            <td>Thành Tiền</td>
-                            <td>Cập Nhật Giỏ Hàng</td>
-                            <td>Xóa Giỏ Hàng</td>
+                            <td>ID</td>
+                            <td>Product Name</td>
+                            <td>Image</td>
+                            <td>Quantity</td>
+                            <td>Price</td>
+                            <td>Total Amount</td>
+                            <td>Edit Item</td>
+                            <td>Delete Item</td>
 
                         </tr>
                         @foreach (var item in Model)
@@ -37,8 +37,8 @@
                                 <td>@item.SOLUONG</td>
                                 <td>@item.DONGIA.ToString("#,##")</td>
                                 <td>@item.TONGTIEN.ToString("#,##")</td>
-                                <td>@Html.ActionLink("Cập Nhật", "SuaGioHang", new { @MASP = item.MASP }, new { @class = "btn btn-success" })</td>
-                                @*<td>@Html.ActionLink("Xóa Giỏ Hàng", "XoaGioHang", new { @IdSanPham = item.IdSanPham }, new { @class = "btn btn-danger" })</td>*@
+                                <td>@Html.ActionLink("Edit", "SuaGioHang", new { @MASP = item.MASP }, new { @class = "btn btn-success" })</td>
+                                <td>@Html.ActionLink("Delete", "XoaGioHang", new { @MASP = item.MASP }, new { @class = "btn btn-danger" })</td>
                             </tr>
                         }
                     </table>
@@ -48,7 +48,7 @@
                         if (Session["user"] == null)
                         {
                             <div class="MuaHang">
-                                <table align="center" class=" table">
+                                <table align="center" class="table">
                                     <tr>
                                     <tr>
                                         <td>Họ tên:</td>
@@ -82,9 +82,9 @@
                                 </table>
                             </div>
                         }
-                        <div class="table-responsive" style=" text-align:left;padding:10px">
-                            <input type="submit" value="Đặt Hàng" class=" btn btn-success" id="btnDatHang">
-                            @Html.ActionLink("Mua Tiếp", "Index", "Home", new { @class = "btn btn-danger" })
+                        <div class="table-responsive" style="text-align:left;padding:10px">
+                            <input type="submit" value="Order" class="btn btn-success" id="btnDatHang">
+                            @Html.ActionLink("Continue Shopping", "Index", "Home", new { @class = "btn btn-danger" })
                         </div>
 
                     }
