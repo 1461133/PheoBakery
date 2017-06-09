@@ -21,6 +21,10 @@ namespace PheoBakery.Controllers
         {
             return PartialView();
         }
+        public PartialViewResult Header()
+        {
+            return PartialView();
+        }
         public PartialViewResult InforCake()
         {
             return PartialView();

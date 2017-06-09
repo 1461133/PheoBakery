@@ -9,63 +9,66 @@
     List<SanPhamDatHang> lstGioHang = ViewBag.GioHang as List<SanPhamDatHang>;
 
 }
-<div class="cart-items">
-    <div class="in-check">
-        <div class="container">
-            <div class="table-responsive">
-                <table class="table table-striped table-bordered table table-condensed">
-                    <tr style="text-align:center">
-                        <td>ID</td>
-                        <td>Product Name</td>
-                        <td>Image</td>
-                        <td>Quantity</td>
-                        <td>Price</td>
-                        <td>Total Amount</td>
-                        <td>Edit Item</td>
-                        <td>Delete Item</td>
+<html>
+<body>
+    <div id="warp">
+        <div id="main" class="container_16">
+            <table class="table table-striped table-bordered table table-condensed">
+                <tr style="text-align:center">
+                    <td>ID</td>
+                    <td>Product Name</td>
+                    <td>Image</td>
+                    <td>Quantity</td>
+                    <td>Price</td>
+                    <td>Total Amount</td>
+                    <td>Edit Item</td>
+                    <td>Delete Item</td>
 
-                    </tr>
-                    @foreach (var item in lstGioHang)
+                </tr>
+                @foreach (var item in lstGioHang)
+            {
+                // sản phẩm có mả sản phẩm được chỉnh sửa gửi từ tham số bên xem giỏ hàng
+                if (Model.MASP == item.MASP)
+                {
+                    using (Html.BeginForm("CapNhatGioHang", "GioHang"))
                     {
-                        // sản phẩm có mả sản phẩm được chỉnh sửa gửi từ tham số bên xem giỏ hàng
-                        if (Model.MASP == item.MASP)
-                        {
-                            using (Html.BeginForm("CapNhatGioHang", "GioHang"))
-                            {
-                                <tr style="text-align:center">
-                                    <td>@item.MASP @Html.Hidden("MASP", item.MASP)</td>
-                                    <td>@item.TENSP</td>
-                                    <td><img src="@Url.Content("~/Content/CssHome/HinhSanPham/" +item.HINHANH)" style="height:250px;width:150px" /></td>
-                                    <td>
-                                        @Html.TextBox("SoLuong", item.SOLUONG, new { @class = "SoLuongThayDoi" })
-                                        <p style="color:red;" id="TB_SoLuongThayDoi"></p>
-                                    </td>
-                                    <td>@item.DONGIA.ToString("#,##")</td>
-                                    <td>@item.TONGTIEN.ToString("#,##")</td>
-                                    <td> <input type="submit" value="Edit" class="btn btn-success" id="btnCapNhatGH"></td>
-                                    <td>@Html.ActionLink("Delete", "XoaGioHang", new { @MASP = item.MASP }, new { @class = "btn btn-danger" })</td>
-                                </tr>
-                            }
-                        }
-                        else
-                        {
-                            <tr style="text-align:center">
-                                <td>@item.MASP</td>
-                                <td>@item.TENSP</td>
-                                <td><img src="@Url.Content("~/Content/CssHome/HinhSanPham/" +item.HINHANH)" style="height:250px;width:150px" /></td>
-                                <td>@item.SOLUONG</td>
-                                <td>@item.DONGIA.ToString("#,##")</td>
-                                <td>@item.TONGTIEN.ToString("#,##")</td>
-                                <td>@Html.ActionLink("Edit", "SuaGioHang", new { @MASP = item.MASP }, new { @class = "btn btn-success" })</td>
-                                <td>@Html.ActionLink("Delete", "XoaGioHang", new { @MASP = item.MASP }, new { @class = "btn btn-danger" })</td>
+                            <tr style="text-align:center ; padding-bottom:30%">
+                                <td width="150px">@item.MASP @Html.Hidden("MASP", item.MASP)</td>
+                                <td width="150px">@item.TENSP</td>
+                                <td width="150px"><img src="@Url.Content("~/Content/CssHome/HinhSanPham/" +item.HINHANH)" style="height:150px;width:150px" /></td>
+                                <td width="150px">
+                                    @Html.TextBox("SoLuong", item.SOLUONG, new { @class = "SoLuongThayDoi" })
+                                    <p style="color:red;" id="TB_SoLuongThayDoi"></p>
+                                </td>
+                                <td width="150px">@item.DONGIA.ToString("#,##")</td>
+                                <td width="150px">@item.TONGTIEN.ToString("#,##")</td>
+                                <td width="150px"> <input type="submit" value="Edit" class="btn btn-success" id="btnCapNhatGH"></td>
+                                <td width="150px">@Html.ActionLink("Delete", "XoaGioHang", new { @MASP = item.MASP }, new { @class = "btn btn-danger" })</td>
                             </tr>
                         }
                     }
-                </table>
-            </div>
+                    else
+                    {
+                        <tr style="text-align:center">
+                            <td>@item.MASP</td>
+                            <td>@item.TENSP</td>
+                            <td><img src="@Url.Content("~/Content/CssHome/HinhSanPham/" +item.HINHANH)" style="height:250px;width:150px" /></td>
+                            <td>@item.SOLUONG</td>
+                            <td>@item.DONGIA.ToString("#,##")</td>
+                            <td>@item.TONGTIEN.ToString("#,##")</td>
+                            <td>@Html.ActionLink("Edit", "SuaGioHang", new { @MASP = item.MASP }, new { @class = "btn btn-success" })</td>
+                            <td>@Html.ActionLink("Delete", "XoaGioHang", new { @MASP = item.MASP }, new { @class = "btn btn-danger" })</td>
+                        </tr>
+                    }
+                }
+            </table>
+
+
         </div>
     </div>
-</div>
+</body>
+</html>
+
 <script>
     $("#btnCapNhatGH").click(function () {
         //Kiểm tra số lượng không phải là số hoặc nhỏ hơn 0

@@ -917,6 +917,7 @@
     <Content Include="Views\Admin\DangNhap.cshtml" />
     <Content Include="Views\Home\DangNhap.cshtml" />
     <Content Include="Views\Home\DangKy.cshtml" />
+    <Content Include="Views\MyComponent\Header.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

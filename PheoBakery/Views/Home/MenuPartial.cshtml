@@ -3,71 +3,43 @@
 
 
 <style>
-    * {
-        margin: 0;
-        padding: 0;
+    .clear{
+        clear: both;
     }
-
-    .mainMenu {
-        
-        /*background: #367AEB;*/
-        float: left;
-    }
-
-        .mainMenu ul {
-            float: left;
+   
+    ul#nav li{
+            float:left;
             list-style: none;
-        }
-
-            .mainMenu ul li {
-                position: relative;
-                float: left;
-            }
-
-        .mainMenu li a {
+    }
+    ul#nav li a{
             display: block;
-            color: #ffffff;
-            font-weight: bold;
             text-decoration: none;
+            margin: 5px 5px;
+            padding: 2px 5px;
+            border-bottom: 1px solid #b6ff00;
+    }
+    ul#nav li a:hover{
+            background: #CCC;
             text-transform: uppercase;
-            padding: 10px 15px;
-        }
-
-            .mainMenu li a:hover {
-                /*background: #70A0F1;*/
-            }
-
-        .mainMenu li ul {
-            background: #6f2f01;
-            /*position:absolute;*/
+    }
+    ul#nav li ul li{
+            float: none;
+    }
+    ul#nav li ul{
             display: none;
-            width: 230px;
-        }
-
-            .mainMenu li ul a:hover {
-                color: #FF0000;
-            }
-
-        .mainMenu li:hover ul {
+            position: absolute;
+    }
+    ul#nav li:hover ul{
             display: block;
-        }
-
-        .mainMenu ul li ul li {
-            width: 100%;
-        }
-
-        .mainMenu li:hover a {
-            background: #6f2f01;
-        }
+    }
 </style>
 <div id="warp">
     <div id="main" class="container_16">
         <div id="mainMenu" class="grid_16">
-            <div class="mainMenu">
-                <ul>
+                <ul id="nav">
                     <li><a href="@Url.Action("Index","Home")">Home</a></li>
                     <li>
-                        <a href="@Url.Action("#","SANPHAMs")">Cakes</a>
+                        <a href="#">Cakes</a>
                         <ul>
                             @foreach (var groupItem in Model.GroupBy(n => n.LOAISP))
                             {
@@ -80,13 +52,15 @@
                             }
                         </ul>
                     </li>
-                    <li><a href="@Url.Action("Index","Home")">Test Order</a></li>
+                    
                     <li><a href="@Url.Action("Index","Blog")">Blog</a></li>
                     <li><a href="@Url.Action("Index","About")">About</a></li>
                     <li><a href="@Url.Action("Index","LienHe")">Contact</a></li>
                 </ul>
-            </div>
+
         </div>
         
     </div>
+    
 </div>
+
