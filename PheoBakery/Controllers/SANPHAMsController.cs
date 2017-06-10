@@ -193,15 +193,6 @@ namespace PheoBakery.Controllers
             ViewBag.MALOAI = MALOAI;
             return View(lstSanPham.OrderBy(n => n.MASP).ToPagedList(PageNumber, Pagesize));
         }
-        public ActionResult SPLienQuan(int MALOAI)
-        {
-            //tạo ra các Viewbag để load ra sản phẩm
-            // tạo list đồng hồ mới
-            var lstQAM = db.SANPHAMs.Where(n => n.MALOAI == MALOAI && n.XOA == false).ToList().OrderBy(n => n.DONGIA);
-            //gán vào viewbang
-            ViewBag.lstQAM = lstQAM;
-            
-            return View();
-        }
+        
     }
 }
