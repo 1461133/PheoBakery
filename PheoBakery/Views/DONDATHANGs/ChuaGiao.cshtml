@@ -25,7 +25,7 @@
                         grid.Column("NGAYDAT", "Order Date"),
                          grid.Column("NGAYGIAO", "Delivery Date"),
                         grid.Column("GIAOHANG", "Delivery Status"),
-                        grid.Column("THANTOAN", "Payment"), /*Đã thanh toán*/
+                        grid.Column("THANHTOAN", "Payment"), /*Đã thanh toán*/
 
                          grid.Column("HUY", "Cancel Order"),
                         grid.Column("Check Orders", format: p => @Html.ActionLink("Check Orders", "DuyetDonHang", new { Id = p.MADONDH }, new { @target = "_blank", @class = "btn btn-success" })) /*Duyệt đơn hàng*/

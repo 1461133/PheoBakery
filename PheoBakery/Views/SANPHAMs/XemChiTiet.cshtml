@@ -41,12 +41,12 @@
             <table width="850">
                 <tr>
                     <td>
-                        <img src="@Url.Content("~/Content/ckfinder/core/connector/aspx/" + Model.HINHANH)"  width="300" height="300" /> 
+                        <img src="@Url.Content("~/Content/ckfinder/core/connector/aspx/" + Model.HINHANH)"  width="500" height="350" /> 
                     </td>
-                    <td rowspan="2" width="500px" style="text-align:right; font-size:25px">
-                        <p>Price: @Model.DONGIA.Value.ToString("#,##")</p>
-                        <p>Details: @Model.MOTA</p>
-                        <p>View :@Model.LUOTXEM</p>
+                    <td rowspan="2" width="500px" style="text-align:center; font-size:25px">
+                        <p><strong>Price: </strong>@Model.DONGIA.Value.ToString("#,##")</p>
+                        <p><strong>Details: </strong>@Model.MOTA</p>
+                        <p><strong>View: </strong>@Model.LUOTXEM</p>
                         <a href="@Url.Action("ThemGioHang", "GioHang", new { @MASP = Model.MASP, @strUrl= Request.Url.ToString() })">Add to cart</a>
                         
                     </td>
@@ -54,8 +54,8 @@
                 </tr>
                 <tr>
                     <td>
-                        <img src="@Url.Content("~/Content/ckfinder/core/connector/aspx/" + Model.HINHANH1)" width="150" height="150"/>
-                        <img src="@Url.Content("~/Content/ckfinder/core/connector/aspx/" + Model.HINHANH2)" width="150" height="150" />
+                        <img src="@Url.Content("~/Content/ckfinder/core/connector/aspx/" + Model.HINHANH1)" width="200" height="200"/>
+                        <img src="@Url.Content("~/Content/ckfinder/core/connector/aspx/" + Model.HINHANH2)" width="200" height="200" />
                     </td>
                     <td>
                     </td>
@@ -76,10 +76,7 @@
             <h3 style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size:25px; font-style:italic; text-align:center">
                 OTHERS
             </h3>
-        
-        
-                
-                    <a href="@Url.Action("TrangSanPham", "SANPHAMs", new { @MALOAI = Model.MALOAI })"><img src="@Url.Content("~/Content/ckfinder/core/connector/aspx/" + Model.HINHANH)" alt="" /></a>
+                    <a href="@Url.Action("TrangSanPham", "SANPHAMs", new { @MALOAI = Model.MALOAI })"><img src="@Url.Content("~/Content/ckfinder/core/connector/aspx/" + Model.HINHANH)" alt="" width="250" height="250" /></a>
 
                     <h3>@Html.Raw(Model.TENSP)</h3>
                     <h4><a href="#"></a> <span >@Model.DONGIA.Value.ToString("#,##")</span></h4>
