@@ -1,0 +1,8 @@
+﻿@using PheoBakery.Models;
+@model IEnumerable<SANPHAM>
+
+@{
+            IEnumerable<SANPHAM> lstQAM = (IEnumerable<SANPHAM>)ViewBag.lstQAM;
+
+}
+@Html.Partial("~/Views/SANPHAMs/SanPhamPartial.cshtml", lstQAM)

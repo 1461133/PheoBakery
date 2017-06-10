@@ -14,120 +14,77 @@
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
 <style>
-    #menu ul{
-    list-style-type:none;
-    padding:0px;
-    margin:0px;
-    }
- 
-    #menu ul li{
-    display:inline;
-    }
- 
-    #menu ul a{
-    text-decoration:none;
-    width:129px;
-    float:left;
-    /*background:#000;*/
-    color:#000000;
-    font-weight:bold;
-    text-align:center;
-    line-height:35px;
-    border-left:1px solid #fff;
-    }
+    .productsWarp {
+	position:relative;
+	overflow:hidden;
+	margin-bottom:10px;
+	padding-bottom:10px;
+	width:940px;
+	height:398px;
+}
+.productsWarp ul {
+	list-style:none;
+	margin:0;
+	width:20000em;
+	position:absolute;
+}
+.productsWarp ul li {
+	list-style:none;
+	float:left;
+	margin:0;
+}
 </style>
 <div id="warp">
     <div id="main" class="container_16">
-        @*<div class="col-md-9 single-main-left">
-            <div class="sngl-top">
-                <div class="col-md-5 single-top-left">*@
-                    <div id="menu">
-                        <ul >
-                            <li data-thumb="@Url.Content("~/Content/CssHome/HinhSanPham/" + Model.HINHANH)">
-                                <div class="thumb-image"> <img src="@Url.Content("~/Content/CssHome/HinhSanPham/" + Model.HINHANH)" data-imagezoom="true" class="img-responsive" alt="" height="250" width="250" /> </div>
-                            </li>
-                            <li data-thumb="@Url.Content("~/Content/CssHome/HinhSanPham/" + Model.HINHANH1)">
-                                <div class="thumb-image"> <img src="@Url.Content("~/Content/CssHome/HinhSanPham/" + Model.HINHANH1)" data-imagezoom="true" class="img-responsive" alt="" height="100" width="100" /> </div>
-                            </li>
-                            <li data-thumb="@Url.Content("~/Content/CssHome/HinhSanPham/" + Model.HINHANH2)">
-                                <div class="thumb-image"> <img src="@Url.Content("~/Content/CssHome/HinhSanPham/" + Model.HINHANH2)" data-imagezoom="true" class="img-responsive" alt="" height="100" width="100" /> </div>
-                            </li>
-
-                        </ul>
-                    </div>
-                    <!-- FlexSlider -->
-                    <script src="~/Content/CssHome/js/imagezoom.js"></script>
-                    <script defer src="~/Content/CssHome/js/jquery.flexslider.js"></script>
-                    <link rel="stylesheet" href="~/Content/CssHome/css/flexslider.css" type="text/css" media="screen" />
-
-                    <script>
-                // Can also be used with $(document).ready()
-                $(window).load(function () {
-                    $('.flexslider').flexslider({
-                        animation: "slide",
-                        controlNav: "thumbnails"
-                    });
-                });
-                    </script>
-                
-                
-                        <h2>@Model.TENSP</h2>
-                            
-                        <h5 class="item_price">@Model.DONGIA.Value.ToString("#,##")</h5>
-                        <p>@Model.MOTA</p>
-                        <a href="@Url.Action("ThemGioHang", "GioHang", new { @MASP = Model.MASP, @strUrl= Request.Url.ToString() })" class="add-cart item_add">Add to cart</a>
+        <div class="products grid_16" style="margin-top:40px">
+            <h2 style="text-align:center; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size:46px">@Model.TENSP</h2>
+            <table width="850">
+                <tr>
+                    <td>
+                        <img src="@Url.Content("~/Content/CssHome/HinhSanPham/" + Model.HINHANH)"  width="300" height="300" /> 
+                    </td>
+                    <td rowspan="2" width="500px" style="text-align:right; font-size:25px">
+                        <p>Price: @Model.DONGIA.Value.ToString("#,##")</p>
+                        <p>Details: @Model.MOTA</p>
+                        <p>View :@Model.LUOTXEM</p>
+                        <a href="@Url.Action("ThemGioHang", "GioHang", new { @MASP = Model.MASP, @strUrl= Request.Url.ToString() })">Add to cart</a>
+                        
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <td>
+                        <img src="@Url.Content("~/Content/CssHome/HinhSanPham/" + Model.HINHANH1)" width="150" height="150"/>
+                        <img src="@Url.Content("~/Content/CssHome/HinhSanPham/" + Model.HINHANH2)" width="150" height="150" />
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align:center">
+                        <div class="fb-comments" data-href="http://localhost:50143/" data-numposts="5"></div>      
+                    </td>
+                </tr>
+            </table>
                    
-                <div class="clearfix"> </div>
+
             
-            <div id="menu">
-                <ul >
-                    <li >
-                        <a href="#">Details: </a>
-                        
-                        <p style="text-align:left">@Model.MOTA</p>
-                        
-                    </li>
-                    <li >
-                       <a href="#">View: </a>
-                       <p style="text-align:left">View :@Model.LUOTXEM</p>
-                        
-                    </li>
-                    <li >
-                        <a href="#">Comment:</a>
-                        <div class="fb-comments" data-href="http://localhost:50143/" data-numposts="5"></div>
-                    </li> 
+        </div>
+                   
+                       
+                <div class="clearfix"> </div>
+            <h3 style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size:25px; font-style:italic; text-align:center">
+                OTHERS
+            </h3>
+        
+        
+                
+                    <a href="@Url.Action("TrangSanPham", "SANPHAMs", new { @MALOAI = Model.MALOAI })"><img src="@Url.Content("~/Content/CssHome/HinhSanPham/" + Model.HINHANH)" alt="" /></a>
 
-                    
-                </ul>
-            </div>
-            <div class="latestproducts">
-                <div class="product-one">
-                    @foreach (var item in Model.MASP.ToString().Take(10))
-                    {
-                    
-                        <div id="menu">
-                            <a href="@Url.Action("XemChiTiet", "SANPHAMs", new { @MASP=Model.MASP})" class="mask"><img class="img-responsive zoom-img" src="@Url.Content("~/Content/CssHome/HinhSanPham/" + Model.HINHANH)" alt="" height="250" width="250" /></a>
-                            <div class="product-bottom">
-                                <h3>@Html.Raw(Model.TENSP)</h3>
-                                <h4><a class="item_add" href="#"><i></i></a> <span class="item_price">@Model.DONGIA.Value.ToString("#,##")</span></h4>
-                            </div>
-                            
-                        </div>
-                 
-                    }
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-
-
-        @*</div>
+                    <h3>@Html.Raw(Model.TENSP)</h3>
+                    <h4><a href="#"></a> <span >@Model.DONGIA.Value.ToString("#,##")</span></h4>
+                <div class="clearfix"></div>
+           
 
     </div>
-    <div class="clear"></div>
-</div>*@
-
-
-
-
-</div>
 </div>

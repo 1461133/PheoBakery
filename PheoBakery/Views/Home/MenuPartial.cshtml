@@ -32,6 +32,36 @@
     ul#nav li:hover ul{
             display: block;
     }
+    .search-bar input[type="text"] {
+	width: 100%;
+	padding: 8px 18px 8px 8px;
+    margin-top: 5px;
+	border: 1px solid #F5F5F5;
+	background:#F5F5F5;
+	outline: none;
+	-webkit-appearance: none;
+	color: rgba(0, 0, 0, 0.74);
+	font-size: 0.875em;
+	font-family: 'Lato', sans-serif;
+	position: relative;
+}
+.search-bar input[type="submit"] {
+    background: url(../../Content/CssHome/images/search.png)no-repeat 0px 0px;
+    outline: none;
+    -webkit-appearance: none;
+    border: 0;
+    display: inline-block;
+    vertical-align: -webkit-baseline-middle;
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    top: 13px;
+    right: 10%;
+}
+.search-bar {
+    width: 93%;
+    float: right;
+}
 </style>
 <div id="warp">
     <div id="main" class="container_16">
@@ -56,11 +86,24 @@
                     <li><a href="@Url.Action("Index","Blog")">Blog</a></li>
                     <li><a href="@Url.Action("Index","About")">About</a></li>
                     <li><a href="@Url.Action("Index","LienHe")">Contact</a></li>
-                </ul>
+                    <li>
+                        <div style="margin-left:180px">
+                            @using (Html.BeginForm("LayTuKhoaTimKiem", "TimKiem"))
+                            {
+                                <div class="search-bar">
+                                    <input type="text" name="sTuKhoa" placeholder="nhập từ khóa cần tìm..">
+                                    <input type="submit" value="">
+                                </div>
+                            }
+                        </div>
+                    </li>
 
+                </ul>
+            
         </div>
         
     </div>
+    
     
 </div>
 
