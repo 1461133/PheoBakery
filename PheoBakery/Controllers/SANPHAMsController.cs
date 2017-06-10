@@ -193,6 +193,13 @@ namespace PheoBakery.Controllers
             ViewBag.MALOAI = MALOAI;
             return View(lstSanPham.OrderBy(n => n.MASP).ToPagedList(PageNumber, Pagesize));
         }
-        
+        [ChildActionOnly]
+        public ActionResult HienThiSanPhamHot()
+        {
+            List<SANPHAM> lstSanPham = db.SANPHAMs.Where(s => s.XOA == false).OrderByDescending(s => s.LUOTXEM).Take(4).ToList<SANPHAM>();
+
+            return PartialView("LayoutSanPham", lstSanPham);
+        }
+
     }
 }
