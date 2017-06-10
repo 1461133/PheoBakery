@@ -54,12 +54,12 @@ namespace PheoBakery.Controllers
                 if (thanhvien.USERNAME == "admin")
                 {
                     Session["user"] = thanhvien;
-                    return RedirectToAction("XemChiTiet");
+                    return RedirectToAction("XemChiTiet","Admin");
                 }
                 else
                 {
                     Session["user"] = thanhvien;
-                    return RedirectToAction("XemChiTiet");
+                    return RedirectToAction("Index", "Home");
                 }
 
             }

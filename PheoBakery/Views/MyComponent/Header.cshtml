@@ -1,4 +1,5 @@
-﻿@*<div id="warp">
+﻿@using PheoBakery.Models
+@*<div id="warp">
     <div id="main" class="container_16">*@
         <div id="header" class="grid_16">
             <div id="logo" class="grid_4 alpha">
@@ -6,11 +7,23 @@
                 <h2>Famously Delicious</h2>
             </div>
             <div id="headright" class="grid_7 prefix_5 omega" style="margin-left:900px">
-                <h3 class="login"><a href="@Url.Action("DangKy","Home")">Sign up</a> / <a href="@Url.Action("DangNhap","Home")">Login</a></h3>
+                @using (Html.BeginForm("DatHang", "GioHang"))
+                {
+                    if (Session["user"] == null)
+                    {
+                        <h3 class="login"><a href="@Url.Action("DangKy", "Home")">Sign up</a> / <a href="@Url.Action("DangNhap", "Home")">Login</a></h3>
 
-                <div class="col-md-6 top-header-left">
-                    @Html.Action("GioHangPartial", "GioHang")
-                </div>
+                    }
+                    else
+                    {
+                        <h3 class="login">Hi, Customer</h3>
+
+                        <div class="col-md-6 top-header-left">
+                            @Html.Action("GioHangPartial", "GioHang")
+                        </div>
+
+                    }
+                }
             </div>
         </div>
 
