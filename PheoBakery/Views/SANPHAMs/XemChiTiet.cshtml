@@ -1,7 +1,7 @@
 ﻿@using PheoBakery.Models;
 @model SANPHAM
 @{
-    ViewBag.Title = "XemChiTiet";
+    ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div id="fb-root"></div>
@@ -41,7 +41,7 @@
             <table width="850">
                 <tr>
                     <td>
-                        <img src="@Url.Content("~/Content/CssHome/HinhSanPham/" + Model.HINHANH)"  width="300" height="300" /> 
+                        <img src="@Url.Content("~/Content/ckfinder/core/connector/aspx/" + Model.HINHANH)"  width="300" height="300" /> 
                     </td>
                     <td rowspan="2" width="500px" style="text-align:right; font-size:25px">
                         <p>Price: @Model.DONGIA.Value.ToString("#,##")</p>
@@ -54,8 +54,8 @@
                 </tr>
                 <tr>
                     <td>
-                        <img src="@Url.Content("~/Content/CssHome/HinhSanPham/" + Model.HINHANH1)" width="150" height="150"/>
-                        <img src="@Url.Content("~/Content/CssHome/HinhSanPham/" + Model.HINHANH2)" width="150" height="150" />
+                        <img src="@Url.Content("~/Content/ckfinder/core/connector/aspx/" + Model.HINHANH1)" width="150" height="150"/>
+                        <img src="@Url.Content("~/Content/ckfinder/core/connector/aspx/" + Model.HINHANH2)" width="150" height="150" />
                     </td>
                     <td>
                     </td>
@@ -79,7 +79,7 @@
         
         
                 
-                    <a href="@Url.Action("TrangSanPham", "SANPHAMs", new { @MALOAI = Model.MALOAI })"><img src="@Url.Content("~/Content/CssHome/HinhSanPham/" + Model.HINHANH)" alt="" /></a>
+                    <a href="@Url.Action("TrangSanPham", "SANPHAMs", new { @MALOAI = Model.MALOAI })"><img src="@Url.Content("~/Content/ckfinder/core/connector/aspx/" + Model.HINHANH)" alt="" /></a>
 
                     <h3>@Html.Raw(Model.TENSP)</h3>
                     <h4><a href="#"></a> <span >@Model.DONGIA.Value.ToString("#,##")</span></h4>

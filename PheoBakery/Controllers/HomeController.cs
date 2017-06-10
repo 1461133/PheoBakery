@@ -65,5 +65,21 @@ namespace PheoBakery.Controllers
             }
             return Content("Tài khoản hoặc mật khẩu không đúng!");
         }
+        public ActionResult DangKy(KHACHHANG khachhang)
+        {
+            //if (Session["GioHang"] == null)
+            //{
+            //    return RedirectToAction("Index", "Home");
+            //}
+            KHACHHANG KH = new KHACHHANG();
+            if (Session["user"] == null)
+            {
+                // thêm khách hàng đối với khách hàng vãng lai(chưa có tài khoản)
+                KH = khachhang;
+                db.KHACHHANGs.Add(KH);
+                db.SaveChanges();
+            }
+            return View("ThongBaoThanhCong");
+        }
     }
 }

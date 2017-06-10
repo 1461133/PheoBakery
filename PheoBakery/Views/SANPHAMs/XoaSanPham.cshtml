@@ -1,7 +1,7 @@
 ﻿@model PheoBakery.Models.SANPHAM
 
 @{
-    ViewBag.Title = "Xóa sản phẩm";
+    ViewBag.Title = "Delete Cake";
     Layout = "~/Views/Admin/AdminQuanTri.cshtml";
 }
 @*Jquery ngày tháng*@
@@ -38,7 +38,7 @@
     });
 </script>
 
-<h2 style="text-align:center">XÓA SẢN PHẨM</h2>
+<h2 style="text-align:center">Delete Cake</h2>
 @*thêm hình ảnh*@
 @using (Html.BeginForm("XoaSanPham", "SANPHAMs", FormMethod.Post, new { @enctype = "multipart/form-data" }))
 {
@@ -46,7 +46,7 @@
     <div class="form-horizontal">
         <hr />
         @Html.ValidationSummary(true)
-        @Html.Hidden("MASP", Model.IdSanPham);
+        @Html.Hidden("MASP", Model.MASP);
 
 
         <div class="form-group">
@@ -68,7 +68,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.MOTA, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                <textarea name="MoTa" class="ckeditor" id="ckeditor">@Model.MOTA</textarea>
+                <textarea name="MOTA" class="ckeditor" id="ckeditor">@Model.MOTA</textarea>
                 @Html.ValidationMessageFor(model => model.MOTA)
             </div>
         </div>
@@ -109,7 +109,7 @@
             @Html.LabelFor(model => model.HINHANH, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <input type="text" name="HINHANH" id="HINHANH" />
-                <input type="button" value="Chọn Ảnh ..." onclick="BrowseServer('');" />
+                <input type="button" value="Choose picture..." onclick="BrowseServer('');" />
                 @Html.ValidationMessageFor(model => model.HINHANH)
                 <br />
                 <img src="@Url.Content("../Content/ckfinder/core/connector/aspx/" + Model.HINHANH)" width="250" height="200">
@@ -120,7 +120,7 @@
             @Html.LabelFor(model => model.HINHANH1, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <input type="text" name="HINHANH1" id="HINHANH1" />
-                <input type="button" value="Chọn Ảnh ..." onclick="BrowseServer(1);" />
+                <input type="button" value="Choose picture ..." onclick="BrowseServer(1);" />
                 @Html.ValidationMessageFor(model => model.HINHANH1)
                 <br />
                 <img src="@Url.Content("../Content/ckfinder/core/connector/aspx/" + Model.HINHANH1)" width="250" height="200">
@@ -130,7 +130,7 @@
             @Html.LabelFor(model => model.HINHANH2, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <input type="text" name="HINHANH2" id="HINHANH2" />
-                <input type="button" value="Chọn Ảnh ..." onclick="BrowseServer(2);" />
+                <input type="button" value="Choose picture ..." onclick="BrowseServer(2);" />
                 @Html.ValidationMessageFor(model => model.HINHANH2)
                 <br />
                 <img src="@Url.Content("../Content/ckfinder/core/connector/aspx/" + Model.HINHANH2)" width="250" height="200">
@@ -140,7 +140,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Xóa" class="btn btn-danger" />
+                <input type="submit" value="Delete" class="btn btn-danger" />
             </div>
         </div>
     </div>
@@ -148,6 +148,6 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "QLySP")
 </div>
 

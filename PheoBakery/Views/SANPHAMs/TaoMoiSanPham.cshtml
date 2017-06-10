@@ -1,6 +1,6 @@
 ﻿@model PheoBakery.Models.SANPHAM
 @{
-    ViewBag.Title = "TaoMoiSanPham";
+    ViewBag.Title = "Create new Cake";
     Layout = "~/Views/Admin/AdminQuanTri.cshtml";
 }
 
@@ -107,7 +107,7 @@
             @Html.LabelFor(model => model.HINHANH, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <input type="text" name="HINHANH" id="HINHANH" />
-                <input type="button" value="Chọn Ảnh ..." onclick="BrowseServer('');" />
+                <input type="button" value="Choose picture ..." onclick="BrowseServer('');" />
                 @Html.ValidationMessageFor(model => model.HINHANH)
             </div>
         </div>
@@ -116,7 +116,7 @@
             @Html.LabelFor(model => model.HINHANH1, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <input type="text" name="HINHANH1" id="HINHANH1" />
-                <input type="button" value="Chọn Ảnh ..." onclick="BrowseServer(1);" />
+                <input type="button" value="Choose picture..." onclick="BrowseServer(1);" />
                 @Html.ValidationMessageFor(model => model.HINHANH1)
             </div>
         </div>
@@ -124,7 +124,7 @@
             @Html.LabelFor(model => model.HINHANH2, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <input type="text" name="HINHANH2" id="HINHANH2" />
-                <input type="button" value="Chọn Ảnh ..." onclick="BrowseServer(2);" />
+                <input type="button" value="Choose picture ..." onclick="BrowseServer(2);" />
                 @Html.ValidationMessageFor(model => model.HINHANH2)
             </div>
         </div>
@@ -132,7 +132,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Tạo Mới" class="btn btn-success" />
+                <input type="submit" value="Create" class="btn btn-success" />
             </div>
         </div>
     </div>
@@ -140,6 +140,6 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "QLySP")
 </div>
 

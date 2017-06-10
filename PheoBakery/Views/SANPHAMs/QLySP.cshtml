@@ -22,7 +22,7 @@
                         grid.Column("MOTA", "Quantity"),
                         grid.Column("LUOTXEM", "View"),
                         grid.Column("MALOAI", "Type", format: p => p.MALOAI != null ? p.LOAISP.TENLOAI : ""), // toán tử 3 ngôi
-                        grid.Column("HINHANH", "Image", format: p => @Html.Raw("<img width=\"200\" height=\"250\" src = \"../Content/CssHome/HinhSanPham/" + p.HINHANH + "\">")),
+                        grid.Column("HINHANH", "Image", format: p => @Html.Raw("<img width=\"200\" height=\"250\" src = \"../Content/ckfinder/core/connector/aspx/" + p.HINHANH + "\">")),
                         grid.Column("Create", format: p => @Html.ActionLink("Create", "TaoMoiSanPham", null, new { @class = "btn btn-success" })),
                         grid.Column("Edit", format: p => @Html.ActionLink("Edit", "ChinhSuaSanPham", new { @MASP = p.MASP }, new { @class = "btn btn-danger" })),
                        grid.Column("Delete", format: p => @Html.ActionLink("Delete", "XoaSanPham", new { @MASP = p.MASP }, new { @class = "btn btn-default" }))

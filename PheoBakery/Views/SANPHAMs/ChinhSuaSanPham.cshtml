@@ -1,7 +1,7 @@
-﻿@model WebBanQuanAo.Models.SanPham
+﻿@model PheoBakery.Models.SANPHAM
 
 @{
-    ViewBag.Title = "Chỉnh sửa sản phẩm";
+    ViewBag.Title = "Edit Cake";
     Layout = "~/Views/Admin/AdminQuanTri.cshtml";
 }
 <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
@@ -110,8 +110,8 @@
         <div class="form-group">
             @Html.LabelFor(model => model.HINHANH, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                <input type="text" name="HINHANH" id="HinhAnh" />
-                <input type="button" value="Chọn Ảnh ..." onclick="BrowseServer('');" />
+                <input type="text" name="HINHANH" id="HINHANH" />
+                <input type="button" value="Choose picture ..." onclick="BrowseServer('');" />
                 @Html.ValidationMessageFor(model => model.HINHANH)
             </div>
         </div>
@@ -119,7 +119,7 @@
             @Html.LabelFor(model => model.HINHANH1, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <input type="text" name="HINHANH1" id="HINHANH1" />
-                <input type="button" value="Chọn Ảnh ..." onclick="BrowseServer(1);" />
+                <input type="button" value="Choose picture ..." onclick="BrowseServer(1);" />
                 @Html.ValidationMessageFor(model => model.HINHANH1)
             </div>
         </div>
@@ -127,21 +127,21 @@
             @Html.LabelFor(model => model.HINHANH2, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <input type="text" name="HINHANH2" id="HINHANH2" />
-                <input type="button" value="Chọn Ảnh ..." onclick="BrowseServer(2);" />
+                <input type="button" value="Choose picture..." onclick="BrowseServer(2);" />
                 @Html.ValidationMessageFor(model => model.HINHANH2)
             </div>
         </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Cập Nhật" class="btn btn-danger" />
+                <input type="submit" value="Edit" class="btn btn-danger" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "QLySP")
 </div>
 
 

@@ -8,7 +8,7 @@
 <div id="warp">
     <div id="main" class="container_16">
         <div style="text-align:center" >
-            @using (Html.BeginForm("DatHang", "GioHang"))
+            @using (Html.BeginForm("DangKy", "Home"))
             {
                 if (Session["user"] == null)
                 {
@@ -16,14 +16,21 @@
                             <tr>
                                 <td style="padding-top:50px; text-align:right">Customer's Name:</td>
                                 <td style="text-align:center">
-                                    @Html.TextBox("TenKhachHang")
+                                    @Html.TextBox("TENKH")
+                                    <p style="color:red;" id="TB_TenKH"></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-top:50px; text-align:right">Customer's Username:</td>
+                                <td style="text-align:center">
+                                    @Html.TextBox("TENDANGNHAP")
                                     <p style="color:red;" id="TB_TenKH"></p>
                                 </td>
                             </tr>
                             <tr>
                                 <td style="text-align:right">Address:</td>
                                 <td style="text-align:center">
-                                    @Html.TextBox("DiaChi")
+                                    @Html.TextBox("DIACHI")
                                     <p style="color:red;" id="TB_DiaChi"></p>
                                 </td>
                             </tr>
@@ -37,7 +44,7 @@
                             <tr>
                                 <td style="text-align:right">Phone Number:</td>
                                 <td style="text-align:center">
-                                    @Html.TextBox("SoDienThoai")
+                                    @Html.TextBox("SDT")
                                     <p style="color:red;" id="TB_Phone"></p>
                                 </td>
                             </tr>
@@ -51,11 +58,7 @@
                             </tr>
                         </table>
                 }
-                <div >
-                    
-
-                </div>
-
+                
             }
         </div>
     </div>
@@ -68,26 +71,33 @@
 <script>
     $("#btnDatHang").click(function () {
         var loi = 0;
-        if ($("#TenKhachHang").val() == "") {
-            $("#TB_TenKH").text("không để trống trường này");
+        if ($("#TENKH").val() == "") {
+            $("#TB_TENKH").text("Please insert this field...");
             loi++;
         }
         else {
-            $("#TB_TenKH").text("");
+            $("#TB_TENKH").text("");
         }
-        if ($("#DiaChi").val() == "") {
-            $("#TB_DiaChi").text("không để trống trường này");
+        if ($("#TENDANGNHAP").val() == "") {
+            $("#TB_TENDANGNHAP").text("Please insert this field...");
             loi++;
         }
         else {
-            $("#TB_DiaChi").text("");
+            $("#TB_TENDANGNHAP").text("");
         }
-        if ($("#SoDienThoai").val() == "") {
-            $("#TB_Phone").text("không để trống trường này");
+        if ($("#DIACHI").val() == "") {
+            $("#TB_DIACHI").text("Please insert this field...");
             loi++;
         }
         else {
-            $("#TB_Phone").text("");
+            $("#TB_DIACHI").text("");
+        }
+        if ($("#SDT").val() == "") {
+            $("#TB_SDT").text("Please insert this field...");
+            loi++;
+        }
+        else {
+            $("#TB_SDT").text("");
         }
         if (loi != 0) {
             return false;

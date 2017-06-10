@@ -36,26 +36,23 @@ namespace PheoBakery.Controllers
         }
 
         // GET: KHACHHANGs/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
+        
 
         // POST: KHACHHANGs/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MAKH,TENKH,TENDANGNHAP,DIACHI,EMAIL,SDT")] KHACHHANG kHACHHANG)
+        public ActionResult Create([Bind(Include = "MAKH,TENKH,TENDANGNHAP,DIACHI,EMAIL,SDT")] KHACHHANG KHACHHANG)
         {
             if (ModelState.IsValid)
             {
-                db.KHACHHANGs.Add(kHACHHANG);
+                db.KHACHHANGs.Add(KHACHHANG);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(kHACHHANG);
+            return View(KHACHHANG);
         }
 
         // GET: KHACHHANGs/Edit/5

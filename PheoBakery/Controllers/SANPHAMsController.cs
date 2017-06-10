@@ -42,7 +42,7 @@ namespace PheoBakery.Controllers
             //Nếu thư mục chứa hình ảnh đó rồi thì xuất ra thông báo
             db.SANPHAMs.Add(sanpham);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("QLySP");
         }
         [HttpGet]
         public ActionResult ChinhSuaSanPham(int? MASP)
@@ -73,7 +73,7 @@ namespace PheoBakery.Controllers
             // nếu dử liệu đầu vào ok
             db.Entry(model).State = System.Data.Entity.EntityState.Modified;
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("QLySP");
         }
         [HttpGet]
         public ActionResult XoaSanPham(int? MASP)
@@ -102,14 +102,14 @@ namespace PheoBakery.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            SANPHAM sanpham = db.SANPHAMs.SingleOrDefault(n => n.MALOAI == MASP);
+            SANPHAM sanpham = db.SANPHAMs.SingleOrDefault(n => n.MASP == MASP);
             if (sanpham == null)
             {
                 return HttpNotFound();
             }
             db.SANPHAMs.Remove(sanpham);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("QLySP");
         }
 
         [ChildActionOnly]
