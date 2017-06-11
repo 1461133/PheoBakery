@@ -22,3 +22,13 @@ begin
 	declare @maspx nvarchar(10) = (select masp from deleted)
 	update SANPHAM set SOLUONGTON = SOLUONGTON - @sl where masp = @maspx
 end
+
+CREATE TRIGGER tg_XoaCTDDH
+ON CTDDH
+FOR Delete
+AS
+begin
+	declare @sl int = (select soluong from deleted)
+	declare @maspx nvarchar(10) = (select masp from deleted)
+	update SANPHAM set SOLUONGTON = SOLUONGTON - @sl where masp = @maspx
+end
