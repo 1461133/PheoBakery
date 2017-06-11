@@ -1,6 +1,6 @@
 ﻿@using PheoBakery.Models
-@*<div id="warp">
-    <div id="main" class="container_16">*@
+@using System.Web.Mvc.Html
+
         <div id="header" class="grid_16">
             <div id="logo" class="grid_4 alpha">
                 <h1><a href="@Url.Action("Index","Home")">DapurKue</a></h1>
@@ -16,8 +16,8 @@
                     }
                     else
                     {
-                        <h3 class="login">Hi, Customer</h3>
-
+                        
+                        <h3 class="login">Hi, @Html.Label(Session["user"].ToString()) / <a href="@Url.Action("DangNhap", "Home")">Logout</a></h3>
                         <div class="col-md-6 top-header-left">
                             @Html.Action("GioHangPartial", "GioHang")
                         </div>
@@ -27,6 +27,3 @@
             </div>
         </div>
 
-    @*</div>
-    <div class="clear"></div>
-</div>*@

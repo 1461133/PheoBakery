@@ -78,8 +78,13 @@ transform: scale(1.5,1.5);
                         <p><strong>Price: </strong>@Model.DONGIA.Value.ToString("#,##")</p>
                         <p><strong>Details: </strong>@Model.MOTA</p>
                         <p><strong>View: </strong>@Model.LUOTXEM</p>
-                        <a href="@Url.Action("ThemGioHang", "GioHang", new { @MASP = Model.MASP, @strUrl= Request.Url.ToString() })">Add to cart</a>
-
+                        @using (Html.BeginForm("DatHang", "GioHang"))
+                        {
+                            if (Session["user"] != null)
+                            {
+                                <a href="@Url.Action("ThemGioHang", "GioHang", new { @MASP = Model.MASP, @strUrl = Request.Url.ToString() })">Add to cart</a>
+                            }
+                        }
                     </td>
                 </tr>
                

@@ -24,7 +24,6 @@ namespace PheoBakery.Controllers
         }
 
         // GET: SANPHAMs/Create
-        
         [HttpGet]
         public ActionResult TaoMoiSanPham()
         {

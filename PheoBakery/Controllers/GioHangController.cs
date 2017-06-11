@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using PheoBakery.Models;
 namespace PheoBakery.Controllers
 {
+
     public class GioHangController : Controller
     {
         TPBakeryEntities db = new TPBakeryEntities();
