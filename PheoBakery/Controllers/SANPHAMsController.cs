@@ -129,8 +129,8 @@ namespace PheoBakery.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             SANPHAM sanpham = db.SANPHAMs.SingleOrDefault(n => n.MASP == MASP && n.XOA == false);
-            sanpham.LUOTXEM = sanpham.LUOTXEM + 1;
-            db.SaveChanges();
+            //sanpham.LUOTXEM = sanpham.LUOTXEM + 1;
+           // db.SaveChanges();
             // kiểm tra id sản phẩm truyền  vào
             if (sanpham == null)
             {
