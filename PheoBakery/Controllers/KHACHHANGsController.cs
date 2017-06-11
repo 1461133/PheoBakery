@@ -10,6 +10,7 @@ using PheoBakery.Models;
 
 namespace PheoBakery.Controllers
 {
+
     public class KHACHHANGsController : Controller
     {
         private TPBakeryEntities db = new TPBakeryEntities();
