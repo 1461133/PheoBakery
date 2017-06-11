@@ -17,41 +17,56 @@
 <link rel="stylesheet" type="text/css" media="all" href="themes/brown/style.css" />
 
 <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
-
+<style>
+    img {
+border-radius:50%;
+-moz-border-radius:50%;
+-webkit-border-radius:50%;
+transition: all 1s ease;
+-webkit-transition: all 1s ease;
+-moz-transition: all 1s ease;
+-o-transition: all 1s ease;
+}
+ 
+img:hover {
+transform: scale(1.5,1.5);
+-webkit-transform: scale(1.5,1.5);
+-moz-transform: scale(1.5,1.5);
+-o-transform: scale(1.5,1.5);
+-ms-transform: scale(1.5,1.5);
+}
+</style>
 <div id="warp">
-    <div id="main" class="container_16">
+    <div id="main" class="container_16" >
         
         <div class="prodNav grid_16">
             <div class="prodHeadline grid_12 alpha">
                 <h3>Cakes</h3>
             </div>
-            @*combobox cho loai các sản phẩm*@
-            @*<div class="browseCategory grid_4 omega">
-                <form action="#" method="get">
-                    <select>
-                        <option>All Category</option>
-                        <option>Brownimissu</option>
-                        <option>Kue Tete</option>
-                        <option>Bagelan</option>
-                    </select>
-                </form>
-            </div>*@
         </div>
-        <div class="bodyContent grid_16">
-            <div class="products grid_16 alpha">
-                <div class="prodMenu">
-                    <h4>All my cakes <a href="#" class="viewAll">View All &raquo;</a></h4>
-                    <div class="menu grid_4 alpha">
-                        @foreach (var item in Model.OrderBy(n => n.DONGIA))
-                        {
-
-                            <a class="grid_4 alpha" href="@Url.Action("XemChiTiet","SANPHAMs", new {@MASP = item.MASP})" ><img class="img-responsive zoom-img" src="@Url.Content("~/Content/ckfinder/core/connector/aspx/" + item.HINHANH)" alt="" style="width:250px;height:250px"></a>
-
-                            <div><h3>@item.TENSP</h3></div>
-                            <h4> <a class="item_add" href="@Url.Action("ThemGioHang", "GioHang", new {@MASP = item.MASP, @strUrl= Request.Url.ToString() })"><i></i></a> <span class="item_price">@item.DONGIA.Value.ToString("#,##")</span></h4>
+        <div class="bodyContent grid_16" >
+            <div class="products grid_16 alpha" >
+                <div class="prodMenu" >
+                    
+                    <div class="menu grid_4 alpha" style="text-align:center">
+                        <table width="900">
                             
+                                @foreach (var item in Model.OrderBy(n => n.DONGIA))
+                                {
+                                    <tr style="text-align:center">
+                                        <td >
+                                            
+                                                <a class="grid_4 alpha" href="@Url.Action("XemChiTiet", "SANPHAMs", new { @MASP = item.MASP })"><img src="@Url.Content("~/Content/ckfinder/core/connector/aspx/" + item.HINHANH)" alt="" style="width:250px;height:250px"></a>
 
-                        }
+                                                <h3 style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size:30px">@item.TENSP</h3>
+                                                <h4> <span class="item_price">@item.DONGIA.Value.ToString("#,##")</span></h4>
+                                                <h4><a class="item_add" href="@Url.Action("ThemGioHang", "GioHang", new { @MASP = item.MASP, @strUrl = Request.Url.ToString() })"><i>Add to cart</i></a> </h4>
+                                            
+                                        </td>
+                                      
+                                    </tr>
+                                }
+                        </table>
                     </div>
                 </div>
             </div>

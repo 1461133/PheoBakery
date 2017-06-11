@@ -12,7 +12,10 @@
         js = d.createElement(s); js.id = id;
         js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.6&appId=482221048641721";
         fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
+    }(document, 'script', 'facebook-jssdk'));
+
+   
+</script>
 <style>
     .productsWarp {
 	position:relative;
@@ -33,38 +36,53 @@
 	float:left;
 	margin:0;
 }
+img {
+border-radius:50%;
+-moz-border-radius:50%;
+-webkit-border-radius:50%;
+transition: all 1s ease;
+-webkit-transition: all 1s ease;
+-moz-transition: all 1s ease;
+-o-transition: all 1s ease;
+}
+ 
+img:hover {
+transform: scale(1.5,1.5);
+-webkit-transform: scale(1.5,1.5);
+-moz-transform: scale(1.5,1.5);
+-o-transform: scale(1.5,1.5);
+-ms-transform: scale(1.5,1.5);
+}
 </style>
 <div id="warp">
     <div id="main" class="container_16">
         <div class="products grid_16" style="margin-top:40px">
             <h2 style="text-align:center; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size:46px">@Model.TENSP</h2>
-            <table width="850">
+            <table width="850" style="text-align:center">
                 <tr>
                     <td>
-                        <img src="@Url.Content("~/Content/ckfinder/core/connector/aspx/" + Model.HINHANH)"  width="500" height="350" /> 
+                        <img src="@Url.Content("~/Content/ckfinder/core/connector/aspx/" + Model.HINHANH)" width="220" height="220" alt="details" />
+
                     </td>
-                    <td rowspan="2" width="500px" style="text-align:center; font-size:25px">
+                    <td>
+                        <img src="@Url.Content("~/Content/ckfinder/core/connector/aspx/" + Model.HINHANH1)" width="220" height="220" alt="details" />
+
+                    </td>
+                    <td>
+                        <img src="@Url.Content("~/Content/ckfinder/core/connector/aspx/" + Model.HINHANH2)" width="220" height="220" alt="details" />
+
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" width="500px" style="text-align:center; font-size:25px;padding-left:35px">
                         <p><strong>Price: </strong>@Model.DONGIA.Value.ToString("#,##")</p>
                         <p><strong>Details: </strong>@Model.MOTA</p>
                         <p><strong>View: </strong>@Model.LUOTXEM</p>
                         <a href="@Url.Action("ThemGioHang", "GioHang", new { @MASP = Model.MASP, @strUrl= Request.Url.ToString() })">Add to cart</a>
-                        
-                    </td>
-                    
-                </tr>
-                <tr>
-                    <td>
-                        <img src="@Url.Content("~/Content/ckfinder/core/connector/aspx/" + Model.HINHANH1)" width="200" height="200"/>
-                        <img src="@Url.Content("~/Content/ckfinder/core/connector/aspx/" + Model.HINHANH2)" width="200" height="200" />
-                    </td>
-                    <td>
+
                     </td>
                 </tr>
-                <tr>
-                    <td colspan="2" style="text-align:center">
-                        <div class="fb-comments" data-href="http://localhost:50143/" data-numposts="5"></div>      
-                    </td>
-                </tr>
+               
             </table>
                    
 
@@ -72,15 +90,17 @@
         </div>
                    
                        
-                <div class="clearfix"> </div>
-            <h3 style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size:25px; font-style:italic; text-align:center">
-                OTHERS
-            </h3>
-                    <a href="@Url.Action("TrangSanPham", "SANPHAMs", new { @MALOAI = Model.MALOAI })"><img src="@Url.Content("~/Content/ckfinder/core/connector/aspx/" + Model.HINHANH)" alt="" width="250" height="250" /></a>
+        <div class="clearfix"> </div>
+        <h3 style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size:25px; font-style:italic; text-align:center">
+            OTHERS
+        </h3>
+        <div style="text-align:center">
+            <a href="@Url.Action("TrangSanPham", "SANPHAMs", new { @MALOAI = Model.MALOAI })"><img src="@Url.Content("~/Content/ckfinder/core/connector/aspx/" + Model.HINHANH)" alt="" width="250" height="250" /></a>
 
-                    <h3>@Html.Raw(Model.TENSP)</h3>
-                    <h4><a href="#"></a> <span >@Model.DONGIA.Value.ToString("#,##")</span></h4>
-                <div class="clearfix"></div>
+            <h3 style="text-align:center">@Html.Raw(Model.TENSP)</h3>
+            <h4 style="text-align:center"><span>@Model.DONGIA.Value.ToString("#,##")</span></h4>
+        </div>
+        <div class="clearfix"></div>
            
 
     </div>
