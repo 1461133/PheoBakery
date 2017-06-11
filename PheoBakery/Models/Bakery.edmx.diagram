@@ -13,7 +13,7 @@
         <EntityTypeShape EntityType="TPBakeryModel.PHIEUNHAP" Width="1.5" PointX="3" PointY="2.75" IsExpanded="true" />
         <EntityTypeShape EntityType="TPBakeryModel.SANPHAM" Width="1.5" PointX="3" PointY="5.75" IsExpanded="true" />
         <EntityTypeShape EntityType="TPBakeryModel.sysdiagram" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="TPBakeryModel.TAIKHOAN" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TPBakeryModel.TAIKHOAN" Width="1.5" PointX="8.125" PointY="3.125" IsExpanded="true" />
         <AssociationConnector Association="TPBakeryModel.FK_CTDDH_DONDATHANG" ManuallyRouted="false" />
         <AssociationConnector Association="TPBakeryModel.FK_CTDDH_SANPHAM" ManuallyRouted="false" />
         <AssociationConnector Association="TPBakeryModel.FK_CTPN_PHIEUNHAP" ManuallyRouted="false" />

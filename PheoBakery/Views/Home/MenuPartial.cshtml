@@ -57,9 +57,10 @@
     height: 18px;
     top: 13px;
     right: 10%;
+    margin-right:45px;
 }
 .search-bar {
-    width: 93%;
+    width: 250px;
     float: right;
 }
 </style>
@@ -87,11 +88,11 @@
                     <li><a href="@Url.Action("Index","About")">About</a></li>
                     <li><a href="@Url.Action("Index","LienHe")">Contact</a></li>
                     <li>
-                        <div style="margin-left:180px">
+                        <div style="margin-left:100px">
                             @using (Html.BeginForm("LayTuKhoaTimKiem", "TimKiem"))
                             {
                                 <div class="search-bar">
-                                    <input type="text" name="sTuKhoa" placeholder="nhập từ khóa cần tìm..">
+                                    <input type="text" name="sTuKhoa" placeholder="insert your keyword..">
                                     <input type="submit" value="">
                                 </div>
                             }
