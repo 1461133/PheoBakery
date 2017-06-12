@@ -25,7 +25,7 @@ namespace PheoBakery.Controllers
         public ActionResult ChuaGiao()
         {
             // lấy danh sách đơn hàng chưa giao
-            var lstChuaGiao = db.DONDATHANGs.Where(n => n.GIAOHANG == false).OrderBy(n => n.NGAYGIAO);
+            var lstChuaGiao = db.DONDATHANGs.Where(n => n.GIAOHANG == false && n.THANHTOAN==true ).OrderBy(n => n.NGAYGIAO);
             return View(lstChuaGiao);
         }
         public ActionResult DaGiaoDaThanhToan()
