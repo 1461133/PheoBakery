@@ -46,18 +46,19 @@
                 {
                     if (Session["user"] != null)
                     {
+                        
                         <div class="MuaHang">
                             <table align="center" class="table">
                                 <tr>
                                 <tr>
-                                    <td>Họ tên:</td>
+                                    <td>Customer's Name:</td>
                                     <td>
                                         @Html.TextBox("TENKH")
                                         <p style="color:red;" id="TB_TenKH"></p>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>Địa Chỉ:</td>
+                                    <td>Address:</td>
                                     <td>
                                         @Html.TextBox("DIACHI")
                                         <p style="color:red;" id="TB_DiaChi"></p>
@@ -71,7 +72,7 @@
 
                                 </tr>
                                 <tr>
-                                    <td>Số Điện Thoại</td>
+                                    <td>Phone Number:</td>
                                     <td>
                                         @Html.TextBox("SDT")
                                         <p style="color:red;" id="TB_Phone"></p>
@@ -100,21 +101,21 @@
     $("#btnDatHang").click(function () {
         var loi = 0;
         if ($("#TENKHACHHANG").val() == "") {
-            $("#TB_TenKH").text("không để trống trường này");
+            $("#TB_TenKH").text("Please insert this field...");
             loi++;
         }
         else {
             $("#TB_TenKH").text("");
         }
         if ($("#DIACHI").val() == "") {
-            $("#TB_DiaChi").text("không để trống trường này");
+            $("#TB_DiaChi").text("Please insert this field...");
             loi++;
         }
         else {
             $("#TB_DiaChi").text("");
         }
         if ($("#SDT").val() == "") {
-            $("#TB_Phone").text("không để trống trường này");
+            $("#TB_Phone").text("Please insert this field...");
             loi++;
         }
         else {
