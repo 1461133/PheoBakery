@@ -32,3 +32,4 @@ begin
 	declare @maspx nvarchar(10) = (select masp from deleted)
 	update SANPHAM set SOLUONGTON = SOLUONGTON - @sl where masp = @maspx
 end
+
