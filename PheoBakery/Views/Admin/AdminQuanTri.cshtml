@@ -140,7 +140,7 @@
                                         <div class="profile_img">
                                             <span style="background:url(../Content/CssAdmin/images/1.jpg) no-repeat center"> </span>
                                             <div class="user-name">
-                                                @if (Session["user"] != null && Session["user"] != " ")
+                                                @if (Session["user"] != null && Session["user"] != "")
                                                 {
                                                     TAIKHOAN tv = (TAIKHOAN)Session["user"];
                                                     <p>Hello:<span>@tv.USERNAME</span></p>

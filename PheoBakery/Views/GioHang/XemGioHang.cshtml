@@ -14,9 +14,11 @@
         }
         else
         {
+            <h3 style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size:35px;text-align:center">Product's Information</h3>
+
             <div>
-                <table width="950" >
-                    <tr style="text-align:center">
+                <table width="950" border="1" style="border-color:aqua">
+                    <tr style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size:15px;text-align:center">
                         <td  style="padding-top:50px"><strong>ID</strong></td>
                         <td><strong>Product Name</strong></td>
                         <td><strong>Image</strong></td>
@@ -41,38 +43,37 @@
                         </tr>
                     }
                 </table>
-
+                <h3 style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size:35px;text-align:center">Customer's Information</h3>
                 @using (Html.BeginForm("DatHang", "GioHang"))
                 {
                     if (Session["user"] != null)
                     {
-                        
-                        <div class="MuaHang">
-                            <table align="center" class="table">
+                        <div class="MuaHang" style="text-align:center">
+                            <table align="center" class="table" style="text-align:left; width:100%">
                                 <tr>
                                 <tr>
-                                    <td>Customer's Name:</td>
+                                    <td style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size:25px; text-align:justify">Customer's Name:</td>
                                     <td>
                                         @Html.TextBox("TENKH")
                                         <p style="color:red;" id="TB_TenKH"></p>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>Address:</td>
+                                    <td  style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size:25px; text-align:justify">Address:</td>
                                     <td>
                                         @Html.TextBox("DIACHI")
                                         <p style="color:red;" id="TB_DiaChi"></p>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>Email:</td>
+                                    <td  style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size:25px; text-align:justify">Email:</td>
                                     <td>
                                         <input name="email" placeholder="insert your email..." type="email" required class="Email">
                                     </td>
 
                                 </tr>
                                 <tr>
-                                    <td>Phone Number:</td>
+                                    <td  style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size:25px; text-align:justify">Phone Number:</td>
                                     <td>
                                         @Html.TextBox("SDT")
                                         <p style="color:red;" id="TB_Phone"></p>
@@ -100,25 +101,31 @@
 <script>
     $("#btnDatHang").click(function () {
         var loi = 0;
-        if ($("#TENKHACHHANG").val() == "") {
+        if ($("#TENKH").val() == null)
+        {
             $("#TB_TenKH").text("Please insert this field...");
             loi++;
         }
-        else {
+        else
+        {
             $("#TB_TenKH").text("");
         }
-        if ($("#DIACHI").val() == "") {
+        if ($("#DIACHI").val() == "")
+        {
             $("#TB_DiaChi").text("Please insert this field...");
             loi++;
         }
-        else {
+        else
+        {
             $("#TB_DiaChi").text("");
         }
-        if ($("#SDT").val() == "") {
+        if ($("#SDT").val() == "")
+        {
             $("#TB_Phone").text("Please insert this field...");
             loi++;
         }
-        else {
+        else
+        {
             $("#TB_Phone").text("");
         }
         if (loi != 0) {
