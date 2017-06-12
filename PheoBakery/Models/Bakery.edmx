@@ -46,7 +46,6 @@
           </Key>
           <Property Name="MAKH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TENKH" Type="nvarchar" MaxLength="50" />
-          <Property Name="TENDANGNHAP" Type="nvarchar" MaxLength="50" />
           <Property Name="DIACHI" Type="nvarchar" MaxLength="50" />
           <Property Name="EMAIL" Type="nvarchar" MaxLength="50" />
           <Property Name="SDT" Type="nvarchar" MaxLength="11" />
@@ -173,18 +172,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_PHIEUNHAP_LOAISP">
-          <End Role="LOAISP" Type="Self.LOAISP" Multiplicity="0..1" />
-          <End Role="PHIEUNHAP" Type="Self.PHIEUNHAP" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="LOAISP">
-              <PropertyRef Name="MALOAI" />
-            </Principal>
-            <Dependent Role="PHIEUNHAP">
-              <PropertyRef Name="MALOAISP" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_SANPHAM_LOAISP">
           <End Role="LOAISP" Type="Self.LOAISP" Multiplicity="0..1" />
           <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="*" />
@@ -230,10 +217,6 @@
           <AssociationSet Name="FK_DONDATHANG_SANPHAM" Association="Self.FK_DONDATHANG_SANPHAM">
             <End Role="SANPHAM" EntitySet="SANPHAM" />
             <End Role="DONDATHANG" EntitySet="DONDATHANG" />
-          </AssociationSet>
-          <AssociationSet Name="FK_PHIEUNHAP_LOAISP" Association="Self.FK_PHIEUNHAP_LOAISP">
-            <End Role="LOAISP" EntitySet="LOAISP" />
-            <End Role="PHIEUNHAP" EntitySet="PHIEUNHAP" />
           </AssociationSet>
           <AssociationSet Name="FK_SANPHAM_LOAISP" Association="Self.FK_SANPHAM_LOAISP">
             <End Role="LOAISP" EntitySet="LOAISP" />
@@ -293,7 +276,6 @@
           </Key>
           <Property Name="MAKH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TENKH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="TENDANGNHAP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="DIACHI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="SDT" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
@@ -305,7 +287,6 @@
           </Key>
           <Property Name="MALOAI" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TENLOAI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="PHIEUNHAPs" Relationship="Self.FK_PHIEUNHAP_LOAISP" FromRole="LOAISP" ToRole="PHIEUNHAP" />
           <NavigationProperty Name="SANPHAMs" Relationship="Self.FK_SANPHAM_LOAISP" FromRole="LOAISP" ToRole="SANPHAM" />
         </EntityType>
         <EntityType Name="PHIEUNHAP">
@@ -317,7 +298,6 @@
           <Property Name="XOA" Type="Boolean" />
           <Property Name="MALOAISP" Type="Int32" />
           <NavigationProperty Name="CTPNs" Relationship="Self.FK_CTPN_PHIEUNHAP" FromRole="PHIEUNHAP" ToRole="CTPN" />
-          <NavigationProperty Name="LOAISP" Relationship="Self.FK_PHIEUNHAP_LOAISP" FromRole="PHIEUNHAP" ToRole="LOAISP" />
         </EntityType>
         <EntityType Name="SANPHAM">
           <Key>
@@ -429,18 +409,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_PHIEUNHAP_LOAISP">
-          <End Role="LOAISP" Type="Self.LOAISP" Multiplicity="0..1" />
-          <End Role="PHIEUNHAP" Type="Self.PHIEUNHAP" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="LOAISP">
-              <PropertyRef Name="MALOAI" />
-            </Principal>
-            <Dependent Role="PHIEUNHAP">
-              <PropertyRef Name="MALOAISP" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_SANPHAM_LOAISP">
           <End Role="LOAISP" Type="Self.LOAISP" Multiplicity="0..1" />
           <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="*" />
@@ -486,10 +454,6 @@
           <AssociationSet Name="FK_DONDATHANG_SANPHAM" Association="Self.FK_DONDATHANG_SANPHAM">
             <End Role="SANPHAM" EntitySet="SANPHAMs" />
             <End Role="DONDATHANG" EntitySet="DONDATHANGs" />
-          </AssociationSet>
-          <AssociationSet Name="FK_PHIEUNHAP_LOAISP" Association="Self.FK_PHIEUNHAP_LOAISP">
-            <End Role="LOAISP" EntitySet="LOAISPs" />
-            <End Role="PHIEUNHAP" EntitySet="PHIEUNHAPs" />
           </AssociationSet>
           <AssociationSet Name="FK_SANPHAM_LOAISP" Association="Self.FK_SANPHAM_LOAISP">
             <End Role="LOAISP" EntitySet="LOAISPs" />
@@ -545,7 +509,6 @@
               <MappingFragment StoreEntitySet="KHACHHANG">
                 <ScalarProperty Name="MAKH" ColumnName="MAKH" />
                 <ScalarProperty Name="TENKH" ColumnName="TENKH" />
-                <ScalarProperty Name="TENDANGNHAP" ColumnName="TENDANGNHAP" />
                 <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
                 <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
                 <ScalarProperty Name="SDT" ColumnName="SDT" />

@@ -21,13 +21,7 @@
                                     <p style="color:red;" id="TB_TenKH"></p>
                                 </td>
                             </tr>
-                            <tr>
-                                <td style="padding-top:50px; text-align:right">Customer's Username:</td>
-                                <td style="text-align:center">
-                                    @Html.TextBox("TENDANGNHAP")
-                                    <p style="color:red;" id="TB_TenKH"></p>
-                                </td>
-                            </tr>
+                            
                             <tr>
                                 <td style="text-align:right">Address:</td>
                                 <td style="text-align:center">
@@ -78,13 +72,6 @@
         }
         else {
             $("#TB_TENKH").text("");
-        }
-        if ($("#TENDANGNHAP").val() == "") {
-            $("#TB_TENDANGNHAP").text("Please insert this field...");
-            loi++;
-        }
-        else {
-            $("#TB_TENDANGNHAP").text("");
         }
         if ($("#DIACHI").val() == "") {
             $("#TB_DIACHI").text("Please insert this field...");

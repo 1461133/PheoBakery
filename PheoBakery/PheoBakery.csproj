@@ -824,13 +824,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
-    <EntityDeploy Include="Models\Bakery.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Bakery.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\Bakery.edmx.diagram">
-      <DependentUpon>Bakery.edmx</DependentUpon>
-    </Content>
     <Content Include="Content\ckeditor\CHANGES.md" />
     <Content Include="Content\ckeditor\LICENSE.md" />
     <Content Include="Content\ckeditor\README.md" />
@@ -867,6 +860,13 @@
     <Content Include="Content\CssHome\HinhSanPham\Thumbs.db" />
     <Content Include="Content\CssHome\images\Thumbs.db" />
     <Content Include="Content\images\Thumbs.db" />
+    <EntityDeploy Include="Models\Bakery.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Bakery.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Bakery.edmx.diagram">
+      <DependentUpon>Bakery.edmx</DependentUpon>
+    </Content>
     <None Include="Project_Readme.html" />
     <Content Include="Views\SANPHAMs\QLySP.cshtml" />
     <Content Include="Views\KHACHHANGs\Create.cshtml" />
@@ -914,7 +914,6 @@
     <Content Include="Views\GioHang\ThongBaoThatBai.cshtml" />
     <Content Include="Views\SANPHAMs\SanPhamPartial.cshtml" />
     <Content Include="Views\Home\MenuPartial.cshtml" />
-    <Content Include="Views\GioHang\ThemGioHang.cshtml" />
     <Content Include="Views\Home\DangNhap.cshtml" />
     <Content Include="Views\Home\DangKy.cshtml" />
     <Content Include="Views\MyComponent\Header.cshtml" />

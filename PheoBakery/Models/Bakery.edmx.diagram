@@ -4,23 +4,22 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="014c067e00b1405f987749fee3c6210d" Name="Diagram1">
-        <EntityTypeShape EntityType="TPBakeryModel.CTDDH" Width="1.5" PointX="5.25" PointY="8.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="TPBakeryModel.CTPN" Width="1.5" PointX="5.25" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="TPBakeryModel.DONDATHANG" Width="1.5" PointX="8.25" PointY="6" IsExpanded="true" />
-        <EntityTypeShape EntityType="TPBakeryModel.KHACHHANG" Width="1.5" PointX="6" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="TPBakeryModel.LOAISP" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="TPBakeryModel.PHIEUNHAP" Width="1.5" PointX="3" PointY="2.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="TPBakeryModel.SANPHAM" Width="1.5" PointX="3" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="TPBakeryModel.sysdiagram" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="TPBakeryModel.TAIKHOAN" Width="1.5" PointX="8.125" PointY="3.125" IsExpanded="true" />
+      <Diagram DiagramId="78150bf27e9d41bc9cc8762cbc7e682d" Name="Diagram1">
+        <EntityTypeShape EntityType="TPBakeryModel.CTDDH" Width="1.5" PointX="5.25" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TPBakeryModel.CTPN" Width="1.5" PointX="8.25" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TPBakeryModel.DONDATHANG" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TPBakeryModel.KHACHHANG" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TPBakeryModel.LOAISP" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TPBakeryModel.PHIEUNHAP" Width="1.5" PointX="6" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TPBakeryModel.SANPHAM" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TPBakeryModel.sysdiagram" Width="1.5" PointX="7.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="TPBakeryModel.TAIKHOAN" Width="1.5" PointX="8.75" PointY="9" IsExpanded="true" />
         <AssociationConnector Association="TPBakeryModel.FK_CTDDH_DONDATHANG" ManuallyRouted="false" />
         <AssociationConnector Association="TPBakeryModel.FK_CTDDH_SANPHAM" ManuallyRouted="false" />
         <AssociationConnector Association="TPBakeryModel.FK_CTPN_PHIEUNHAP" ManuallyRouted="false" />
         <AssociationConnector Association="TPBakeryModel.FK_CTPN_SANPHAM" ManuallyRouted="false" />
         <AssociationConnector Association="TPBakeryModel.FK_DONDATHANG_KHACHHANG" ManuallyRouted="false" />
         <AssociationConnector Association="TPBakeryModel.FK_DONDATHANG_SANPHAM" ManuallyRouted="false" />
-        <AssociationConnector Association="TPBakeryModel.FK_PHIEUNHAP_LOAISP" ManuallyRouted="false" />
         <AssociationConnector Association="TPBakeryModel.FK_SANPHAM_LOAISP" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>

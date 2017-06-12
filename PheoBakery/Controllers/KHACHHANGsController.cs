@@ -47,7 +47,7 @@ namespace PheoBakery.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MAKH,TENKH,TENDANGNHAP,DIACHI,EMAIL,SDT")] KHACHHANG KHACHHANG)
+        public ActionResult Create([Bind(Include = "MAKH,TENKH,DIACHI,EMAIL,SDT")] KHACHHANG KHACHHANG)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace PheoBakery.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MAKH,TENKH,TENDANGNHAP,DIACHI,EMAIL,SDT")] KHACHHANG kHACHHANG)
+        public ActionResult Edit([Bind(Include = "MAKH,TENKH,DIACHI,EMAIL,SDT")] KHACHHANG kHACHHANG)
         {
             if (ModelState.IsValid)
             {

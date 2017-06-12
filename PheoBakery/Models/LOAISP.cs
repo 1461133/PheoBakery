@@ -17,15 +17,12 @@ namespace PheoBakery.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public LOAISP()
         {
-            this.PHIEUNHAPs = new HashSet<PHIEUNHAP>();
             this.SANPHAMs = new HashSet<SANPHAM>();
         }
     
         public int MALOAI { get; set; }
         public string TENLOAI { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PHIEUNHAP> PHIEUNHAPs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SANPHAM> SANPHAMs { get; set; }
     }

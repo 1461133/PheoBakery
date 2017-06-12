@@ -27,6 +27,5 @@ namespace PheoBakery.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CTPN> CTPNs { get; set; }
-        public virtual LOAISP LOAISP { get; set; }
     }
 }

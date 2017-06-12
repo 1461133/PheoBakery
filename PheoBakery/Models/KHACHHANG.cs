@@ -22,7 +22,6 @@ namespace PheoBakery.Models
     
         public int MAKH { get; set; }
         public string TENKH { get; set; }
-        public string TENDANGNHAP { get; set; }
         public string DIACHI { get; set; }
         public string EMAIL { get; set; }
         public string SDT { get; set; }

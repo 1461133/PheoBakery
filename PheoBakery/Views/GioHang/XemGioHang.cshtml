@@ -44,7 +44,7 @@
 
                 @using (Html.BeginForm("DatHang", "GioHang"))
                 {
-                    if (Session["user"] == null)
+                    if (Session["user"] != null)
                     {
                         <div class="MuaHang">
                             <table align="center" class="table">
@@ -52,28 +52,28 @@
                                 <tr>
                                     <td>Họ tên:</td>
                                     <td>
-                                        @Html.TextBox("TenKhachHang")
+                                        @Html.TextBox("TENKH")
                                         <p style="color:red;" id="TB_TenKH"></p>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Địa Chỉ:</td>
                                     <td>
-                                        @Html.TextBox("DiaChi")
+                                        @Html.TextBox("DIACHI")
                                         <p style="color:red;" id="TB_DiaChi"></p>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Email:</td>
                                     <td>
-                                        <input name="email" placeholder="nhập vào địa chỉ email" type="email" required class="Email">
+                                        <input name="email" placeholder="insert your email..." type="email" required class="Email">
                                     </td>
 
                                 </tr>
                                 <tr>
                                     <td>Số Điện Thoại</td>
                                     <td>
-                                        @Html.TextBox("SoDienThoai")
+                                        @Html.TextBox("SDT")
                                         <p style="color:red;" id="TB_Phone"></p>
                                     </td>
                                 </tr>
@@ -99,21 +99,21 @@
 <script>
     $("#btnDatHang").click(function () {
         var loi = 0;
-        if ($("#TenKhachHang").val() == "") {
+        if ($("#TENKHACHHANG").val() == "") {
             $("#TB_TenKH").text("không để trống trường này");
             loi++;
         }
         else {
             $("#TB_TenKH").text("");
         }
-        if ($("#DiaChi").val() == "") {
+        if ($("#DIACHI").val() == "") {
             $("#TB_DiaChi").text("không để trống trường này");
             loi++;
         }
         else {
             $("#TB_DiaChi").text("");
         }
-        if ($("#SoDienThoai").val() == "") {
+        if ($("#SDT").val() == "") {
             $("#TB_Phone").text("không để trống trường này");
             loi++;
         }

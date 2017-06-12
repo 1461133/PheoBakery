@@ -181,13 +181,11 @@ namespace PheoBakery.Controllers
                 return RedirectToAction("Index", "Home");
             }
             KHACHHANG KH = new KHACHHANG();
-            if (Session["user"] == null)
-            {
-                // thêm khách hàng đối với khách hàng vãng lai(chưa có tài khoản)
-                KH = khachhang;
-                db.KHACHHANGs.Add(KH);
-                db.SaveChanges();
-            }
+            // thêm khách hàng đối với mọi tài khoản ( 1 tài khoản đăng nhập sử dụng được cho nhiều khách hàng)
+            KH = khachhang;
+            db.KHACHHANGs.Add(KH);
+            db.SaveChanges();
+          
 
             // thêm đơn hàng
             DONDATHANG ddh = new DONDATHANG();

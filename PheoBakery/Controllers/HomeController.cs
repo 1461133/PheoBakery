@@ -47,7 +47,7 @@ namespace PheoBakery.Controllers
                 }
                 else
                 {
-                    // nếu không phải là admin thì lưu tên đăng nhập của khách hàng vào
+                    // nếu không phải là admin thì lưu tên đăng nhập của khách hàng vào session user
                     Session["user"] = thanhvien.USERNAME;
                     return RedirectToAction("Index", "Home");
                 }
@@ -55,21 +55,6 @@ namespace PheoBakery.Controllers
             }
             return Content("Incorrect Password or Username!!");
         }
-        public ActionResult DangKy(KHACHHANG khachhang)
-        {
-            //if (Session["GioHang"] == null)
-            //{
-            //    return RedirectToAction("Index", "Home");
-            //}
-            KHACHHANG KH = new KHACHHANG();
-            if (Session["user"] == null)
-            {
-                // thêm khách hàng đối với khách hàng vãng lai(chưa có tài khoản)
-                KH = khachhang;
-                db.KHACHHANGs.Add(KH);
-                db.SaveChanges();
-            }
-            return View("ThongBaoThanhCong");
-        }
+        
     }
 }
