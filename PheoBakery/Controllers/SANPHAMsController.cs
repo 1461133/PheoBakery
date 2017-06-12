@@ -129,6 +129,7 @@ namespace PheoBakery.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             SANPHAM sanpham = db.SANPHAMs.SingleOrDefault(n => n.MASP == MASP && n.XOA == false);
+
             sanpham.LUOTXEM = sanpham.LUOTXEM + 1;
            db.SaveChanges();
             // kiểm tra id sản phẩm truyền  vào
@@ -193,6 +194,22 @@ namespace PheoBakery.Controllers
             int PageNumber = (page ?? 1);
             ViewBag.MALOAI = MALOAI;
             return View(lstSanPham.OrderBy(n => n.MASP).ToPagedList(PageNumber, Pagesize));
+        }
+        public ActionResult TrangSanPham2(int? MALOAI)
+        {
+            if (MALOAI == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            // load sản phẩm dựa vào loại sản phẩm và nhà sản xuất trong bảng sản phẩm
+            var lstSanPham = db.SANPHAMs.Where(n => n.MALOAI == MALOAI).Take(3);
+            if (lstSanPham.Count() == 0)
+            {
+                // thông báo ko tìm thấy
+                return HttpNotFound();
+            }
+            return View(lstSanPham.OrderBy(n => n.MASP));
+
         }
         [ChildActionOnly]
         public ActionResult HienThiSanPhamHot()
