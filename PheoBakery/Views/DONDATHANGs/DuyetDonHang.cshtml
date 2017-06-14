@@ -58,7 +58,9 @@
                 <td align="right" colspan="4">Total: @Model.CTDDHs.Sum(n => n.SOLUONG) products</td>
             </tr>
             <tr>
-                <td align="right" colspan="4">Total Money: @Model.CTDDHs.Sum(n => n.SANPHAM.DONGIA).Value.ToString("#,##") $</td>
+                <td align="right" colspan="4">Total Money: @Model.CTDDHs.Sum(n => n.DONGIA).Value.ToString("#,##") $</td>
+               
+                
             </tr>
         </table>
         <br /><br />
@@ -82,7 +84,7 @@
         printWindow.print();
     }
 
-</script>
+                </script>
 
 
 
