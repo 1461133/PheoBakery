@@ -4,10 +4,11 @@ ON CTDDH
 FOR INSERT
 AS
 begin
-	declare @sl int = (select soluong from inserted)
-	declare @masp int = (select masp from inserted)
-	update SANPHAM set SOLUONGTON = SOLUONGTON - @sl where masp = @masp
+	declare @sl int = (select SOLUONG from inserted)
+	declare @masp int = (select MASP from inserted)
+	update SANPHAM set SOLUONGTON = SOLUONGTON - @sl where MASP = @masp
 end
+
 
 CREATE TRIGGER tg_SuaCTDDH
 ON CTDDH
