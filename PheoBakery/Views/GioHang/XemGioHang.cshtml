@@ -49,7 +49,7 @@
                 {
                     if (Session["user"] != null)
                     {
-                        <div class="MuaHang" style="text-align:center">
+                        <div class="MuaHang" style="text-align:center" onclick="TestDatHang()">
                             <table align="center" class="table" style="text-align:left; width:100%">
                                 <tr>
                                 <tr>
@@ -98,7 +98,7 @@
 @{Html.RenderAction("Infor", "MyComponent");}
 @{Html.RenderAction("Footer", "MyComponent");}
 
-@*kiểm tra validition thông qua jquyre*@
+@*kiểm tra validition thông qua jquery*@
 <script>
     $("#btnDatHang").click(function () {
         var loi = 0;

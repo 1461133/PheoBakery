@@ -27,7 +27,7 @@
             {
                 if (Session["user"] == null)
                 {
-                    <div class="MuaHang" style="text-align:center">
+                    <div class="MuaHang" style="text-align:center" onclick="TestDKy()">
                         <table align="center" class="table" style="text-align:left; width:100%">
                             <tr>
                             <tr>
@@ -74,18 +74,55 @@
 @{Html.RenderAction("Infor", "MyComponent");}
 @{Html.RenderAction("Footer", "MyComponent");}
 
-<script type="text/javascript">
-    $("#btnDangKy").click(function () {
-        var TaiKhoan = $(".TaiKhoan").val();
-        var MatKhau = $(".MatKhau").val();
-        if (TaiKhoan == "") {
-            alert("Enter Your Username");
-            return;
+<script>
+    function TestDKy() {
+        var loi = 0;
+        if ($("#USERNAME").val() == "")
+        {
+            $("#TB_Username").text("Please insert this field...");
+            loi++;
         }
-        if (MatKhau == "") {
-            alert("Enter Your Password");
-            return;
+        else
+        {
+            $("#TB_Username").text("");
         }
-    });
+
+
+        if ($("#PASSWORD").val() == "")
+        {
+            $("#TB_Password").text("Please insert this field...");
+            loi++;
+        }
+        else
+        {
+            $("#TB_Password").text("");
+        }
+
+
+        if ($("#CONFIRMPASSWORD").val() == "")
+        {
+            $("#TB_ConfirmPass").text("Please insert this field...");
+            loi++;
+        }
+        else
+        {
+            if ($("#CONFIRMPASSWORD").val() != $("#PASSWORD").val()) {
+                $("#TB_ConfirmPass").text("Please check this field...");
+                loi++;
+            }
+            else {
+                $("#TB_ConfirmPass").text("");
+            }
+        }
+
+        
+
+
+        if (loi != 0) {
+            return false;
+        }
+
+    };
+
 
 </script>
