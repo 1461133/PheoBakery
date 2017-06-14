@@ -465,6 +465,7 @@
     <Content Include="Content\CssHome\images\s-icons.png" />
     <Content Include="Content\CssHome\images\s1.jpg" />
     <Content Include="Content\CssHome\images\search.png" />
+    <Content Include="Content\CssHome\images\searchicon.jpg" />
     <Content Include="Content\CssHome\images\si.jpg" />
     <Content Include="Content\CssHome\images\si1.jpg" />
     <Content Include="Content\CssHome\images\si2.jpg" />
