@@ -93,5 +93,6 @@ namespace PheoBakery.Controllers
             return RedirectToAction("KQTimKiemKhachHang", new { @sTuKhoa = sTuKhoa });
 
         }
+       
     }
 }

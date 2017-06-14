@@ -5,28 +5,53 @@
     ViewBag.Title = "Search Results";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<style>
+    img {
+        border-radius: 50%;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        transition: all 1s ease;
+        -webkit-transition: all 1s ease;
+        -moz-transition: all 1s ease;
+        -o-transition: all 1s ease;
+    }
 
+        img:hover {
+            transform: scale(1.5,1.5);
+            -webkit-transform: scale(1.5,1.5);
+            -moz-transform: scale(1.5,1.5);
+            -o-transform: scale(1.5,1.5);
+            -ms-transform: scale(1.5,1.5);
+        }
+</style>
 <div id="warp">
     <div id="main" class="container_16">
-        @foreach (var item in Model.OrderBy(n => n.DONGIA))
+        @if (Model != null)
         {
-            <div class="col-md-4 product-left p-left">
-                <div class="product-main simpleCart_shelfItem">
-                    <a href="@Url.Action("XemChiTiet", "SANPHAMs", new {@MASP = item.MASP})" class="mask"><img class="img-responsive zoom-img" src="@Url.Content("~/Content/CssHome/HinhSanPham/" + item.HINHANH)" alt="" style="width:250px;height:250px"></a>
-                    <div class="product-bottom">
-                        <div><h3>@item.TENSP</h3></div>
-                        <h4><span class="item_price">@item.DONGIA.Value.ToString("#,##")</span></h4>
-                        @using (Html.BeginForm("DatHang", "GioHang"))
-                        {
-                            if (Session["user"] != null)
+            foreach (var item in Model.OrderBy(n => n.DONGIA))
+            {
+                <div class="col-md-4 product-left p-left">
+                    <div class="product-main simpleCart_shelfItem">
+                        <a href="@Url.Action("XemChiTiet", "SANPHAMs", new {@MASP = item.MASP})" class="mask"><img class="img-responsive zoom-img" src="@Url.Content("~/Content/CssHome/HinhSanPham/" + item.HINHANH)" alt="" style="width:250px;height:250px"></a>
+                        <div class="product-bottom">
+                            <div><h3>@item.TENSP</h3></div>
+                            <h4><span class="item_price">@item.DONGIA.Value.ToString("#,##")</span></h4>
+                            @using (Html.BeginForm("DatHang", "GioHang"))
                             {
-                        <a href="@Url.Action("ThemGioHang", "GioHang", new { @MASP = item.MASP, @strUrl= Request.Url.ToString() })">Add to cart</a>
+                                if (Session["user"] != null)
+                                {
+                                    <a href="@Url.Action("ThemGioHang", "GioHang", new { @MASP = item.MASP, @strUrl= Request.Url.ToString() })">Add to cart</a>
+                                }
                             }
-                        }
+                        </div>
                     </div>
                 </div>
-            </div>
+            }
         }
+        @*@if(!Model.Any())
+        {
+            <h3> NOT FOUND</h3>
+        }*@
         <div class="clearfix"></div>
         <div class="dlink" style="margin:5px;padding:10px">
             Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount
@@ -34,5 +59,9 @@
         </div>
     </div>
 </div>
+@{Html.RenderAction("InforCake", "MyComponent");}
+@{Html.RenderAction("Infor", "MyComponent");}
+@{Html.RenderAction("Footer", "MyComponent");}
+
 
 
