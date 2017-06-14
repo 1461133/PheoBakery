@@ -8,15 +8,17 @@
 <body>
     <div id="warp">
         <div id="main" class="container_16">
-            @{Html.RenderAction("Slider", "MyComponent");}
-            @{Html.RenderAction("SpecialCake", "MyComponent");}
-            @{Html.RenderAction("NewCake", "MyComponent");}
+            @*<div style="padding-top:100px; width:100%">*@
+                @{Html.RenderAction("Slider", "MyComponent");}
+                @{Html.RenderAction("SpecialCake", "MyComponent");}
+                @{Html.RenderAction("NewCake", "MyComponent");}
 
-            @{ Html.RenderAction("HienThiSanPhamHot", "SANPHAMs"); }
+                @{ Html.RenderAction("HienThiSanPhamHot", "SANPHAMs"); }
 
-            @{Html.RenderAction("InforCake", "MyComponent");}
-            @{Html.RenderAction("Infor", "MyComponent");}
-            @{Html.RenderAction("Footer", "MyComponent");}
+                @{Html.RenderAction("InforCake", "MyComponent");}
+                @{Html.RenderAction("Infor", "MyComponent");}
+                @{Html.RenderAction("Footer", "MyComponent");}
+            @*</div>*@
         </div>
     </div>
 </body>

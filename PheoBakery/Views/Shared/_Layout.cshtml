@@ -11,14 +11,14 @@
     
 
 </head>
-<body style="background-color:#40210B">
-    <div style="z-index:1;position:absolute">
+<body @*style="background:#281300 url(images/bg-head.jpg) repeat-x"*@>
+    <div style="z-index:1;position:absolute; width:100%">
         @{Html.RenderAction("Header", "MyComponent");}
 
         @{Html.RenderAction("MenuPartial", "Home");}
-    </div>
+</div>
     @*margin-top:190px; margin-left:200px*@
-    <div style="z-index:0; position:absolute; width:100%; margin-top:190px">
+    <div style="z-index:0; position:center; width:100%">
         @RenderBody()
     </div>
         @Scripts.Render("~/bundles/scripts")
