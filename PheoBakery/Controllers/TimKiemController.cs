@@ -31,26 +31,68 @@ namespace PheoBakery.Controllers
             return View(lstSanPham.OrderBy(n => n.TENSP).ToPagedList(PageNumber, Pagesize));
 
         }
-        [HttpPost]
-        public ActionResult LayTuKhoaTimKiem(string sTuKhoa)
+        [HttpGet]
+        public ActionResult KQTimKiemLoaiSP(string sTuKhoa, int? page)
         {
-            // tìm kiếm theo tên sản phẩm
+            // tìm kiếm theo tên loại sản phẩm
 
             // thực hiện phân trang
             // tạo biến số sản phẩm trên trang
-            //if (Request.HttpMethod != "GET")
-            //{
-            //    page = 1;
-            //}
-            //int Pagesize = 6;
-            //// tạo biến số trang hiện tại
-            //int PageNumber = (page ?? 1);
-            //var lstSanPham = db.SanPhams.Where(n => n.TenSanPham.Contains(sTuKhoa));
-            //ViewBag.TuKhoa = sTuKhoa;
-            //return View(lstSanPham.OrderBy(n => n.TenSanPham).ToPagedList(PageNumber, Pagesize));
+            if (Request.HttpMethod != "GET")
+            {
+                page = 1;
+            }
+            int Pagesize = 6;
+            // tạo biến số trang hiện tại
+            int PageNumber = (page ?? 1);
+            var lstLoaiSanPham = db.LOAISPs.Where(n => n.TENLOAI.Contains(sTuKhoa));
+            ViewBag.TuKhoa = sTuKhoa;
+            return View(lstLoaiSanPham.OrderBy(n => n.TENLOAI).ToPagedList(PageNumber, Pagesize));
+
+        }
+        [HttpGet]
+        public ActionResult KQTimKiemKhachHang(string sTuKhoa, int? page)
+        {
+            // tìm kiếm theo tên khách hàng
+
+            // thực hiện phân trang
+            // tạo biến số sản phẩm trên trang
+            if (Request.HttpMethod != "GET")
+            {
+                page = 1;
+            }
+            int Pagesize = 6;
+            // tạo biến số trang hiện tại
+            int PageNumber = (page ?? 1);
+            var lstKhachHang = db.KHACHHANGs.Where(n => n.TENKH.Contains(sTuKhoa));
+            ViewBag.TuKhoa = sTuKhoa;
+            return View(lstKhachHang.OrderBy(n => n.TENKH).ToPagedList(PageNumber, Pagesize));
+
+        }
+        [HttpPost]
+        public ActionResult LayTuKhoaTimKiem(string sTuKhoa)
+        {
+            
             // gọi hàm get tìm kiếm
             return RedirectToAction("KQTimKiem", new { @sTuKhoa = sTuKhoa });
 
         }
+        [HttpPost]
+        public ActionResult LayTuKhoaTimKiemLoaiSP(string sTuKhoa)
+        {
+
+            // gọi hàm get tìm kiếm
+            return RedirectToAction("KQTimKiemLoaiSP", new { @sTuKhoa = sTuKhoa });
+
+        }
+        [HttpPost]
+        public ActionResult LayTuKhoaTimKiemKhachHang(string sTuKhoa)
+        {
+
+            // gọi hàm get tìm kiếm
+            return RedirectToAction("KQTimKiemKhachHang", new { @sTuKhoa = sTuKhoa });
+
+        }
+       
     }
 }

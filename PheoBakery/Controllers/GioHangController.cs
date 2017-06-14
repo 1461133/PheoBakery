@@ -204,9 +204,9 @@ namespace PheoBakery.Controllers
             {
                 CTDDH ctdh = new CTDDH();
                 ctdh.MADONDH = ddh.MADONDH;
-                ctdh.MASP = item.SOLUONG;
+                ctdh.MASP = item.MASP;
                 ctdh.TENSP = item.TENSP;
-                ctdh.SOLUONG = item.MASP;
+                ctdh.SOLUONG = item.SOLUONG;
                 ctdh.DONGIA = item.DONGIA;
                 db.CTDDHs.Add(ctdh);
             }

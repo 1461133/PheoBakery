@@ -8,6 +8,15 @@
 }
 
 <h2 style="font-weight:bold;text-align:center">Product Types Mangement</h2>
+<div style="margin-left:100px">
+    @using (Html.BeginForm("LayTuKhoaTimKiemLoaiSP", "TimKiem"))
+    {
+        <div class="search-bar">
+            <input type="text" name="sTuKhoa" placeholder="insert your keyword..">
+            <input type="submit" value="">
+        </div>
+    }
+</div>
 
 @grid.GetHtml(
             tableStyle: "table table-bordered table-condensed table-responsive",
@@ -22,4 +31,6 @@
                            grid.Column(format: p => @Html.ActionLink("Edit", "ChinhSua", new { @MALOAI = p.MALOAI }, new { @class = "btn btn-success" })),
                            grid.Column(format: p => @Html.ActionLink("Delete", "Xoa", new { @MALOAI = p.MALOAI }, new { @class = "btn btn-danger" }))
                             ))
+
+
 

@@ -919,7 +919,8 @@
     <Content Include="Views\MyComponent\Header.cshtml" />
     <Content Include="Views\TimKiem\KQTimKiem.cshtml" />
     <Content Include="Views\SANPHAMs\LayoutSanPham.cshtml" />
-    <Content Include="Views\SANPHAMs\XemChiTietPartial.cshtml" />
+    <Content Include="Views\TimKiem\KQTimKiemLoaiSP.cshtml" />
+    <Content Include="Views\TimKiem\KQTimKiemKhachHang.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

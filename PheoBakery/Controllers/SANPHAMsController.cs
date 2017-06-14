@@ -74,8 +74,8 @@ namespace PheoBakery.Controllers
             db.SaveChanges();
             return RedirectToAction("QLySP");
         }
-        [HttpGet]
-        public ActionResult XoaSanPham(int? MASP)
+      [HttpGet]
+      public ActionResult XoaSanPham(int? MASP)
         {
             // lấy sản phẩm cần chỉnh dựa vào id
             if (MASP == null)

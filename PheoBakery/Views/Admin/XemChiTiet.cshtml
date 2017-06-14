@@ -8,6 +8,16 @@
 }
 
 <h2 style="font-weight:bold;text-align:center">Member Management</h2>
+<div style="margin-left:100px">
+    @using (Html.BeginForm("LayTuKhoaTimKiemKhachHang", "TimKiem"))
+    {
+        <div class="search-bar">
+            <input type="text" name="sTuKhoa" placeholder="insert your keyword..">
+            <input type="submit" value="">
+        </div>
+    }
+</div>
+
 @grid.GetHtml(
             tableStyle: "table table-bordered table-condensed table-responsive",
             headerStyle: "gridHead",
@@ -19,8 +29,7 @@
                         grid.Column("TENKH", "Customer's Name "),
                          grid.Column("DIACHI", "Customer's Address "),
                         grid.Column("EMAIL", "Customer's Email "),
-                         grid.Column("SDT", "Customer's Phone"),
-                         grid.Column("TENDANGNHAP","Customer's Username")
+                         grid.Column("SDT", "Customer's Phone")
                         ))
 
 
