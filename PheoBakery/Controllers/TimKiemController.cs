@@ -154,7 +154,7 @@ namespace PheoBakery.Controllers
         public ActionResult LayTuKhoaTimKiemGiaSP(string sTuKhoa1, string sTuKhoa2)
         {
             //gọi hàm get tìm kiếm
-            return RedirectToAction("KQTimKiem", new { @sTuKhoa1 = sTuKhoa1, @sTuKhoa2 = sTuKhoa2 });
+            return RedirectToAction("KQTimKiemNangCao", new { @sTuKhoa1 = sTuKhoa1, @sTuKhoa2 = sTuKhoa2 });
         }
     }
 }

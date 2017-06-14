@@ -922,6 +922,7 @@
     <Content Include="Views\TimKiem\KQTimKiemLoaiSP.cshtml" />
     <Content Include="Views\TimKiem\KQTimKiemKhachHang.cshtml" />
     <Content Include="Views\TimKiem\KQTimKiemSPAdmin.cshtml" />
+    <Content Include="Views\TimKiem\KQTimKiemNangCao.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
