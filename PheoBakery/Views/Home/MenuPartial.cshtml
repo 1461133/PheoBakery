@@ -57,11 +57,42 @@
     height: 18px;
     top: 13px;
     right: 10%;
-    margin-right:45px;
+    margin-right:135px;
 }
 .search-bar {
-    width: 250px;
+    width: 150px;
     float: right;
+}
+.search-bar2 {
+    width: 90px;
+    float: right;
+}
+ .search-bar2 input[type="text"] {
+	width: 100%;
+	padding: 0px 0px 0px 0px;
+    margin-top: 5px;
+	border: 1px solid #F5F5F5;
+	background:#F5F5F5;
+	outline: none;
+	-webkit-appearance: none;
+	color: rgba(0, 0, 0, 0.74);
+	font-size: 0.875em;
+	font-family: 'Lato', sans-serif;
+	position: relative;
+}
+ .search-bar2 input[type="submit"] {
+    background: url(../../Content/CssHome/images/search.png)no-repeat 0px 0px;
+    outline: none;
+    -webkit-appearance: none;
+    border: 0;
+    display: inline-block;
+    vertical-align: -webkit-baseline-middle;
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    top: 13px;
+    right: 5%;
+    margin-right:3px;
 }
 </style>
 <div id="warp">
@@ -98,7 +129,18 @@
                             }
                         </div>
                     </li>
-
+                    <li>
+                        <div style="margin-left:50px">
+                            @using (Html.BeginForm("LayTuKhoaTimKiemGiaSP", "TimKiem"))
+                            {
+                                <div class="search-bar2">
+                                    <input type="text" name="sTuKhoa1" placeholder="min value">
+                                    <input type="text" name="sTuKhoa2" placeholder="max value">
+                                    <input type="submit" value="">
+                                </div>
+                            }
+                        </div>
+                    </li>
                 </ul>
             
         </div>

@@ -69,6 +69,35 @@ namespace PheoBakery.Controllers
             return View(lstKhachHang.OrderBy(n => n.TENKH).ToPagedList(PageNumber, Pagesize));
 
         }
+        [HttpGet]
+
+        public ActionResult KQTimKiemGiaSP(string sTuKhoa1, string sTuKhoa2, int? page)
+        {
+            // tìm kiếm theo tên loại sản phẩm
+
+            // thực hiện phân trang
+            // tạo biến số sản phẩm trên trang
+            if (Request.HttpMethod != "GET")
+            {
+                page = 1;
+            }
+            int Pagesize = 6;
+            // tạo biến số trang hiện tại
+            int PageNumber = (page ?? 1);
+            float tam = 0;
+            if(float.TryParse(sTuKhoa1, out tam)== false)
+            {
+                sTuKhoa1 = "0";
+            }
+            if(float.TryParse(sTuKhoa2, out tam) == false)
+            {
+                sTuKhoa2 = "100";
+            }
+            var lstSanPhamTheoGia = db.SANPHAMs.Where(n=> n.DONGIA>= float.Parse(sTuKhoa1) && n.DONGIA <= float.Parse(sTuKhoa2));
+            ViewBag.sTuKhoa1 = sTuKhoa1;
+            ViewBag.sTuKhoa2 = sTuKhoa2;
+            return View(lstSanPhamTheoGia.OrderBy(n => n.DONGIA).ToPagedList(PageNumber, Pagesize));
+        }
         [HttpPost]
         public ActionResult LayTuKhoaTimKiem(string sTuKhoa)
         {
@@ -93,6 +122,11 @@ namespace PheoBakery.Controllers
             return RedirectToAction("KQTimKiemKhachHang", new { @sTuKhoa = sTuKhoa });
 
         }
-       
+        [HttpPost]
+        public ActionResult LayTuKhoaTimKiemGiaSP(string sTuKhoa1, string sTuKhoa2)
+        {
+            //gọi hàm get tìm kiếm
+            return RedirectToAction("KQTimKiem", new { @sTuKhoa1 = sTuKhoa1, @sTuKhoa2 = sTuKhoa2 });
+        }
     }
 }
