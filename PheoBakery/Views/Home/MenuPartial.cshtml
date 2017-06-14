@@ -111,7 +111,7 @@
                     <li><a href="@Url.Action("Index","Home")">Home</a></li>
                     <li>
                         <a href="#">Cakes</a>
-                        <ul>
+                        <ul style="background-color:#40210B">
                             @foreach (var groupItem in Model.GroupBy(n => n.LOAISP))
                             {
                                 if (groupItem.Key != null)
