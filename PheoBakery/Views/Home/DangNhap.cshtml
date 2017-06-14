@@ -14,13 +14,6 @@
                     <p><a href="#">LOG IN </a></p>
                 </div>
                 <div class="signin">
-                    <div class="signin-rit">
-                        <span class="checkbox1">
-                            <label class="checkbox"><input type="checkbox" name="checkbox" checked="">Forgot Password ?</label>
-                        </span>
-                        <p><a href="#">Click Here</a> </p>
-                        <div class="clearfix"> </div>
-                    </div>
                     <div class="log-input">
                         @using (Ajax.BeginForm("LoginAdmin", "Home", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "ThongBao" }))
                         {

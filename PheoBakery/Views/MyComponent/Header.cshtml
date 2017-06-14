@@ -17,7 +17,7 @@
                     else
                     {
                         
-                        <h3 class="login">Hi, @Html.Label(Session["user"].ToString()) / <a href="@Url.Action("DangNhap", "Home")">Logout</a></h3>
+                        <h3 class="login">Hi, @Html.Label(Session["user"].ToString()) / <a href="@Url.Action("Logout", "Home")">Logout</a></h3>
                         <div class="col-md-6 top-header-left">
                             @Html.Action("GioHangPartial", "GioHang")
                         </div>

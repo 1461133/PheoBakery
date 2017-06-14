@@ -21,7 +21,11 @@ namespace PheoBakery.Controllers
         {
             return View(db.KHACHHANGs.OrderBy(n => n.MAKH));
         }
-        
-        
+        public ActionResult Logout()
+        {
+            Session.Clear();
+            return RedirectToAction("Index", "Home");
+        }
+
     }
 }
