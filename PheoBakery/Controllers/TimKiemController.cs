@@ -32,6 +32,25 @@ namespace PheoBakery.Controllers
 
         }
         [HttpGet]
+        public ActionResult KQTimKiemSPAdmin(string sTuKhoa, int? page)
+        {
+            // tìm kiếm theo tên sản phẩm
+
+            // thực hiện phân trang
+            // tạo biến số sản phẩm trên trang
+            if (Request.HttpMethod != "GET")
+            {
+                page = 1;
+            }
+            int Pagesize = 6;
+            // tạo biến số trang hiện tại
+            int PageNumber = (page ?? 1);
+            var lstSanPham = db.SANPHAMs.Where(n => n.TENSP.Contains(sTuKhoa));
+            ViewBag.TuKhoa = sTuKhoa;
+            return View(lstSanPham.OrderBy(n => n.TENSP).ToPagedList(PageNumber, Pagesize));
+
+        }
+        [HttpGet]
         public ActionResult KQTimKiemLoaiSP(string sTuKhoa, int? page)
         {
             // tìm kiếm theo tên loại sản phẩm
@@ -70,6 +89,14 @@ namespace PheoBakery.Controllers
 
         }
         [HttpPost]
+        public ActionResult LayTuKhoaTimKiemSPAdmin(string sTuKhoa)
+        {
+
+            // gọi hàm get tìm kiếm
+            return RedirectToAction("KQTimKiemSPAdmin", new { @sTuKhoa = sTuKhoa });
+
+        }
+        [HttpPost]
         public ActionResult LayTuKhoaTimKiem(string sTuKhoa)
         {
             
@@ -77,6 +104,7 @@ namespace PheoBakery.Controllers
             return RedirectToAction("KQTimKiem", new { @sTuKhoa = sTuKhoa });
 
         }
+        
         [HttpPost]
         public ActionResult LayTuKhoaTimKiemLoaiSP(string sTuKhoa)
         {

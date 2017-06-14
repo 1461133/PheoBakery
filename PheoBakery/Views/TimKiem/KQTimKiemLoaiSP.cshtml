@@ -21,9 +21,9 @@
             columns: grid.Columns(
                             grid.Column("MALOAI", "ID"),
                             grid.Column("TENLOAI", "Type"),
-                            grid.Column(format: p => @Html.ActionLink("Create", "TaoMoi", null, new { @class = "btn btn-default" })),
-                            grid.Column(format: p => @Html.ActionLink("Edit", "ChinhSua", new { @MALOAI = p.MALOAI }, new { @class = "btn btn-success" })),
-                            grid.Column(format: p => @Html.ActionLink("Delete", "Xoa", new { @MALOAI = p.MALOAI }, new { @class = "btn btn-danger" }))
+                            grid.Column(format: p => @Html.ActionLink("Create", "TaoMoi","LOAISPs", null, new { @class = "btn btn-default" })),
+                            grid.Column(format: p => @Html.ActionLink("Edit", "ChinhSua", "LOAISPs", new { @MALOAI = p.MALOAI }, new { @class = "btn btn-success" })),
+                            grid.Column(format: p => @Html.ActionLink("Delete", "Xoa", "LOAISPs", new { @MALOAI = p.MALOAI }, new { @class = "btn btn-danger" }))
                             ))
 
 
