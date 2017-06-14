@@ -103,7 +103,7 @@ transform: scale(1.5,1.5);
             <a href="@Url.Action("TrangSanPham", "SANPHAMs", new { @MALOAI = Model.MALOAI })"><img src="@Url.Content("~/Content/ckfinder/core/connector/aspx/" + Model.HINHANH2)" alt="" width="250" height="250" /></a>
 
             <h3 style="text-align:center">@Html.Raw(Model.TENSP)</h3>
-            <h4 style="text-align:center"><span>@Model.DONGIA.Value.ToString("#,##")</span></h4>
+            <h4 style="text-align:center"><span>@Model.DONGIA.Value.ToString("#,##")$</span></h4>
         </div>
         <div class="clearfix"></div>
            
