@@ -6,7 +6,7 @@
     Layout = "~/Views/Admin/AdminQuanTri.cshtml";
 }
 
-<legend>Nhập hàng cho sản phẩm <b style="color: rgb(192,0,0)">@Model.TENSP</b> </legend>
+<legend>Import Product<b style="color: rgb(192,0,0)"> @Model.TENSP</b> </legend>
 <div class="row">
     <div class="col-md-3">
         <div class="imgSP">
@@ -15,43 +15,42 @@
     </div>
     <div class="col-md-9">
         <div class="ttSP">
-            <h3>Loại sản phẩm: @Model.LOAISP.TENLOAI</h3>
-            <h3>Số lượng tồn: @Model.SOLUONGTON</h3>
-            <h3>Đơn Giá: @Model.DONGIA.Value.ToString("#,##")</h3>
+            <h3>Type of Product: @Model.LOAISP.TENLOAI</h3>
+            <h3>Quantity: @Model.SOLUONGTON</h3>
+            <h3>Unit Price: @Model.DONGIA.Value.ToString("#,##")$</h3>
         </div>
     </div>
 </div>
 <br />
 
 @*thêm hình ảnh*@
-<h2 style="font-size:20px; font-weight:bold;padding:10px;">Thông Tin Nhập Hàng</h2>
+<h2 style="font-size:20px; font-weight:bold;padding:10px;">Product's Information</h2>
 @using (Html.BeginForm("NhapHangDon", "QuanLyNhapHang"))
 {
     <div class="form-horizontal">
         <hr />
         @Html.Hidden("MASP", Model.MASP)
         <div class="form-group">
-            <label class="control-label col-md-2">Mã loại sản phẩm :</label>
-            <div class="col-md-2">
-                @{var lstMLSP = (SelectList)ViewBag.MALOAISP;}
-                @Html.DropDownList("MALOAISP", lstMLSP, new { @class = "MALOAISP" })
+            <label class="control-label col-md-2">Product: </label>
+            <div class="col-md-10">
+                @Model.TENSP
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label col-md-2">Đơn Giá :</label>
+            <label class="control-label col-md-2">Unit Price :</label>
             <div class="col-md-10">
                 @Html.TextBox("DONGIANHAP")
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label col-md-2">Số Lượng Nhập :</label>
+            <label class="control-label col-md-2">Quantity :</label>
             <div class="col-md-10">
                 @Html.TextBox("SOLUONGNHAP")
             </div>
         </div>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Nhập Hàng" class="btn btn-primary" />
+                <input type="submit" value="Import" class="btn btn-primary" />
             </div>
         </div>
     </div>

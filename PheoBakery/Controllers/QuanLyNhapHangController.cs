@@ -47,11 +47,11 @@ namespace PheoBakery.Controllers
         }
         // tạo view nhập hàng
         [HttpGet]
-        public ActionResult NhapHangDon(int? IdSanPham)
+        public ActionResult NhapHangDon(int? MASP)
         {
             
-            SANPHAM sanpham = db.SANPHAMs.SingleOrDefault(n => n.MASP == IdSanPham);
-            if (IdSanPham == null)
+            SANPHAM sanpham = db.SANPHAMs.SingleOrDefault(n => n.MASP == MASP);
+            if (MASP == null)
             {
                 return HttpNotFound();
             }

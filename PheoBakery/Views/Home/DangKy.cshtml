@@ -32,6 +32,7 @@
                             <tr>
                                 <td style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size:25px; text-align:justify;padding-left:150px">Username:</td>
                                 <td>
+                                    
                                     @Html.TextBox("USERNAME")
                                     <p style="color:red;" id="TB_Username"></p>
                                 </td>
@@ -39,14 +40,15 @@
                             <tr>
                                 <td style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size:25px; text-align:justify;padding-left:150px">Password:</td>
                                 <td>
-                                    @Html.TextBox("PASSWORD")
+                                   @Html.Password("PASSWORD")
                                     <p style="color:red;" id="TB_Password"></p>
                                 </td>
                             </tr>
                             <tr>
                                 <td style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size:25px; text-align:justify;padding-left:150px">Confirm Password:</td>
                                 <td>
-                                    @Html.TextBox("CONFIRMPASSWORD")
+                                    @Html.Password("CONFIRMPASSWORD")
+                                    
                                     <p style="color:red;" id="TB_ConfirmPass"></p>
                                 </td>
 
@@ -57,7 +59,6 @@
                 }
                 <div class="table-responsive" style="text-align:center;padding:10px">
                     <input type="submit" value="Sign Up" class="btn btn-success" id="btnDangKy" style="width:250px; height:50px; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size:30px; color:darkblue;text-align:center">
-                    <a href="@Url.Action("Index","Home")">Continue Shopping</a>
                 </div>
 
             }
