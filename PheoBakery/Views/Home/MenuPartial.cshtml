@@ -34,7 +34,7 @@
     }
     .search-bar input[type="text"] {
 	width: 100%;
-	padding: 8px 18px 8px 8px;
+	/*padding: 0px 0px 0px 0px;*/
     margin-top: 5px;
 	border: 1px solid #F5F5F5;
 	background:#F5F5F5;
@@ -43,7 +43,11 @@
 	color: rgba(0, 0, 0, 0.74);
 	font-size: 0.875em;
 	font-family: 'Lato', sans-serif;
-	position: relative;
+	position: absolute;
+    width: 150px;
+    height: 18px;
+    top: 6px;
+    margin-right:275px;
 }
 .search-bar input[type="submit"] {
     background: url(../../Content/CssHome/images/search.png)no-repeat 0px 0px;
@@ -54,17 +58,16 @@
     vertical-align: -webkit-baseline-middle;
     position: absolute;
     width: 18px;
-    height: 18px;
-    top: 13px;
-    right: 10%;
-    margin-right:135px;
+    height: 16px;
+    top: 12px;
+    margin-left:125px;
 }
 .search-bar {
-    width: 150px;
+    width: 160px;
     float: right;
 }
 .search-bar2 {
-    width: 90px;
+    width: 300px;
     float: right;
 }
  .search-bar2 input[type="text"] {
@@ -78,7 +81,12 @@
 	color: rgba(0, 0, 0, 0.74);
 	font-size: 0.875em;
 	font-family: 'Lato', sans-serif;
-	position: relative;
+	position: absolute;
+    width: 80px;
+    height: 18px;
+    top: 6px;
+    /*right: 5%;*/
+    
 }
  .search-bar2 input[type="submit"] {
     background: url(../../Content/CssHome/images/searchicon.jpg)no-repeat 0px 0px;
@@ -90,9 +98,8 @@
     position: absolute;
     width: 18px;
     height: 18px;
-    top: 13px;
-    right: 5%;
-    margin-right:3px;
+    top: 15px;
+    /*margin-right:8px;*/
 }
 </style>
 <div id="warp">
@@ -119,7 +126,7 @@
                     <li><a href="@Url.Action("Index","About")">About</a></li>
                     <li><a href="@Url.Action("Index","LienHe")">Contact</a></li>
                     <li>
-                        <div style="margin-left:100px">
+                        <div @*style="margin-left:100px"*@>
                             @using (Html.BeginForm("LayTuKhoaTimKiem", "TimKiem"))
                             {
                                 <div class="search-bar">
@@ -130,13 +137,14 @@
                         </div>
                     </li>
                     <li>
-                        <div style="margin-left:50px">
+                        <div @*style="margin-left:50px"*@>
                             @using (Html.BeginForm("LayTuKhoaTimKiemGiaSP", "TimKiem"))
                             {
                                 <div class="search-bar2">
-                                    <input type="text" name="sTuKhoa1" placeholder="min value">
-                                    <input type="text" name="sTuKhoa2" placeholder="max value">
-                                    <input type="submit" value="">
+                                    <input style="margin-left:200px;" type="text" name="sTuKhoa1" placeholder="min value">
+                                    <h5 style="margin-left:283px; color:white; margin-top:12px">-></h5>
+                                    <input style="margin-left:310px;" type="text" name="sTuKhoa2" placeholder="max value">
+                                    <input style="margin-left:410px;"  type="submit" value="">
                                 </div>
                             }
                         </div>

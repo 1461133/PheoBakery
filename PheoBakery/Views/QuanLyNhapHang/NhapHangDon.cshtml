@@ -7,14 +7,15 @@
 }
 
 <legend>Import Product<b style="color: rgb(192,0,0)"> @Model.TENSP</b> </legend>
-<div class="row">
+<div class="row" style="text-align:center">
     <div class="col-md-3">
         <div class="imgSP">
-            <img style="height: 250px; width: 300px;" src="@Url.Content("~/Content/ckfinder/core/connector/aspx/" + Model.HINHANH)" />
+            <img style="height: 250px; width: 300px; align-content:center" src="@Url.Content("~/Content/ckfinder/core/connector/aspx/" + Model.HINHANH)" />
         </div>
     </div>
-    <div class="col-md-9">
+    <div class="col-md-9" >
         <div class="ttSP">
+            <h2> Product's Information </h2>
             <h3>Type of Product: @Model.LOAISP.TENLOAI</h3>
             <h3>Quantity: @Model.SOLUONGTON</h3>
             <h3>Unit Price: @Model.DONGIA.Value.ToString("#,##")$</h3>
@@ -24,10 +25,10 @@
 <br />
 
 @*thêm hình ảnh*@
-<h2 style="font-size:20px; font-weight:bold;padding:10px;">Product's Information</h2>
+@*<h2 style="font-size:20px; font-weight:bold;padding:10px;">Product's Information</h2>*@
 @using (Html.BeginForm("NhapHangDon", "QuanLyNhapHang"))
 {
-    <div class="form-horizontal">
+    <div class="form-horizontal" style="margin-left:420px">
         <hr />
         @Html.Hidden("MASP", Model.MASP)
         <div class="form-group">
@@ -56,13 +57,13 @@
     </div>
 
                     }
-
 <style>
     .imgSP {
         border: 1px solid #999999;
         background-color: #fff;
         height: 250px;
         width: 300px;
+        margin-left:250px;
     }
 </style>
 

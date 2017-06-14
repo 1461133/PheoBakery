@@ -35,7 +35,6 @@ namespace PheoBakery.Controllers
         }
         public double ThongKeTongDoanhThu()
         {
-            // double TongDoanhThu = db.CTDDHs.Sum(n =>n.SOLUONG * n.DONGIA).Value;
             double TongDoanhThu = 0;
             foreach (var item in db.DONDATHANGs)
             {
