@@ -26,42 +26,59 @@
 </style>
 <div id="warp">
     <div id="main" class="container_16">
-        @if (Model != null)
-        {
-            foreach (var item in Model.OrderBy(n => n.DONGIA))
-            {
-                <div class="col-md-4 product-left p-left">
-                    <div class="product-main simpleCart_shelfItem">
-                        <a href="@Url.Action("XemChiTiet", "SANPHAMs", new {@MASP = item.MASP})" class="mask"><img class="img-responsive zoom-img" src="@Url.Content("~/Content/CssHome/HinhSanPham/" + item.HINHANH)" alt="" style="width:250px;height:250px"></a>
-                        <div class="product-bottom">
-                            <div><h3>@item.TENSP</h3></div>
-                            <h4><span class="item_price">@item.DONGIA.Value.ToString("#,##")</span></h4>
-                            @using (Html.BeginForm("DatHang", "GioHang"))
+
+        <div class="prodNav grid_16">
+            <div class="prodHeadline grid_12 alpha">
+                <h3>Cakes </h3>
+
+            </div>
+        </div>
+        <div class="bodyContent grid_16">
+            <div class="products grid_16 alpha">
+                <div class="prodMenu">
+
+                    <div class="menu grid_4 alpha" style="text-align:center">
+                        <table width="900">
+                            @foreach (var item in Model.OrderBy(n => n.DONGIA))
                             {
-                                if (Session["user"] != null)
-                                {
-                                    <a href="@Url.Action("ThemGioHang", "GioHang", new { @MASP = item.MASP, @strUrl= Request.Url.ToString() })">Add to cart</a>
-                                }
+                                <tr style="text-align:center">
+                                    <td>
+
+                                        <a class="grid_4 alpha" href="@Url.Action("XemChiTiet", "SANPHAMs", new { @MASP = item.MASP })"><img src="@Url.Content("~/Content/ckfinder/core/connector/aspx/" + item.HINHANH)" alt="" style="width:250px;height:250px"></a>
+
+                                        <h3 style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size:30px">@item.TENSP</h3>
+                                        <h4> <span class="item_price">@item.DONGIA.Value.ToString("#,##")$</span></h4>
+                                        @using (Html.BeginForm("DatHang", "GioHang"))
+                                        {
+                                            if (Session["user"] != null)
+                                            {
+                                                <h4><a class="item_add" href="@Url.Action("ThemGioHang", "GioHang", new { @MASP = item.MASP, @strUrl = Request.Url.ToString() })"><i>Add to cart</i></a> </h4>
+                                            }
+                                        }
+
+                                        
+                                    </td>
+                                </tr>
                             }
-                        </div>
+                        </table>
                     </div>
                 </div>
-            }
-        }
-        @*@if(!Model.Any())
-        {
-            <h3> NOT FOUND</h3>
-        }*@
-        <div class="clearfix"></div>
-        <div class="dlink" style="margin:5px;padding:10px">
-            Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount
-            @Html.PagedListPager(Model, page => @Url.Action("KQTimKiem", new { @page = page, @sTuKhoa = ViewBag.TuKhoa }))
+            </div>
         </div>
+            <div class="clearfix"></div>
+        <div class="commentPages grid_16">
+            <div class="dlink" style="margin:5px;padding:10px">
+                Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount
+                @Html.PagedListPager(Model, page => @Url.Action("KQTimKiem", new { @page = page, @sTuKhoa = ViewBag.TuKhoa }))
+            </div>
+        </div>
+
     </div>
 </div>
-@{Html.RenderAction("InforCake", "MyComponent");}
-@{Html.RenderAction("Infor", "MyComponent");}
 @{Html.RenderAction("Footer", "MyComponent");}
 
 
+        @*</div>
+    </div>
+</div>*@ 
 
