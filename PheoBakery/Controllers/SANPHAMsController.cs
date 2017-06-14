@@ -110,7 +110,11 @@ namespace PheoBakery.Controllers
             db.SaveChanges();
             return RedirectToAction("QLySP");
         }
-
+        [ChildActionOnly]
+        public ActionResult XemChiTietPartial()
+        {
+            return PartialView();
+        }
         [ChildActionOnly]
         public ActionResult SanPhamPartial()
         {
