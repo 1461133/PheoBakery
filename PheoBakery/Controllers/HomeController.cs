@@ -71,7 +71,7 @@ namespace PheoBakery.Controllers
             {
                 if (thanhvien.USERNAME == "admin"||thanhvien.USERNAME == "Admin" || thanhvien.USERNAME == "ADMIN")
                 {
-                    Session["user"] = thanhvien.USERNAME;
+                    Session["user"] = thanhvien;
                     return RedirectToAction("XemChiTiet","Admin");
                 }
                 else
@@ -83,6 +83,11 @@ namespace PheoBakery.Controllers
 
             }
             return Content("Incorrect Password or Username!!");
+        }
+         public ActionResult Logout ()
+        {
+            Session.Clear();
+            return RedirectToAction("Index", "Home");
         }
         
     }
