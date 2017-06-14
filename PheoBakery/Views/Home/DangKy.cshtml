@@ -5,6 +5,7 @@
     ViewBag.Title = "Sign Up";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 <html>
 <head>
     <style type="text/css">
@@ -42,6 +43,7 @@
                                 <td>
                                    @Html.Password("PASSWORD")
                                     <p style="color:red;" id="TB_Password"></p>
+                                   
                                 </td>
                             </tr>
                             <tr>
@@ -60,60 +62,9 @@
                 <div class="table-responsive" style="text-align:center;padding:10px">
                     <input type="submit" value="Sign Up" class="btn btn-success" id="btnDangKy" style="width:250px; height:50px; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size:30px; color:darkblue;text-align:center">
                 </div>
-
+                
             }
-            @*<form action="" method="POST" name="DKUser" id="DKUser" onSubmit="return KiemTra()">
-                <table width="1000" border="0" align="center" bgcolor="#F0F0F0" style="margin-top:7%">
-                    <tr bgcolor="#333333">
-                        <td colspan="2" bgcolor="#00FFCC" class="tieudedky">
-                            <div align="center" class="style2" style="font-weight: bold;font-size: 36px">Sign Up</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td width="49%">
-                            <div align="right" style="font-weight: bold">Username: </div>
-                        </td>
-                        <td width="51%">
-                            <input name="textTenDN" type="text" id="textTenDN" size="20">
-                            <input name="hd1" type="hidden" value="*" style="border:#FFFFFF; color:#FF0000">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><div align="right" style="font-weight:bold">Password: </div></td>
-                        <td>
-                            <input name="textMatkhau" type="password" id="textMatkhau" size="15">
-
-                            <input name="hd" type="hidden" value="*" style="border:#FFFFFF; color:#FF0000">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td><div align="right" style="font-weight:bold;">Confirm Password: </div></td>
-                        <td>
-                            <input name="textMatkhaugolai" type="password" id="textMatkhaugolai" size="15">
-                            <input name="hd2" type="hidden" value="*" style="border:#FFFFFF; color:#FF0000">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td width="49%">
-                            <div align="right">
-                                <input name="btDangky" type="submit" id="btDangky" value="Sign Up" style="width:150px">
-                            </div>
-                        </td>
-                        <td width="51%">
-                            <input name="btXoa" type="reset" id="btXoa" value="Reset" style="width:150px">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <div align="center">
-                                <input name="btBack" type="button" id="btBack" value="Cancel" style="width:200px" onClick="window.location.href='../index.php'" />
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-            </form>*@
+            
         </div>
         </div>
 
@@ -122,52 +73,19 @@
 </html>
 @{Html.RenderAction("Infor", "MyComponent");}
 @{Html.RenderAction("Footer", "MyComponent");}
-<script>
 
-function KiemTra()
-{
-	myFrmObj = document.DKUser;
-	if(myFrmObj.textTenDN.value == "")
-	{
-		window.alert("Please insert your username!!!");
-		myFrmObj.textTenDN.focus();
-		myFrmObj.hd1.type = 'label';
-		return false;
-	}
-	else
-	{
-	    if (myFrmObj.textMatkhau.value == "") {
-	        window.alert("Máº­t kháº©u khÃ´ng Ä‘Æ°á»£c Ä‘á»ƒ trá»‘ng!!!");
-	        myFrmObj.textMatkhau.focus();
-	        myFrmObj.hd.type = 'label';
-	        return false;
-	    }
-	    else //kt mat khau toi thieu 5 ky tu
-	    {
-	        if (myFrmObj.textMatkhau.value.length < 5) {
-	            window.alert("Please check your password !!");
-	            myFrmObj.textMatkhau.focus();
-	            myFrmObj.hd.type = 'label';
-	            return false;
-	        }
-	        else {
-	            if (myFrmObj.textMatkhau.value != myFrmObj.textMatkhaugolai.value)
-	            {
-	                window.alert("Confirm Password is incorrect!!");
-	                myFrmObj.textMatkhaugolai.focus();
-	                myFrmObj.hd2.type = 'label';
-	                return false;
-	            }
-	            
-	            else
-	            {
+<script type="text/javascript">
+    $("#btnDangKy").click(function () {
+        var TaiKhoan = $(".TaiKhoan").val();
+        var MatKhau = $(".MatKhau").val();
+        if (TaiKhoan == "") {
+            alert("Enter Your Username");
+            return;
+        }
+        if (MatKhau == "") {
+            alert("Enter Your Password");
+            return;
+        }
+    });
 
-	                return true;
-
-	            }
-
-	        }
-	    }
-	}
-}
 </script>

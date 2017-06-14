@@ -6,6 +6,9 @@ using System.Web.Mvc;
 using PheoBakery.Models;
 using System.Data.SqlClient;
 using System.Net.Mail;
+using System.Web.Security;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace PheoBakery.Controllers
 {
@@ -28,13 +31,32 @@ namespace PheoBakery.Controllers
         {
             return View();
         }
-       
+        public ActionResult DangKy()
+        {
+            return View();
+        }
+        public string CreateMD5(string input)
+        {
+            // Use input string to calculate MD5 hash
+            MD5 md5 = System.Security.Cryptography.MD5.Create();
+            byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(input);
+            byte[] hashBytes = md5.ComputeHash(inputBytes);
+
+            // Convert the byte array to hexadecimal string
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < hashBytes.Length; i++)
+            {
+                sb.Append(hashBytes[i].ToString("X2"));
+            }
+            return sb.ToString();
+        }
+        [HttpPost]
         public ActionResult DangKy(TAIKHOAN taikhoan)
         {
             // thêm tài khoản
             TAIKHOAN tk = new TAIKHOAN();
             tk.USERNAME = taikhoan.USERNAME;
-            tk.PASSWORD = taikhoan.PASSWORD;
+            tk.PASSWORD = CreateMD5( taikhoan.PASSWORD);
             db.TAIKHOANs.Add(tk);
             db.SaveChanges();
             return View();
@@ -43,13 +65,13 @@ namespace PheoBakery.Controllers
         public ActionResult LoginAdmin(FormCollection collection)
         {
             string TaiKhoan = collection["txtUser"].ToString();
-            string MatKhau = collection["txtPass"].ToString();
+            string MatKhau = CreateMD5(collection["txtPass"].ToString());
             TAIKHOAN thanhvien = db.TAIKHOANs.SingleOrDefault(n => n.USERNAME == TaiKhoan && n.PASSWORD == MatKhau);
             if (thanhvien != null)
             {
-                if (thanhvien.USERNAME == "admin")
+                if (thanhvien.USERNAME == "admin"||thanhvien.USERNAME == "Admin" || thanhvien.USERNAME == "ADMIN")
                 {
-                    Session["user"] = thanhvien;
+                    Session["user"] = thanhvien.USERNAME;
                     return RedirectToAction("XemChiTiet","Admin");
                 }
                 else
