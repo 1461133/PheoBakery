@@ -90,7 +90,7 @@ namespace PheoBakery.Controllers
         }
         [HttpGet]
 
-        public ActionResult KQTimKiemGiaSP(string sTuKhoa1, string sTuKhoa2, int? page)
+        public ActionResult KQTimKiemNangCao(string sTuKhoa1, string sTuKhoa2, int? page)
         {
             // tìm kiếm theo tên loại sản phẩm
 
@@ -112,7 +112,9 @@ namespace PheoBakery.Controllers
             {
                 sTuKhoa2 = "100";
             }
-            var lstSanPhamTheoGia = db.SANPHAMs.Where(n=> n.DONGIA>= float.Parse(sTuKhoa1) && n.DONGIA <= float.Parse(sTuKhoa2));
+            var gialon = float.Parse(sTuKhoa2);
+            var gianho = float.Parse(sTuKhoa1);
+            var lstSanPhamTheoGia = db.SANPHAMs.Where(n=> n.DONGIA>= gianho && n.DONGIA <= gialon);
             ViewBag.sTuKhoa1 = sTuKhoa1;
             ViewBag.sTuKhoa2 = sTuKhoa2;
             return View(lstSanPhamTheoGia.OrderBy(n => n.DONGIA).ToPagedList(PageNumber, Pagesize));
