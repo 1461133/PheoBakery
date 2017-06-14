@@ -2,7 +2,7 @@
 @model PagedList.PagedList<SANPHAM>
 @using PagedList.Mvc;
 @{
-    ViewBag.Title = "Kết quả tìm kiếm";
+    ViewBag.Title = "Search Results";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -16,8 +16,13 @@
                     <div class="product-bottom">
                         <div><h3>@item.TENSP</h3></div>
                         <h4><span class="item_price">@item.DONGIA.Value.ToString("#,##")</span></h4>
-                        
+                        @using (Html.BeginForm("DatHang", "GioHang"))
+                        {
+                            if (Session["user"] != null)
+                            {
                         <a href="@Url.Action("ThemGioHang", "GioHang", new { @MASP = item.MASP, @strUrl= Request.Url.ToString() })">Add to cart</a>
+                            }
+                        }
                     </div>
                 </div>
             </div>
