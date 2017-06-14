@@ -7,19 +7,28 @@
     WebGrid grid = new WebGrid(source: Model, rowsPerPage: 10);
 }
 
+<style>
+    .search-bar input[type="submit"] {
+        background: url(../../Content/CssHome/images/search.png)no-repeat 0px 0px;
+        outline: none;
+        -webkit-appearance: none;
+        border: 0;
+        width: 30px;
+    }
+</style>
 <div>
     <h2 style="font-weight:bold;text-align:center">Product Management</h2>
-
-    @using (Html.BeginForm("LayTuKhoaTimKiemSPAdmin", "TimKiem"))
-    {
-        <div class="search-bar">
-            <input type="text" name="sTuKhoa" placeholder="insert your keyword..">
-            <input type="submit" value="">
-        </div>
-    }
-
+    <div style="margin-left:100px;text-align:right">
+        @using (Html.BeginForm("LayTuKhoaTimKiemSPAdmin", "TimKiem"))
+        {
+            <div class="search-bar">
+                <input type="text" name="sTuKhoa" placeholder="insert your keyword..">
+                <input type="submit" value="">
+            </div>
+        }
+    </div>
 </div>
-
+<br />
 
 @grid.GetHtml(
             tableStyle: "table table-bordered table-condensed table-responsive",
