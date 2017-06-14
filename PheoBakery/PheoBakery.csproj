@@ -225,6 +225,7 @@
     <Compile Include="Controllers\MyComponentController.cs" />
     <Compile Include="Controllers\QuanLyNhapHangController.cs" />
     <Compile Include="Controllers\SANPHAMsController.cs" />
+    <Compile Include="Controllers\TaiKhoanController.cs" />
     <Compile Include="Controllers\ThongKeController.cs" />
     <Compile Include="Controllers\TimKiemController.cs" />
     <Compile Include="Global.asax.cs">
@@ -818,6 +819,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="images\LoaiSanPham\Other\" />
+    <Folder Include="Views\TaiKhoan\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

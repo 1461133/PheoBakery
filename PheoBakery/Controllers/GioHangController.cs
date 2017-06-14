@@ -47,6 +47,7 @@ namespace PheoBakery.Controllers
                 }
                 sanphamcheck.SOLUONG++;
                 sanphamcheck.TONGTIEN = sanphamcheck.SOLUONG * sanphamcheck.DONGIA;
+                
                 return Redirect(strUrl);
             }
             SanPhamDatHang itemGH = new SanPhamDatHang(MASP);
@@ -207,7 +208,7 @@ namespace PheoBakery.Controllers
                 ctdh.MASP = item.MASP;
                 ctdh.TENSP = item.TENSP;
                 ctdh.SOLUONG = item.SOLUONG;
-                ctdh.DONGIA = item.DONGIA;
+                ctdh.DONGIA = item.DONGIA*item.SOLUONG;
                 db.CTDDHs.Add(ctdh);
             }
 

@@ -1,100 +1,172 @@
-﻿@using PheoBakery.Models
-
-@model List<SanPhamDatHang>
+﻿<?php
+	session_start();
+?>
 @{
     ViewBag.Title = "Sign Up";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<html>
+<head>
+    <style type="text/css">
+        .style1 {
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-weight: bold;
+        }
 
-<div id="warp">
-    <div id="main" class="container_16">
-        <div style="text-align:center" >
+        .style2 {
+            color: #FF3333;
+        }
+    </style>
+</head>
+<body>
+    <div id="warp">
+        <div id="main" class="container_16">
+            <h3 style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size:35px;text-align:center">Sign Up</h3>
             @using (Html.BeginForm("DangKy", "Home"))
             {
                 if (Session["user"] == null)
                 {
-                        <table width="800" align="center" style="font-size:30px; font-style:italic ; text-align:center">
+                    <div class="MuaHang" style="text-align:center">
+                        <table align="center" class="table" style="text-align:left; width:100%">
                             <tr>
-                                <td style="padding-top:50px; text-align:right">Customer's Name:</td>
-                                <td style="text-align:center">
-                                    @Html.TextBox("TENKH")
-                                    <p style="color:red;" id="TB_TenKH"></p>
+                            <tr>
+                                <td style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size:25px; text-align:justify;padding-left:150px">Username:</td>
+                                <td>
+                                    @Html.TextBox("USERNAME")
+                                    <p style="color:red;" id="TB_Username"></p>
                                 </td>
+                            </tr>
+                            <tr>
+                                <td style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size:25px; text-align:justify;padding-left:150px">Password:</td>
+                                <td>
+                                    @Html.TextBox("PASSWORD")
+                                    <p style="color:red;" id="TB_Password"></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size:25px; text-align:justify;padding-left:150px">Confirm Password:</td>
+                                <td>
+                                    @Html.TextBox("CONFIRMPASSWORD")
+                                    <p style="color:red;" id="TB_ConfirmPass"></p>
+                                </td>
+
                             </tr>
                             
-                            <tr>
-                                <td style="text-align:right">Address:</td>
-                                <td style="text-align:center">
-                                    @Html.TextBox("DIACHI")
-                                    <p style="color:red;" id="TB_DiaChi"></p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="text-align:right">Email:</td>
-                                <td style="text-align:center">
-                                    <input name="email" placeholder="insert your email..." type="email" required class="Email">
-                                </td>
-
-                            </tr>
-                            <tr>
-                                <td style="text-align:right">Phone Number:</td>
-                                <td style="text-align:center">
-                                    @Html.TextBox("SDT")
-                                    <p style="color:red;" id="TB_Phone"></p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="text-align:right">
-                                    <input type="submit" value="Sign Up" id="btnDatHang" style="width:250px; height:32px; font-size: 20px" >
-                                </td>
-                                <td style="text-align:center">
-                                    <input type="reset" value="Cancel" id="btnHuy" style="width:250px; height:32px; font-size: 20px">
-                                </td>
-                            </tr>
                         </table>
+                    </div>
                 }
-                
-            }
-        </div>
-    </div>
-</div>
+                <div class="table-responsive" style="text-align:center;padding:10px">
+                    <input type="submit" value="Sign Up" class="btn btn-success" id="btnDangKy" style="width:250px; height:50px; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size:30px; color:darkblue;text-align:center">
+                    <a href="@Url.Action("Index","Home")">Continue Shopping</a>
+                </div>
 
+            }
+            @*<form action="" method="POST" name="DKUser" id="DKUser" onSubmit="return KiemTra()">
+                <table width="1000" border="0" align="center" bgcolor="#F0F0F0" style="margin-top:7%">
+                    <tr bgcolor="#333333">
+                        <td colspan="2" bgcolor="#00FFCC" class="tieudedky">
+                            <div align="center" class="style2" style="font-weight: bold;font-size: 36px">Sign Up</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="49%">
+                            <div align="right" style="font-weight: bold">Username: </div>
+                        </td>
+                        <td width="51%">
+                            <input name="textTenDN" type="text" id="textTenDN" size="20">
+                            <input name="hd1" type="hidden" value="*" style="border:#FFFFFF; color:#FF0000">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><div align="right" style="font-weight:bold">Password: </div></td>
+                        <td>
+                            <input name="textMatkhau" type="password" id="textMatkhau" size="15">
+
+                            <input name="hd" type="hidden" value="*" style="border:#FFFFFF; color:#FF0000">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><div align="right" style="font-weight:bold;">Confirm Password: </div></td>
+                        <td>
+                            <input name="textMatkhaugolai" type="password" id="textMatkhaugolai" size="15">
+                            <input name="hd2" type="hidden" value="*" style="border:#FFFFFF; color:#FF0000">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td width="49%">
+                            <div align="right">
+                                <input name="btDangky" type="submit" id="btDangky" value="Sign Up" style="width:150px">
+                            </div>
+                        </td>
+                        <td width="51%">
+                            <input name="btXoa" type="reset" id="btXoa" value="Reset" style="width:150px">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div align="center">
+                                <input name="btBack" type="button" id="btBack" value="Cancel" style="width:200px" onClick="window.location.href='../index.php'" />
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </form>*@
+        </div>
+        </div>
+
+   
+</body>
+</html>
 @{Html.RenderAction("Infor", "MyComponent");}
 @{Html.RenderAction("Footer", "MyComponent");}
-
-@*kiểm tra validition thông qua jquyre*@
 <script>
-    $("#btnDatHang").click(function () {
-        var loi = 0;
-        if ($("#TENKH").val() == "") {
-            $("#TB_TENKH").text("Please insert this field...");
-            loi++;
-        }
-        else {
-            $("#TB_TENKH").text("");
-        }
-        if ($("#DIACHI").val() == "") {
-            $("#TB_DIACHI").text("Please insert this field...");
-            loi++;
-        }
-        else {
-            $("#TB_DIACHI").text("");
-        }
-        if ($("#SDT").val() == "") {
-            $("#TB_SDT").text("Please insert this field...");
-            loi++;
-        }
-        else {
-            $("#TB_SDT").text("");
-        }
-        if (loi != 0) {
-            return false;
-        }
 
-    });
+function KiemTra()
+{
+	myFrmObj = document.DKUser;
+	if(myFrmObj.textTenDN.value == "")
+	{
+		window.alert("Please insert your username!!!");
+		myFrmObj.textTenDN.focus();
+		myFrmObj.hd1.type = 'label';
+		return false;
+	}
+	else
+	{
+	    if (myFrmObj.textMatkhau.value == "") {
+	        window.alert("Máº­t kháº©u khÃ´ng Ä‘Æ°á»£c Ä‘á»ƒ trá»‘ng!!!");
+	        myFrmObj.textMatkhau.focus();
+	        myFrmObj.hd.type = 'label';
+	        return false;
+	    }
+	    else //kt mat khau toi thieu 5 ky tu
+	    {
+	        if (myFrmObj.textMatkhau.value.length < 5) {
+	            window.alert("Please check your password !!");
+	            myFrmObj.textMatkhau.focus();
+	            myFrmObj.hd.type = 'label';
+	            return false;
+	        }
+	        else {
+	            if (myFrmObj.textMatkhau.value != myFrmObj.textMatkhaugolai.value)
+	            {
+	                window.alert("Confirm Password is incorrect!!");
+	                myFrmObj.textMatkhaugolai.focus();
+	                myFrmObj.hd2.type = 'label';
+	                return false;
+	            }
+	            
+	            else
+	            {
 
+	                return true;
 
+	            }
+
+	        }
+	    }
+	}
+}
 </script>
-
-
-

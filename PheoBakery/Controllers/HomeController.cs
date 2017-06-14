@@ -28,8 +28,15 @@ namespace PheoBakery.Controllers
         {
             return View();
         }
-        public ActionResult DangKy()
+       
+        public ActionResult DangKy(TAIKHOAN taikhoan)
         {
+            // thêm tài khoản
+            TAIKHOAN tk = new TAIKHOAN();
+            tk.USERNAME = taikhoan.USERNAME;
+            tk.PASSWORD = taikhoan.PASSWORD;
+            db.TAIKHOANs.Add(tk);
+            db.SaveChanges();
             return View();
         }
         [HttpPost]
