@@ -11,18 +11,23 @@
     
 
 </head>
-<body @*style="background:#281300 url(images/bg-head.jpg) repeat-x"*@>
-    <div style="z-index:1;position:absolute; width:100%">
-        @{Html.RenderAction("Header", "MyComponent");}
 
-        @{Html.RenderAction("MenuPartial", "Home");}
-</div>
-    @*margin-top:190px; margin-left:200px*@
-    <div style="z-index:0; position:center; width:100%">
-        @RenderBody()
-    </div>
+<body>
+    <div id="warp">
+        <div style="z-index:1;position:absolute">
+            @{Html.RenderAction("Header", "MyComponent");}
+            @{Html.RenderAction("MenuPartial", "Home");}
+
+
+        </div>
+        @*margin-top:190px; margin-left:200px*@
+        <div style="z-index:0; position:absolute; width:100%">
+            @RenderBody()
+        </div>
+
         @Scripts.Render("~/bundles/scripts")
         @Scripts.Render("~/bundles/bootstrap")
         @RenderSection("scripts", required: false)
+    </div>
 </body>
 </html>

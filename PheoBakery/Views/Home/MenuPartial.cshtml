@@ -19,7 +19,7 @@
             border-bottom: 1px solid #b6ff00;
     }
     ul#nav li a:hover{
-            background: #CCC;
+            background: none;
             text-transform: uppercase;
     }
     ul#nav li ul li{
@@ -102,14 +102,16 @@
     /*margin-right:8px;*/
 }
 </style>
-<div id="warp">
+
+
     <div id="main" class="container_16">
         <div id="mainMenu" class="grid_16">
+           
                 <ul id="nav">
                     <li><a href="@Url.Action("Index","Home")">Home</a></li>
                     <li>
                         <a href="#">Cakes</a>
-                        <ul @*style="background-color:#40210B"*@>
+                        <ul>
                             @foreach (var groupItem in Model.GroupBy(n => n.LOAISP))
                             {
                                 if (groupItem.Key != null)
@@ -121,7 +123,7 @@
                             }
                         </ul>
                     </li>
-                    
+
                     <li><a href="@Url.Action("Index","Blog")">Blog</a></li>
                     <li><a href="@Url.Action("Index","About")">About</a></li>
                     <li><a href="@Url.Action("Index","LienHe")">Contact</a></li>
@@ -144,13 +146,13 @@
                                     <input style="margin-left:200px;" type="text" name="sTuKhoa1" placeholder="min value">
                                     <h5 style="margin-left:283px; color:white; margin-top:12px">-></h5>
                                     <input style="margin-left:310px;" type="text" name="sTuKhoa2" placeholder="max value">
-                                    <input style="margin-left:410px;"  type="submit" value="">
+                                    <input style="margin-left:410px;" type="submit" value="">
                                 </div>
                             }
                         </div>
                     </li>
                 </ul>
-            
+   
         </div>
         
     </div>
