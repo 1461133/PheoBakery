@@ -56,10 +56,10 @@
         <div class="r3_counter_box">
             <i class="fa fa-usd"></i>
             <div class="stats">
-                @{decimal TongDoanhThu = decimal.Parse(ViewBag.ThongKeDoanhThu.ToString());
-                    TongDoanhThu = TongDoanhThu;
+                @{decimal ThongKeTongDoanhThu = decimal.Parse(ViewBag.ThongKeTongDoanhThu.ToString());
+                    ThongKeTongDoanhThu = ThongKeTongDoanhThu;
                 }
-                <h5>@TongDoanhThu.ToString("#,##") $<span></span></h5>
+                <h5>@ThongKeTongDoanhThu.ToString("#,##") $<span></span></h5>
                 <div class="grow grow3">
                     <p>Summary</p>
                 </div>

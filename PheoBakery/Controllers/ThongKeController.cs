@@ -16,6 +16,7 @@ namespace PheoBakery.Controllers
            // ViewBag.SoNguoiTruyCap = HttpContext.Application["SoNguoiTruyCap"].ToString();// lấy số người truy cập từ application
             //ViewBag.SoNguoiOnline = HttpContext.Application["SoNguoiOnline"].ToString();
             ViewBag.ThongKeDoanhThu = ThongKeDoanhThu();// thống kê doanh thu
+            ViewBag.ThongKeTongDoanhThu = ThongKeTongDoanhThu();
             ViewBag.ThongKeDonHang = ThongKeDonHang(); // thống kê đơn hàng
             ViewBag.ThongKeThanhVien = ThongKeThanhVien(); // thống kê thành viên
             ViewBag.ThongKeSanPham = ThongKeSanPham(); // thống kê số lượng sản phẩm tồn
@@ -24,7 +25,22 @@ namespace PheoBakery.Controllers
         }
         public double ThongKeDoanhThu()
         {
-            double TongDoanhThu = db.CTDDHs.Sum(n =>n.SOLUONG * n.DONGIA).Value;
+            // double TongDoanhThu = db.CTDDHs.Sum(n =>n.SOLUONG * n.DONGIA).Value;
+            double TongDoanhThu = 0;
+            foreach(var item in db.DONDATHANGs)
+            {
+                TongDoanhThu = TongDoanhThu + item.CTDDHs.Sum(n => n.DONGIA).Value;
+            }
+            return TongDoanhThu; // thống kê tổng doanh thu
+        }
+        public double ThongKeTongDoanhThu()
+        {
+            // double TongDoanhThu = db.CTDDHs.Sum(n =>n.SOLUONG * n.DONGIA).Value;
+            double TongDoanhThu = 0;
+            foreach (var item in db.DONDATHANGs)
+            {
+                TongDoanhThu = TongDoanhThu + item.CTDDHs.Sum(n => n.DONGIA).Value;
+            }
             return TongDoanhThu; // thống kê tổng doanh thu
         }
         public double ThongKeDonHang()

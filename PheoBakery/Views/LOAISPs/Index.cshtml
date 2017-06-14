@@ -6,17 +6,28 @@
     Layout = "~/Views/Admin/AdminQuanTri.cshtml";
     WebGrid grid = new WebGrid(source: Model, rowsPerPage: 20);
 }
-
-<h2 style="font-weight:bold;text-align:center">Product Types Mangement</h2>
-<div style="margin-left:100px">
-    @using (Html.BeginForm("LayTuKhoaTimKiemLoaiSP", "TimKiem"))
-    {
-        <div class="search-bar">
-            <input type="text" name="sTuKhoa" placeholder="insert your keyword..">
-            <input type="submit" value="">
-        </div>
+<style>
+    .search-bar input[type="submit"] {
+        background: url(../../Content/CssHome/images/search.png)no-repeat 0px 0px;
+        outline: none;
+        -webkit-appearance: none;
+        border: 0;
+        width: 30px;
     }
+</style>
+<div>
+    <h2 style="font-weight:bold;text-align:center">Product Types Mangement</h2>
+    <div style="margin-left:100px;text-align:right">
+        @using (Html.BeginForm("LayTuKhoaTimKiemLoaiSP", "TimKiem"))
+        {
+            <div class="search-bar">
+                <input type="text" name="sTuKhoa" placeholder="insert your keyword..">
+                <input type="submit" value="">
+            </div>
+        }
+    </div>
 </div>
+<br />
 
 @grid.GetHtml(
             tableStyle: "table table-bordered table-condensed table-responsive",
