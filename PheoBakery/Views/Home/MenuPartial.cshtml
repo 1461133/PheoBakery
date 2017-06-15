@@ -65,6 +65,7 @@
 .search-bar {
     width: 160px;
     float: right;
+    margin-left:-50px;
 }
 .search-bar2 {
     width: 300px;
@@ -105,7 +106,7 @@
 
 
     <div id="main" class="container_16">
-        <div id="mainMenu" class="grid_16">
+        <div id="mainMenu" class="grid_16" style="text-align:center;margin-left:50px">
            
                 <ul id="nav">
                     <li><a href="@Url.Action("Index","Home")">Home</a></li>
@@ -143,10 +144,11 @@
                             @using (Html.BeginForm("LayTuKhoaTimKiemGiaSP", "TimKiem"))
                             {
                                 <div class="search-bar2">
-                                    <input style="margin-left:200px;" type="text" name="sTuKhoa1" placeholder="min value">
-                                    <h5 style="margin-left:283px; color:white; margin-top:12px">-></h5>
-                                    <input style="margin-left:310px;" type="text" name="sTuKhoa2" placeholder="max value">
-                                    <input style="margin-left:410px;" type="submit" value="">
+                                    <input style="margin-left:100px;" type="text" name="sTuKhoa1" placeholder="min value">
+                                    <h5 style="margin-left:326px; color:white; margin-top:12px; width:50px">-></h5>
+                                    <input style="margin-left:220px;" type="text" name="sTuKhoa2" placeholder="max value">
+
+                                    <input style="margin-left:310px;" type="submit" value="">
                                 </div>
                             }
                         </div>
